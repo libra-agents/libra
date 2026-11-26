@@ -1,0 +1,6 @@
+numpy>=1.26.0,<3
+requests>=2.31.0,<3
+pydantic>=2.9.0
+jsonschema>=4.23.0
+jsonpath-ng>=1.7.0
+llama-index-core==0.10.17

@@ -1,0 +1,160 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=qwen-embeddings-job
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --gres=gpu:1
+#SBATCH --time=00:30:00
+#SBATCH --output=slurm-%x-%j.out
+#SBATCH --error=slurm-%x-%j.err
+
+set -euo pipefail
+set +x
+unset DEEPSEEK_API_KEY DASHSCOPE_API_KEY OPENROUTER_API_KEY EMBEDDING_API_KEY
+
+SOURCE="${REPO_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
+SOURCE="$(cd "$SOURCE" && pwd)"
+PROJECT="${SKILL_MINING_ROOT:-${SCRATCH_ROOT:-}}"
+if [[ -z "$PROJECT" && -n "${SCRATCH:-}" ]]; then
+  PROJECT="${SCRATCH%/}/skill-mining"
+elif [[ -z "$PROJECT" && "$(basename "$SOURCE")" == src ]]; then
+  PROJECT="$(cd "$SOURCE/.." && pwd)"
+elif [[ -z "$PROJECT" ]]; then
+  PROJECT="$SOURCE"
+fi
+VENV="$PROJECT/.venv"
+IMAGE="$PROJECT/containers/vllm-openai-v0.26.0-cu129.sif"
+MODEL=Qwen/Qwen3-Embedding-0.6B
+OUTPUT="$PROJECT/embeddings/qwen3_embedding_0.6b_v1"
+JOBTMP="${SLURM_TMPDIR:-$PROJECT/jobtmp}/skill-mining-$SLURM_JOB_ID"
+PORT=$((10000 + SLURM_JOB_ID % 40000))
+SERVER_PID=
+
+module load python/3.11.11-5e66
+source "$VENV/bin/activate"
+export PYTHONPATH="$SOURCE"
+export PYTHONDONTWRITEBYTECODE=1
+export OMP_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+export NO_PROXY=127.0.0.1,localhost
+export no_proxy="$NO_PROXY"
+export HF_HOME="$PROJECT/huggingface"
+export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
+export XDG_CACHE_HOME="$JOBTMP/cache"
+export TMPDIR="$JOBTMP/tmp"
+export VLLM_CACHE_ROOT="$JOBTMP/vllm"
+export FLASHINFER_WORKSPACE_BASE="$JOBTMP/flashinfer"
+export TORCHINDUCTOR_CACHE_DIR="$JOBTMP/torchinductor"
+export TRITON_CACHE_DIR="$JOBTMP/triton"
+export CUDA_CACHE_PATH="$JOBTMP/cuda"
+export VLLM_NO_USAGE_STATS=1
+export APPTAINER_CACHEDIR="$JOBTMP/apptainer-cache"
+export APPTAINER_TMPDIR="$JOBTMP/apptainer-tmp"
+export APPTAINERENV_HF_HOME="$HF_HOME"
+export APPTAINERENV_HUGGINGFACE_HUB_CACHE="$HUGGINGFACE_HUB_CACHE"
+export APPTAINERENV_XDG_CACHE_HOME="$XDG_CACHE_HOME"
+export APPTAINERENV_TMPDIR="$TMPDIR"
+export APPTAINERENV_VLLM_CACHE_ROOT="$VLLM_CACHE_ROOT"
+export APPTAINERENV_FLASHINFER_WORKSPACE_BASE="$FLASHINFER_WORKSPACE_BASE"
+export APPTAINERENV_TORCHINDUCTOR_CACHE_DIR="$TORCHINDUCTOR_CACHE_DIR"
+export APPTAINERENV_TRITON_CACHE_DIR="$TRITON_CACHE_DIR"
+export APPTAINERENV_CUDA_CACHE_PATH="$CUDA_CACHE_PATH"
+export APPTAINERENV_VLLM_NO_USAGE_STATS="$VLLM_NO_USAGE_STATS"
+export EMBEDDING_BASE_URL="http://127.0.0.1:$PORT/v1"
+export EMBEDDING_MODEL="$MODEL"
+
+cleanup() {
+  if [[ -n "$SERVER_PID" ]]; then
+    kill -9 "$SERVER_PID" >/dev/null 2>&1 || true
+  fi
+  rm -rf "$JOBTMP"
+}
+trap cleanup EXIT
+
+test ! -e "$OUTPUT/COMPLETE"
+mkdir -p \
+  "$PROJECT/logs" "$PROJECT/containers" "$HF_HOME" "$OUTPUT" \
+  "$XDG_CACHE_HOME" "$TMPDIR" "$VLLM_CACHE_ROOT" \
+  "$FLASHINFER_WORKSPACE_BASE" "$TORCHINDUCTOR_CACHE_DIR" \
+  "$TRITON_CACHE_DIR" "$CUDA_CACHE_PATH" \
+  "$APPTAINER_CACHEDIR" "$APPTAINER_TMPDIR"
+
+printf 'CONFIG job=%s cpus=%s gpu=%s model=%s version=qwen3_embedding_0.6b_v1 output=%s\n' \
+  "$SLURM_JOB_ID" "$SLURM_CPUS_PER_TASK" \
+  "${CUDA_VISIBLE_DEVICES:-allocated}" "$MODEL" "$OUTPUT"
+df -h "$PROJECT"
+df -i "$PROJECT"
+
+if [[ ! -s "$IMAGE" ]]; then
+  apptainer pull "$IMAGE" docker://vllm/vllm-openai:v0.26.0-cu129
+fi
+
+apptainer exec --nv --no-home \
+  --bind "$PROJECT:$PROJECT" \
+  --bind "$JOBTMP:$JOBTMP" \
+  "$IMAGE" \
+  vllm serve "$MODEL" \
+    --runner pooling \
+    --host 127.0.0.1 \
+    --port "$PORT" \
+    --dtype auto \
+    --max-model-len 8192 \
+    --gpu-memory-utilization 0.9 \
+  > "$OUTPUT/server.log" 2>&1 &
+SERVER_PID=$!
+
+ready=
+for _ in $(seq 1 120); do
+  if ! kill -0 "$SERVER_PID" 2>/dev/null; then
+    tail -100 "$OUTPUT/server.log" >&2
+    exit 1
+  fi
+  if curl --fail --silent "http://127.0.0.1:$PORT/health" >/dev/null; then
+    ready=1
+    break
+  fi
+  sleep 5
+done
+test -n "$ready"
+printf 'QWEN_HEALTH ready=1 endpoint=%s\n' "$EMBEDDING_BASE_URL"
+
+appworld_data="$SOURCE/dataset and embedding/appworld"
+appworld_out="$OUTPUT/appworld"
+test -s "$appworld_data/tool_registry.json"
+test -s "$appworld_data/benchmark.jsonl"
+python -m embedding.embed_appworld \
+  --registry "$appworld_data/tool_registry.json" \
+  --benchmark "$appworld_data/benchmark.jsonl" \
+  --output-dir "$appworld_out"
+
+for dataset in scitool_clean bfcl; do
+  data="$SOURCE/dataset and embedding/$dataset"
+  out="$OUTPUT/$dataset"
+  test -s "$data/tool_registry.json"
+  test -s "$data/benchmark.jsonl"
+  mkdir -p "$out"
+  python -m embedding.embed_tools \
+    --tools "$data/tool_registry.json" \
+    --output "$out/tool_embeddings.npz" \
+    --model "$MODEL" \
+    --batch-size 16 \
+    --max-concurrent 1 \
+    --tool-text-mode full-doc \
+    --force
+  python -m embedding.embed_tools \
+    --queries "$data/benchmark.jsonl" \
+    --output "$out/query_embeddings.npz" \
+    --model "$MODEL" \
+    --batch-size 16 \
+    --max-concurrent 1 \
+    --force
+done
+
+rm -f "$OUTPUT/server.log"
+touch "$OUTPUT/COMPLETE"
+du -sh "$OUTPUT" "$HF_HOME" "$IMAGE"
+df -h "$PROJECT"
+df -i "$PROJECT"

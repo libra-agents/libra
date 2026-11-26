@@ -1,0 +1,86 @@
+{
+  "version": "tgr_llm_graph_v1",
+  "edge_definition": "directed edge source->target means source depends on target",
+  "main_adjacency": "symmetric",
+  "model": "deepseek-v4-flash",
+  "num_tools": 128,
+  "num_pairs_evaluated": 8128,
+  "invalid_label_count": 0,
+  "directed_edges": [
+    {
+      "source": "TravelAPI.book_flight",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TravelAPI.cancel_booking",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TravelAPI.get_booking_history",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TravelAPI.get_credit_card_balance",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TravelAPI.purchase_insurance",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TravelAPI.register_credit_card",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TravelAPI.retrieve_invoice",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TravelAPI.set_budget_limit",
+      "target": "TravelAPI.authenticate_travel",
+      "label": "b_depends_on_a"
+    }
+  ],
+  "undirected_edges": [
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.book_flight"
+    },
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.cancel_booking"
+    },
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.get_booking_history"
+    },
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.get_credit_card_balance"
+    },
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.purchase_insurance"
+    },
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.register_credit_card"
+    },
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.retrieve_invoice"
+    },
+    {
+      "tool_a": "TravelAPI.authenticate_travel",
+      "tool_b": "TravelAPI.set_budget_limit"
+    }
+  ],
+  "invalid_outputs": []
+}

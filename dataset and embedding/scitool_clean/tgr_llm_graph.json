@@ -1,0 +1,4289 @@
+{
+  "version": "tgr_llm_graph_v1",
+  "edge_definition": "directed edge source->target means source depends on target",
+  "main_adjacency": "symmetric",
+  "model": "deepseek-v4-flash",
+  "num_tools": 477,
+  "num_pairs_evaluated": 113526,
+  "invalid_label_count": 0,
+  "directed_edges": [
+    {
+      "source": "AddHydrogens",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetHydrogenAcceptorsNum",
+      "target": "AddHydrogens",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FoldFingerprintFromSmiles",
+      "target": "AddWavyBondsForStereoAny",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "AminoAcidStatistics",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CalculateEnergyFromSequence",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CalculateForceEnergyFromSequence",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CalculateForceFromSequence",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CalculateHydrophobicityAndPolarity",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "AnalyzeProteinSeqFromPDB",
+      "target": "CalculatorPeptideProperty",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "ComputeHydrophilicity",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ComputeProtScale",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "DegenerateCodonCalculatorbyAminoAcid",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "AnalyzeProteinSeqFromPDB",
+      "target": "FoldProtein",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GenerateRandomMutation",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAminoAcidFrequency",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InherentDisorderedRegionsPredictor",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "AnalyzeProteinSeqFromPDB",
+      "target": "PerformBlastQuery",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "AnalyzeProteinSeqFromPDB",
+      "target": "PredictHumanProteinInteraction",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "PredictProteinBinaryLocalization",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "PredictProteinSolubility",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ProteinIsoelectricPointCalculator",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "AnalyzeProteinSeqFromPDB",
+      "target": "ProteinMotifAnalysis",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "ProteinSolubilityPredictor",
+      "target": "AnalyzeProteinSeqFromPDB",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsSubstructure",
+      "target": "AssignAtomChiralTagsFromStructure",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "AssignRadicals",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "AssignRadicals",
+      "target": "ShowMol",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "ExplainAtomCode",
+      "target": "AssignStereoChemistry",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CheckPatent",
+      "target": "BuildMorganFpFromSmiles",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CheckPatent",
+      "target": "BuildTorsionsFpFromSmiles",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "NameToCas",
+      "target": "CASToPrice",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "CASToPrice",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CalculateEnergyFromSequence",
+      "target": "GetFASTAFromName",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "CalculateForceFromSequence",
+      "target": "GetFASTAFromName",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "CalculateShapeSimilarity",
+      "target": "GetUSRCAT",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "ComputeHydrophilicity",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "ComputePiMw",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "ComputeProtPara",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FoldFingerprintFromSmiles",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ConvertSdfToCsv",
+      "target": "GenerateMorganfingerprintsFromCSV",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "InChIToCSID",
+      "target": "ConvertSmilesToInchi",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIToInChIKey",
+      "target": "ConvertSmilesToInchi",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CreateShingling",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "CustomPropertyVSA",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "Deprotect",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "DetermineBondOrders",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "DetermineBonds",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "EncodeMolecule",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "EncodeSECFP",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "Enumerate",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ExplainAtomCode",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ExplainAtomPairScore",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FingerprintsFromSmiles",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FoldFingerprintFromSmiles",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FuncGroups",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GenerateEstateFingerprint",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GenerateFraggleFragments",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GenerateMolKeyFromSmiles",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAdjacencyMatrix",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAliphaticCarbocyclesNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAliphaticHeterocyclesNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAliphaticRingsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAllowNontetrahedralChirality",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAmideBondsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAromaticCarbocyclesNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAromaticHeterocyclesNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAromaticRingsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAsphericity",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAtomFeature",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAtomPairCode",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAtomPairFingerprint",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAtomPairFingerprintAsBitVect",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAtomStereoCentersNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAtomsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAutocorrelation2D",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetAutocorrelation3D",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetBCUT",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetBridgeheadAtomsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetChi0n",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetChi0v",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetChi1n",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetChi1v",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetChi2n",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetChi2v",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetConnectivityInvariants",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetCoulombMat",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetCrippenDescriptors",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetDistanceMatrix",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetEEMCharges",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetEccentricity",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetExactMolceularWeight",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFeatureInvariants",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormalCharge",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormalChargeOfAtoms",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFractionCSP3",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetGETAWAY",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetHBANum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetHBDNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetHallKierAlpha",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetHeavyAtomsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetHeteroatomsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetHeterocyclesNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetHybridization",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetInertialShapeFactor",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetKappa1",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetKappa2",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetKappa3",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetLabuteASA",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetLipinskiHBANum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetLipinskiHBDNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMACCSKeysFingerprint",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMORSE",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetModifiedAtoms",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetModifiedBonds",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMolFormula",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMolFrags",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMorganFingerprint",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetNPR1",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetNPR2",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPatternFingerprint",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetRdkFingerprintFromSmiles",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetRingSystems",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetRingsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetRotatableBondsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetSaturatedCarbocyclesNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetSaturatedHeterocyclesNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetSaturatedRingsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetSpiroAtomsNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetStereoCodeFromSmiles",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTautomers",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTemplateMolecule",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTopologicalTorsionFingerprint",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetUSR",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetUSRCAT",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetUnspecifiedAtomStereoCentersNum",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetUseLegacyStereoPerception",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "HapticBondsToDative",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "HasQueryHs",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "Kekulize",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MergeQueryHs",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MurckoDecompose",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RXNRetrosynthetic",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveHydrogens",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveStereochemistry",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToWeight",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetAromaticity",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetBondStereoFromDirections",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmallMoleculeSimilarityCalculation",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmilesToPdb",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TestMolecule",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TypeAtomsInMolecule",
+      "target": "ConvertingPeptide2SMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "Deprotect",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ExplainAtomPairScore",
+      "target": "DetermineBonds",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FoldFingerprintFromSmiles",
+      "target": "Enumerate",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "Enumerate",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "Enumerate",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToWeight",
+      "target": "Enumerate",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "Enumerate",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "Enumerate",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FixPDBFile",
+      "target": "FetchProteinStructureFromPDBID",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "FoldProtein",
+      "target": "GetFASTAFromName",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GenerateElectricalDescriptorsFromCSV",
+      "target": "MLPClassifier",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GenerateElectricalDescriptorsFromCSV",
+      "target": "RandomForestClassifier",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GenerateRandomMutation",
+      "target": "PredictProteinBinaryLocalization",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetAminoAcidFrequency",
+      "target": "GenerateSequenceFromEnergy",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InherentDisorderedRegionsPredictor",
+      "target": "GenerateSequenceFromEnergy",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GenerateSequenceFromEnergy",
+      "target": "PerformBlastQuery",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GenerateSequenceFromEnergy",
+      "target": "PredictProteinBinaryLocalization",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GenerateSequenceFromEnergy",
+      "target": "PredictProteinSolubility",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "ProteinCodonOptimization",
+      "target": "GenerateSequenceFromEnergy",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ProteinIsoelectricPointCalculator",
+      "target": "GenerateSequenceFromEnergy",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GenerateSequenceFromEnergy",
+      "target": "ProteinMotifAnalysis",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "ProteinSolubilityPredictor",
+      "target": "GenerateSequenceFromEnergy",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SequenceToPdb",
+      "target": "GenerateSequenceFromEnergy",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TruncationLibraryDesign",
+      "target": "GenerateSequenceFromEnergy",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetCbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetDensityAtomicByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetDensityByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetEElectronicByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetEIonicByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetETotalByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetEfermiByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetEnergyPerAtomByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetFormationEnergyPerAtomByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetInitialStructuresByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetVbmByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetVolumeByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMetalByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsStableByFormula",
+      "target": "GetBatteryFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetCbmByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetChemicalSystemByMaterialId",
+      "target": "SearchMaterialsByChemsys",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetChemsysByBatteryId",
+      "target": "SearchMaterialsByChemsys",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "SearchMaterialsByChemsys",
+      "target": "GetChemsysByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetCreatedTimeByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetDensityAtomicByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetDocByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetEIonicByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetETotalByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetEnergyAboveHullByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetEquilibriumReactionEnergyPerAtom",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetEquilibriumReactionEnergyPerAtom",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "InherentDisorderedRegionsPredictor",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "PerformBlastQuery",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "PredictHumanProteinInteraction",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "PredictProteinBinaryLocalization",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "PredictProteinSolubility",
+      "target": "GetFASTAFromName",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "ProteinIsoelectricPointCalculator",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "ProteinMotifAnalysis",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "ProteinSolubilityPredictor",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFASTAFromName",
+      "target": "SequenceToPdb",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetFormationEnergyPerAtomByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetInitialStructuresByFormula",
+      "target": "GetFormulaAlphabeticalByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "GetMaterialIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetVbmByFormula",
+      "target": "GetFormulaAlphabeticalByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetVolumeByFormula",
+      "target": "GetFormulaAlphabeticalByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFormulaAlphabeticalByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMetalByFormula",
+      "target": "GetFormulaAlphabeticalByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "IsStableByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByBatteryId",
+      "target": "GetInitialStructuresByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByBatteryId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByBatteryId",
+      "target": "GetVbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByBatteryId",
+      "target": "GetVolumeByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFormulaAnonymousByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMetalByFormula",
+      "target": "GetFormulaAnonymousByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaAnonymousByBatteryId",
+      "target": "IsStableByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetInitialStructuresByFormula",
+      "target": "GetFormulaAnonymousByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaAnonymousByMaterialId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByMaterialId",
+      "target": "GetVbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetVolumeByFormula",
+      "target": "GetFormulaAnonymousByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFormulaAnonymousByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMetalByFormula",
+      "target": "GetFormulaAnonymousByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaAnonymousByMaterialId",
+      "target": "IsStableByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetInitialStructuresByFormula",
+      "target": "GetFormulaAnonymousByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaAnonymousByMoleculeId",
+      "target": "GetMaterialIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetVbmByFormula",
+      "target": "GetFormulaAnonymousByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaAnonymousByMoleculeId",
+      "target": "GetVolumeByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByMoleculeId",
+      "target": "IsMagneticByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByMoleculeId",
+      "target": "IsMetalByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaAnonymousByMoleculeId",
+      "target": "IsStableByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetInitialStructuresByFormula",
+      "target": "GetFormulaByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetFormulaByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaByMaterialId",
+      "target": "GetVbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaByMaterialId",
+      "target": "GetVolumeByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFormulaByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMetalByFormula",
+      "target": "GetFormulaByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsStableByFormula",
+      "target": "GetFormulaByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaByMaterialId",
+      "target": "SearchXasByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaChargeByBatteryId",
+      "target": "GetInitialStructuresByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaChargeByBatteryId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaChargeByBatteryId",
+      "target": "GetVbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaChargeByBatteryId",
+      "target": "GetVolumeByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaChargeByBatteryId",
+      "target": "IsMagneticByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaChargeByBatteryId",
+      "target": "IsMetalByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaChargeByBatteryId",
+      "target": "IsStableByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetInitialStructuresByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetVbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetVolumeByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFormulaDischargeByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "IsMetalByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsStableByFormula",
+      "target": "GetFormulaDischargeByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaPrettyByMaterialId",
+      "target": "GetInitialStructuresByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFormulaPrettyByMaterialId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaPrettyByMaterialId",
+      "target": "IsMetalByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaPrettyByMaterialId",
+      "target": "IsStableByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaPrettyByMoleculeId",
+      "target": "GetInitialStructuresByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaPrettyByMoleculeId",
+      "target": "GetVbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaPrettyByMoleculeId",
+      "target": "GetVolumeByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFormulaPrettyByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFormulaPrettyByMoleculeId",
+      "target": "IsMetalByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFormulaPrettyByMoleculeId",
+      "target": "IsStableByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFrameworkFormulaByBatteryId",
+      "target": "GetInitialStructuresByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFrameworkFormulaByBatteryId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFrameworkFormulaByBatteryId",
+      "target": "GetVbmByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetFrameworkFormulaByBatteryId",
+      "target": "GetVolumeByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetFrameworkFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetFrameworkFormulaByBatteryId",
+      "target": "IsMetalByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsStableByFormula",
+      "target": "GetFrameworkFormulaByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetUrlByFsId",
+      "target": "GetFsIdByTaskId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "NameToSMILES",
+      "target": "GetGETAWAY",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIToCSID",
+      "target": "GetInchiByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIToInChIKey",
+      "target": "GetInchiByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIToSMILES",
+      "target": "GetInchiByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIKeyToInChI",
+      "target": "GetInchikeyByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsValidInChIKey",
+      "target": "GetInchikeyByMoleculeId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "NameToSMILES",
+      "target": "GetInertialShapeFactor",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetNsitesByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetNumMagneticSitesByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetNumberOfElementsByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetOriginsByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetOxidationStateMethodByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPairIdByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetPhononInfoByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetPhysicalPropertiesByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPossibleSpeciesByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPossibleValencesByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetPropertyNameByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetReferencesByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetRemarksByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetSpaceGroupSymbolByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetStructureByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetStructureGraphByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetSurfaceAnisotropyByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetSymmetryByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMaterialIdByBatteryId",
+      "target": "GetTotalMagnetizationByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTotalMagnetizationNormalizedVolByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetUncorrectedEnergyPerAtomByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetVbmByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetVolumeByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetWeightedSurfaceEnergyByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMagneticByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMetalByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsStableByMaterialId",
+      "target": "GetMaterialIdByBatteryId",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetNsitesByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetNumMagneticSitesByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetNumberOfElementsByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetOriginsByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetOxidationStateMethodByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetPairIdByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPhononInfoByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPhysicalPropertiesByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPossibleSpeciesByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetPossibleValencesByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetPropertyNameByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetReferencesByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetRemarksByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetSpaceGroupSymbolByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetStructureByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetStructureGraphByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetSurfaceAnisotropyByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetSymmetryByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTotalMagnetizationByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTotalMagnetizationNormalizedVolByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "GetUncorrectedEnergyPerAtomByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetVbmByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetVolumeByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetWeightedSurfaceEnergyByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMagneticByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMaterialIdByFormula",
+      "target": "IsMetalByMaterialId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "IsStableByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetMolFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetVbmByFormula",
+      "target": "GetMolFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetVolumeByFormula",
+      "target": "GetMolFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMagneticByFormula",
+      "target": "GetMolFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsMetalByFormula",
+      "target": "GetMolFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsStableByFormula",
+      "target": "GetMolFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMolFormula",
+      "target": "SearchXasByFormula",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMoleculeLevelsOfTheoryByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetNatomsByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetNboPopulationByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetNelectronsByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetOpenShellByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetOrbitalsLevelsOfTheoryByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetOrbitalsPropertyIdsByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetOriginsByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPropertyIdByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetPropertyNameByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetRotationalEnthalpyByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetRotationalEntropyByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetSolventByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetSpeciesHashByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetSpinMultiplicityByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetSymmetryByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetThermoLevelsOfTheoryByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetThermoPropertyIdsByMoelculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetTotalEnthalpyByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetTotalEntropyByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetTranslationalEnthalpyByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTranslationalEntropyByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetUniqueCalcTypesByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetUniqueLevelsOfTheoryByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetUniqueLotSolventsByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetUniqueSolventsByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetUniqueTaskTypesByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetVibrationLevelsOfTheoryByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetVibrationPropertyIdsByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetVibrationalEnthalpyByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetVibrationalEntropyByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetMoleculeIdByFormula",
+      "target": "GetWarningsByMoleculeId",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "GetZeroPointEnergyByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "NameToSMILES",
+      "target": "GetMorganFingerprint",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "NameToSMILES",
+      "target": "GetStereoCodeFromSmiles",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "GetTautomers",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToWeight",
+      "target": "GetTautomers",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "GetTautomers",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "GetTautomers",
+      "target": "ShowMol",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "HapticBondsToDative",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "HapticBondsToDative",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIToCSID",
+      "target": "InChIKeyToInChI",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "Kekulize",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MergeQueryHs",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MurckoDecompose",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveHydrogens",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveStereochemistry",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToWeight",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetAromaticity",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetBondStereoFromDirections",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmilesToPdb",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIKeyToSMILES",
+      "target": "TestMolecule",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "TypeAtomsInMolecule",
+      "target": "InChIKeyToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "IsValidInChIKey",
+      "target": "InChIToInChIKey",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "Kekulize",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MergeQueryHs",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MurckoDecompose",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveHydrogens",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveStereochemistry",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToWeight",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetAromaticity",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetBondStereoFromDirections",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmallMoleculeSimilarityCalculation",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "InChIToSMILES",
+      "target": "SmilesToPdb",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "InChIToSMILES",
+      "target": "TestMolecule",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "TypeAtomsInMolecule",
+      "target": "InChIToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "Kekulize",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RandomMoelcule",
+      "target": "Length_SELFIES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MOFToSMILES",
+      "target": "RemoveStereochemistry",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "MOFToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "MOFToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetAromaticity",
+      "target": "MOFToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetBondStereoFromDirections",
+      "target": "MOFToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "MOFToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmallMoleculeSimilarityCalculation",
+      "target": "MOFToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "MOFToSMILES",
+      "target": "TestMolecule",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "TypeAtomsInMolecule",
+      "target": "MOFToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "MurckoDecompose",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SafetySummary",
+      "target": "NameToCas",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveHydrogens",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RemoveStereochemistry",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToWeight",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetAromaticity",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetBondStereoFromDirections",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "ShowMol",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmallMoleculeSimilarityCalculation",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmilesToPdb",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TestMolecule",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TypeAtomsInMolecule",
+      "target": "NameToSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TranslateDNAtoAminoAcidSequence",
+      "target": "RandomDNAGeneration",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SELFIEStoSMILES",
+      "target": "RandomMoelcule",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "RandomMoelcule",
+      "target": "Split_SELFIES",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "RemoveStereochemistry",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToCAS",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToInChI",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILESToWeight",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetAromaticity",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SetBondStereoFromDirections",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SELFIEStoSMILES",
+      "target": "ShowMol",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "SmallMoleculeSimilarityCalculation",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmilesToPdb",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SELFIEStoSMILES",
+      "target": "TestMolecule",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "TypeAtomsInMolecule",
+      "target": "SELFIEStoSMILES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SafetySummary",
+      "target": "SMILESToCAS",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "TestMolecule",
+      "target": "SMILESToInChI",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "Split_SELFIES",
+      "target": "SMILEStoSELFIES",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SMILEStoSELFIES",
+      "target": "TestMolecule",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "SmallMoleculeSimilarityCalculation",
+      "target": "SlnToSmiles",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SmilesToPdb",
+      "target": "SlnToSmiles",
+      "label": "b_depends_on_a"
+    },
+    {
+      "source": "SlnToSmiles",
+      "target": "TestMolecule",
+      "label": "a_depends_on_b"
+    },
+    {
+      "source": "TypeAtomsInMolecule",
+      "target": "SlnToSmiles",
+      "label": "b_depends_on_a"
+    }
+  ],
+  "undirected_edges": [
+    {
+      "tool_a": "AddHydrogens",
+      "tool_b": "GetAtomPairFingerprintAsBitVect"
+    },
+    {
+      "tool_a": "AddHydrogens",
+      "tool_b": "GetHydrogenAcceptorsNum"
+    },
+    {
+      "tool_a": "AddWavyBondsForStereoAny",
+      "tool_b": "FoldFingerprintFromSmiles"
+    },
+    {
+      "tool_a": "AminoAcidStatistics",
+      "tool_b": "GetFASTAFromName"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "CalculateEnergyFromSequence"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "CalculateForceEnergyFromSequence"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "CalculateForceFromSequence"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "CalculateHydrophobicityAndPolarity"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "CalculatorPeptideProperty"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "ComputeHydrophilicity"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "ComputeProtScale"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "DegenerateCodonCalculatorbyAminoAcid"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "FoldProtein"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "GenerateRandomMutation"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "GetAminoAcidFrequency"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "InherentDisorderedRegionsPredictor"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "PerformBlastQuery"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "PredictHumanProteinInteraction"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "PredictProteinBinaryLocalization"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "PredictProteinSolubility"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "ProteinIsoelectricPointCalculator"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "ProteinMotifAnalysis"
+    },
+    {
+      "tool_a": "AnalyzeProteinSeqFromPDB",
+      "tool_b": "ProteinSolubilityPredictor"
+    },
+    {
+      "tool_a": "AssignAtomChiralTagsFromStructure",
+      "tool_b": "IsSubstructure"
+    },
+    {
+      "tool_a": "AssignRadicals",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "AssignRadicals",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "AssignStereoChemistry",
+      "tool_b": "ExplainAtomCode"
+    },
+    {
+      "tool_a": "BuildMorganFpFromSmiles",
+      "tool_b": "CheckPatent"
+    },
+    {
+      "tool_a": "BuildTorsionsFpFromSmiles",
+      "tool_b": "CheckPatent"
+    },
+    {
+      "tool_a": "CASToPrice",
+      "tool_b": "NameToCas"
+    },
+    {
+      "tool_a": "CASToPrice",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "CalculateEnergyFromSequence",
+      "tool_b": "GetFASTAFromName"
+    },
+    {
+      "tool_a": "CalculateForceFromSequence",
+      "tool_b": "GetFASTAFromName"
+    },
+    {
+      "tool_a": "CalculateShapeSimilarity",
+      "tool_b": "GetUSRCAT"
+    },
+    {
+      "tool_a": "ComputeHydrophilicity",
+      "tool_b": "GetFASTAFromName"
+    },
+    {
+      "tool_a": "ComputePiMw",
+      "tool_b": "GetFASTAFromName"
+    },
+    {
+      "tool_a": "ComputeProtPara",
+      "tool_b": "GetFASTAFromName"
+    },
+    {
+      "tool_a": "CondenseAbbreviationSubstanceGroups",
+      "tool_b": "FoldFingerprintFromSmiles"
+    },
+    {
+      "tool_a": "CondenseAbbreviationSubstanceGroups",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "ConvertSdfToCsv",
+      "tool_b": "GenerateMorganfingerprintsFromCSV"
+    },
+    {
+      "tool_a": "ConvertSmilesToInchi",
+      "tool_b": "InChIToCSID"
+    },
+    {
+      "tool_a": "ConvertSmilesToInchi",
+      "tool_b": "InChIToInChIKey"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "CreateShingling"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "CustomPropertyVSA"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "Deprotect"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "DetermineBondOrders"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "DetermineBonds"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "EncodeMolecule"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "EncodeSECFP"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "Enumerate"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "ExplainAtomCode"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "ExplainAtomPairScore"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "FingerprintsFromSmiles"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "FoldFingerprintFromSmiles"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "FuncGroups"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GenerateEstateFingerprint"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GenerateFraggleFragments"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GenerateMolKeyFromSmiles"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAdjacencyMatrix"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAliphaticCarbocyclesNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAliphaticHeterocyclesNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAliphaticRingsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAllowNontetrahedralChirality"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAmideBondsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAromaticCarbocyclesNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAromaticHeterocyclesNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAromaticRingsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAsphericity"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAtomFeature"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAtomPairCode"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAtomPairFingerprint"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAtomPairFingerprintAsBitVect"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAtomStereoCentersNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAtomsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAutocorrelation2D"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetAutocorrelation3D"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetBCUT"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetBridgeheadAtomsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetChi0n"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetChi0v"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetChi1n"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetChi1v"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetChi2n"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetChi2v"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetConnectivityInvariants"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetCoulombMat"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetCrippenDescriptors"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetDistanceMatrix"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetEEMCharges"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetEccentricity"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetExactMolceularWeight"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetFeatureInvariants"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetFormalCharge"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetFormalChargeOfAtoms"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetFractionCSP3"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetGETAWAY"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetHBANum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetHBDNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetHallKierAlpha"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetHeavyAtomsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetHeteroatomsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetHeterocyclesNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetHybridization"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetInertialShapeFactor"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetKappa1"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetKappa2"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetKappa3"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetLabuteASA"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetLipinskiHBANum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetLipinskiHBDNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetMACCSKeysFingerprint"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetMORSE"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetModifiedAtoms"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetModifiedBonds"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetMolFormula"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetMolFrags"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetMorganFingerprint"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetNPR1"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetNPR2"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetPatternFingerprint"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetRdkFingerprintFromSmiles"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetRingSystems"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetRingsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetRotatableBondsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetSaturatedCarbocyclesNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetSaturatedHeterocyclesNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetSaturatedRingsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetSpiroAtomsNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetStereoCodeFromSmiles"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetTautomers"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetTemplateMolecule"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetTopologicalTorsionFingerprint"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetUSR"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetUSRCAT"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetUnspecifiedAtomStereoCentersNum"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "GetUseLegacyStereoPerception"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "HapticBondsToDative"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "HasQueryHs"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "Kekulize"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "MergeQueryHs"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "MurckoDecompose"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "RXNRetrosynthetic"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "RemoveHydrogens"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "RemoveStereochemistry"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SMILESToWeight"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SMILEStoSELFIES"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SetAromaticity"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SetBondStereoFromDirections"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SmallMoleculeSimilarityCalculation"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "SmilesToPdb"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "ConvertingPeptide2SMILES",
+      "tool_b": "TypeAtomsInMolecule"
+    },
+    {
+      "tool_a": "Deprotect",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "DetermineBonds",
+      "tool_b": "ExplainAtomPairScore"
+    },
+    {
+      "tool_a": "Enumerate",
+      "tool_b": "FoldFingerprintFromSmiles"
+    },
+    {
+      "tool_a": "Enumerate",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "Enumerate",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "Enumerate",
+      "tool_b": "SMILESToWeight"
+    },
+    {
+      "tool_a": "Enumerate",
+      "tool_b": "SMILEStoSELFIES"
+    },
+    {
+      "tool_a": "Enumerate",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "FetchProteinStructureFromPDBID",
+      "tool_b": "FixPDBFile"
+    },
+    {
+      "tool_a": "FoldProtein",
+      "tool_b": "GetFASTAFromName"
+    },
+    {
+      "tool_a": "GenerateElectricalDescriptorsFromCSV",
+      "tool_b": "MLPClassifier"
+    },
+    {
+      "tool_a": "GenerateElectricalDescriptorsFromCSV",
+      "tool_b": "RandomForestClassifier"
+    },
+    {
+      "tool_a": "GenerateRandomMutation",
+      "tool_b": "PredictProteinBinaryLocalization"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "GetAminoAcidFrequency"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "InherentDisorderedRegionsPredictor"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "PerformBlastQuery"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "PredictProteinBinaryLocalization"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "PredictProteinSolubility"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "ProteinCodonOptimization"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "ProteinIsoelectricPointCalculator"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "ProteinMotifAnalysis"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "ProteinSolubilityPredictor"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "SequenceToPdb"
+    },
+    {
+      "tool_a": "GenerateSequenceFromEnergy",
+      "tool_b": "TruncationLibraryDesign"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetCbmByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetDensityAtomicByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetDensityByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetEElectronicByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetEIonicByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetETotalByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetEfermiByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetEnergyPerAtomByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetFormationEnergyPerAtomByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetBatteryFormulaByBatteryId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetCbmByMaterialId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetChemicalSystemByMaterialId",
+      "tool_b": "SearchMaterialsByChemsys"
+    },
+    {
+      "tool_a": "GetChemsysByBatteryId",
+      "tool_b": "SearchMaterialsByChemsys"
+    },
+    {
+      "tool_a": "GetChemsysByMoleculeId",
+      "tool_b": "SearchMaterialsByChemsys"
+    },
+    {
+      "tool_a": "GetCreatedTimeByMaterialId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetDensityAtomicByMaterialId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetDocByMaterialId",
+      "tool_b": "GetMaterialIdByBatteryId"
+    },
+    {
+      "tool_a": "GetEIonicByMaterialId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetETotalByMaterialId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetEnergyAboveHullByMaterialId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetEquilibriumReactionEnergyPerAtom",
+      "tool_b": "GetMaterialIdByBatteryId"
+    },
+    {
+      "tool_a": "GetEquilibriumReactionEnergyPerAtom",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "InherentDisorderedRegionsPredictor"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "PerformBlastQuery"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "PredictHumanProteinInteraction"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "PredictProteinBinaryLocalization"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "PredictProteinSolubility"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "ProteinIsoelectricPointCalculator"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "ProteinMotifAnalysis"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "ProteinSolubilityPredictor"
+    },
+    {
+      "tool_a": "GetFASTAFromName",
+      "tool_b": "SequenceToPdb"
+    },
+    {
+      "tool_a": "GetFormationEnergyPerAtomByMaterialId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAlphabeticalByMoleculeId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAlphabeticalByMoleculeId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAlphabeticalByMoleculeId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAlphabeticalByMoleculeId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAlphabeticalByMoleculeId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAlphabeticalByMoleculeId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAlphabeticalByMoleculeId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByBatteryId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByBatteryId",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByBatteryId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByBatteryId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByBatteryId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByBatteryId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByBatteryId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMaterialId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMaterialId",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMaterialId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMaterialId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMaterialId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMaterialId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMaterialId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMoleculeId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMoleculeId",
+      "tool_b": "GetMaterialIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMoleculeId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMoleculeId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMoleculeId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMoleculeId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaAnonymousByMoleculeId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaByMaterialId",
+      "tool_b": "SearchXasByFormula"
+    },
+    {
+      "tool_a": "GetFormulaChargeByBatteryId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaChargeByBatteryId",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaChargeByBatteryId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaChargeByBatteryId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaChargeByBatteryId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaChargeByBatteryId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaChargeByBatteryId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaDischargeByBatteryId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaDischargeByBatteryId",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetFormulaDischargeByBatteryId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaDischargeByBatteryId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaDischargeByBatteryId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaDischargeByBatteryId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaDischargeByBatteryId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMaterialId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMaterialId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMaterialId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMaterialId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMoleculeId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMoleculeId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMoleculeId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMoleculeId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMoleculeId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFormulaPrettyByMoleculeId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFrameworkFormulaByBatteryId",
+      "tool_b": "GetInitialStructuresByFormula"
+    },
+    {
+      "tool_a": "GetFrameworkFormulaByBatteryId",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetFrameworkFormulaByBatteryId",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetFrameworkFormulaByBatteryId",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetFrameworkFormulaByBatteryId",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetFrameworkFormulaByBatteryId",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetFrameworkFormulaByBatteryId",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetFsIdByTaskId",
+      "tool_b": "GetUrlByFsId"
+    },
+    {
+      "tool_a": "GetGETAWAY",
+      "tool_b": "NameToSMILES"
+    },
+    {
+      "tool_a": "GetInchiByMoleculeId",
+      "tool_b": "InChIToCSID"
+    },
+    {
+      "tool_a": "GetInchiByMoleculeId",
+      "tool_b": "InChIToInChIKey"
+    },
+    {
+      "tool_a": "GetInchiByMoleculeId",
+      "tool_b": "InChIToSMILES"
+    },
+    {
+      "tool_a": "GetInchikeyByMoleculeId",
+      "tool_b": "InChIKeyToInChI"
+    },
+    {
+      "tool_a": "GetInchikeyByMoleculeId",
+      "tool_b": "IsValidInChIKey"
+    },
+    {
+      "tool_a": "GetInertialShapeFactor",
+      "tool_b": "NameToSMILES"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetNsitesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetNumMagneticSitesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetNumberOfElementsByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetOriginsByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetOxidationStateMethodByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetPairIdByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetPhononInfoByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetPhysicalPropertiesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetPossibleSpeciesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetPossibleValencesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetPropertyNameByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetReferencesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetRemarksByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetSpaceGroupSymbolByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetStructureByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetStructureGraphByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetSurfaceAnisotropyByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetSymmetryByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetTotalMagnetizationByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetTotalMagnetizationNormalizedVolByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetUncorrectedEnergyPerAtomByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetVbmByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetVolumeByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "GetWeightedSurfaceEnergyByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "IsMagneticByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "IsMetalByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByBatteryId",
+      "tool_b": "IsStableByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetNsitesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetNumMagneticSitesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetNumberOfElementsByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetOriginsByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetOxidationStateMethodByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetPairIdByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetPhononInfoByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetPhysicalPropertiesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetPossibleSpeciesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetPossibleValencesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetPropertyNameByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetReferencesByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetRemarksByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetSpaceGroupSymbolByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetStructureByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetStructureGraphByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetSurfaceAnisotropyByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetSymmetryByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetTotalMagnetizationByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetTotalMagnetizationNormalizedVolByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetUncorrectedEnergyPerAtomByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetVbmByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetVolumeByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "GetWeightedSurfaceEnergyByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "IsMagneticByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "IsMetalByMaterialId"
+    },
+    {
+      "tool_a": "GetMaterialIdByFormula",
+      "tool_b": "IsStableByMaterialId"
+    },
+    {
+      "tool_a": "GetMolFormula",
+      "tool_b": "GetMoleculeIdByFormula"
+    },
+    {
+      "tool_a": "GetMolFormula",
+      "tool_b": "GetVbmByFormula"
+    },
+    {
+      "tool_a": "GetMolFormula",
+      "tool_b": "GetVolumeByFormula"
+    },
+    {
+      "tool_a": "GetMolFormula",
+      "tool_b": "IsMagneticByFormula"
+    },
+    {
+      "tool_a": "GetMolFormula",
+      "tool_b": "IsMetalByFormula"
+    },
+    {
+      "tool_a": "GetMolFormula",
+      "tool_b": "IsStableByFormula"
+    },
+    {
+      "tool_a": "GetMolFormula",
+      "tool_b": "SearchXasByFormula"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetMoleculeLevelsOfTheoryByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetNatomsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetNboPopulationByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetNelectronsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetOpenShellByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetOrbitalsLevelsOfTheoryByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetOrbitalsPropertyIdsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetOriginsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetPropertyIdByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetPropertyNameByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetRotationalEnthalpyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetRotationalEntropyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetSolventByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetSpeciesHashByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetSpinMultiplicityByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetSymmetryByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetThermoLevelsOfTheoryByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetThermoPropertyIdsByMoelculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetTotalEnthalpyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetTotalEntropyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetTranslationalEnthalpyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetTranslationalEntropyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetUniqueCalcTypesByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetUniqueLevelsOfTheoryByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetUniqueLotSolventsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetUniqueSolventsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetUniqueTaskTypesByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetVibrationLevelsOfTheoryByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetVibrationPropertyIdsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetVibrationalEnthalpyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetVibrationalEntropyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetWarningsByMoleculeId"
+    },
+    {
+      "tool_a": "GetMoleculeIdByFormula",
+      "tool_b": "GetZeroPointEnergyByMoleculeId"
+    },
+    {
+      "tool_a": "GetMorganFingerprint",
+      "tool_b": "NameToSMILES"
+    },
+    {
+      "tool_a": "GetStereoCodeFromSmiles",
+      "tool_b": "NameToSMILES"
+    },
+    {
+      "tool_a": "GetTautomers",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "GetTautomers",
+      "tool_b": "SMILESToWeight"
+    },
+    {
+      "tool_a": "GetTautomers",
+      "tool_b": "SMILEStoSELFIES"
+    },
+    {
+      "tool_a": "GetTautomers",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "HapticBondsToDative",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "HapticBondsToDative",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "InChIKeyToInChI",
+      "tool_b": "InChIToCSID"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "Kekulize"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "MergeQueryHs"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "MurckoDecompose"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "RemoveHydrogens"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "RemoveStereochemistry"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "SMILESToWeight"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "SMILEStoSELFIES"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "SetAromaticity"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "SetBondStereoFromDirections"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "SmilesToPdb"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "InChIKeyToSMILES",
+      "tool_b": "TypeAtomsInMolecule"
+    },
+    {
+      "tool_a": "InChIToInChIKey",
+      "tool_b": "IsValidInChIKey"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "Kekulize"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "MergeQueryHs"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "MurckoDecompose"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "RemoveHydrogens"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "RemoveStereochemistry"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "SMILESToWeight"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "SMILEStoSELFIES"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "SetAromaticity"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "SetBondStereoFromDirections"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "SmallMoleculeSimilarityCalculation"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "SmilesToPdb"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "InChIToSMILES",
+      "tool_b": "TypeAtomsInMolecule"
+    },
+    {
+      "tool_a": "Kekulize",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "Length_SELFIES",
+      "tool_b": "RandomMoelcule"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "RemoveStereochemistry"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "SMILEStoSELFIES"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "SetAromaticity"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "SetBondStereoFromDirections"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "SmallMoleculeSimilarityCalculation"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "MOFToSMILES",
+      "tool_b": "TypeAtomsInMolecule"
+    },
+    {
+      "tool_a": "MurckoDecompose",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "NameToCas",
+      "tool_b": "SafetySummary"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "RemoveHydrogens"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "RemoveStereochemistry"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SMILESToWeight"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SMILEStoSELFIES"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SetAromaticity"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SetBondStereoFromDirections"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SmallMoleculeSimilarityCalculation"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "SmilesToPdb"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "NameToSMILES",
+      "tool_b": "TypeAtomsInMolecule"
+    },
+    {
+      "tool_a": "RandomDNAGeneration",
+      "tool_b": "TranslateDNAtoAminoAcidSequence"
+    },
+    {
+      "tool_a": "RandomMoelcule",
+      "tool_b": "SELFIEStoSMILES"
+    },
+    {
+      "tool_a": "RandomMoelcule",
+      "tool_b": "Split_SELFIES"
+    },
+    {
+      "tool_a": "RemoveStereochemistry",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "SMILESToCAS"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "SMILESToInChI"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "SMILESToWeight"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "SetAromaticity"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "SetBondStereoFromDirections"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "ShowMol"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "SmallMoleculeSimilarityCalculation"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "SmilesToPdb"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "SELFIEStoSMILES",
+      "tool_b": "TypeAtomsInMolecule"
+    },
+    {
+      "tool_a": "SMILESToCAS",
+      "tool_b": "SafetySummary"
+    },
+    {
+      "tool_a": "SMILESToInChI",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "SMILEStoSELFIES",
+      "tool_b": "Split_SELFIES"
+    },
+    {
+      "tool_a": "SMILEStoSELFIES",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "SlnToSmiles",
+      "tool_b": "SmallMoleculeSimilarityCalculation"
+    },
+    {
+      "tool_a": "SlnToSmiles",
+      "tool_b": "SmilesToPdb"
+    },
+    {
+      "tool_a": "SlnToSmiles",
+      "tool_b": "TestMolecule"
+    },
+    {
+      "tool_a": "SlnToSmiles",
+      "tool_b": "TypeAtomsInMolecule"
+    }
+  ],
+  "invalid_outputs": []
+}

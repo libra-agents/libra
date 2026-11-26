@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=scikg-qwen-retrieval-job
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:1
+#SBATCH --exclude=gpu2708
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=64G
+#SBATCH --time=02:00:00
+#SBATCH --output=slurm-%x-%j.out
+#SBATCH --error=slurm-%x-%j.err
+
+set -euo pipefail
+REPO_ROOT="${REPO_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
+REPO_ROOT="$(cd "$REPO_ROOT" && pwd)"
+if [[ -z "${SCRATCH_ROOT:-}" && -n "${SKILL_MINING_ROOT:-}" ]]; then
+  SCRATCH_ROOT="$SKILL_MINING_ROOT"
+elif [[ -z "${SCRATCH_ROOT:-}" && -n "${SCRATCH:-}" ]]; then
+  SCRATCH_ROOT="${SCRATCH%/}/skill-mining"
+elif [[ -z "${SCRATCH_ROOT:-}" && "$(basename "$REPO_ROOT")" == src ]]; then
+  SCRATCH_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
+elif [[ -z "${SCRATCH_ROOT:-}" ]]; then
+  SCRATCH_ROOT="$REPO_ROOT"
+fi
+readonly REPO_ROOT SCRATCH_ROOT
+readonly RUN_ROOT="${SCRATCH_ROOT}/scikg/qwen3_embedding_0.6b_catalog477"
+readonly IMAGE_PATH="${SCRATCH_ROOT}/containers/vllm-openai-v0.26.0-cu129.sif"
+readonly VENV_PYTHON="${SCRATCH_ROOT}/.venv/bin/python"
+readonly PORT=$((10000 + (SLURM_JOB_ID + UID * 983) % 40000))
+
+module load python/3.11.11-5e66
+export PYTHONPATH="${REPO_ROOT}"
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+export HF_HOME="${SCRATCH_ROOT}/huggingface"
+export HUGGINGFACE_HUB_CACHE="${HF_HOME}/hub"
+export VLLM_CACHE_ROOT="${SCRATCH_ROOT}/vllm"
+export XDG_CACHE_HOME="${SCRATCH_ROOT}/cache"
+export TMPDIR="${SCRATCH_ROOT}/tmp"
+export FLASHINFER_WORKSPACE_BASE="${SCRATCH_ROOT}/flashinfer"
+export TORCHINDUCTOR_CACHE_DIR="${SCRATCH_ROOT}/torchinductor"
+export TRITON_CACHE_DIR="${SCRATCH_ROOT}/triton"
+export CUDA_CACHE_PATH="${SCRATCH_ROOT}/cuda"
+export PYTHONNOUSERSITE=1
+export EMBEDDING_MODEL=Qwen/Qwen3-Embedding-0.6B
+export EMBEDDING_BASE_URL="http://127.0.0.1:${PORT}/v1"
+for name in HF_HOME HUGGINGFACE_HUB_CACHE VLLM_CACHE_ROOT XDG_CACHE_HOME TMPDIR FLASHINFER_WORKSPACE_BASE TORCHINDUCTOR_CACHE_DIR TRITON_CACHE_DIR CUDA_CACHE_PATH PYTHONNOUSERSITE EMBEDDING_MODEL EMBEDDING_BASE_URL; do
+  export "APPTAINERENV_${name}=${!name}"
+done
+mkdir -p "${RUN_ROOT}" "${SCRATCH_ROOT}/logs" "${TMPDIR}"
+
+container_exec=(apptainer exec --nv --no-home --bind "${REPO_ROOT}:${REPO_ROOT}" --bind "${SCRATCH_ROOT}:${SCRATCH_ROOT}" "${IMAGE_PATH}")
+"${container_exec[@]}" vllm serve Qwen/Qwen3-Embedding-0.6B --runner pooling \
+  --host 127.0.0.1 --port "${PORT}" --dtype auto --max-model-len 8192 \
+  --gpu-memory-utilization 0.9 >"${SCRATCH_ROOT}/logs/scikg-embedding-server-${SLURM_JOB_ID}.log" 2>&1 &
+server_pid=$!
+trap 'kill "${server_pid}" 2>/dev/null || true; wait 2>/dev/null || true' EXIT INT TERM
+for attempt in $(seq 1 120); do
+  kill -0 "${server_pid}" 2>/dev/null || { echo 'Embedding server exited.' >&2; exit 1; }
+  curl --silent --fail "http://127.0.0.1:${PORT}/health" >/dev/null && break
+  [[ "${attempt}" -eq 120 ]] && { echo 'Embedding server timeout.' >&2; exit 1; }
+  sleep 5
+done
+
+cd "${REPO_ROOT}"
+"${VENV_PYTHON}" -m embedding.embed_tools \
+  --queries "dataset and embedding/scitool_clean/benchmark.jsonl" \
+  --output "${RUN_ROOT}/query_embeddings.npz" --force --batch-size 64 --max-concurrent 8
+"${VENV_PYTHON}" -m embedding.embed_scitool_kg_context \
+  --kg-path "SciToolAgent-main/KG/storage_graph_large/graph_store.json" \
+  --tool-registry "dataset and embedding/scitool_clean/tool_registry.json" \
+  --expand-hops 3 --cache-path "${RUN_ROOT}/context_embeddings.npz" \
+  --force --batch-size 64 --max-concurrent 8 --save-every 5000
+"${VENV_PYTHON}" eval_scitool_retrieval.py --mode kg \
+  --benchmark "dataset and embedding/scitool_clean/benchmark.jsonl" \
+  --tool-registry "dataset and embedding/scitool_clean/tool_registry.json" \
+  --query-embeddings "${RUN_ROOT}/query_embeddings.npz" \
+  --kg-path "SciToolAgent-main/KG/storage_graph_large/graph_store.json" \
+  --kg-tool-embeddings "${RUN_ROOT}/tool_embeddings.npz" \
+  --kg-context-embeddings "${RUN_ROOT}/context_embeddings.npz" \
+  --kg-top-k 5 --kg-expand-hops 3 --ks 1,3,5,10,15,20 \
+  --output "${RUN_ROOT}/first_stage.json"

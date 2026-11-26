@@ -1,0 +1,5860 @@
+{
+  "edges": [
+    {
+      "id": "edge_003ff9cdf889261a0b86",
+      "source": "InChIKeyToSMILES",
+      "target": "CalculateMolecularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7888509035110474
+    },
+    {
+      "id": "edge_01aa6b1c1f72cb3529c4",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetUseLegacyStereoPerception",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8369784355163574
+    },
+    {
+      "id": "edge_01adecb6fc324c6b20df",
+      "source": "MurckoDecompose",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8393297791481018
+    },
+    {
+      "id": "edge_01d5a5d507f560f26cc0",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetChi0n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8792195320129395
+    },
+    {
+      "id": "edge_0209c97a9913c605db35",
+      "source": "Kekulize",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8505802750587463
+    },
+    {
+      "id": "edge_028b3445c5460a06b86b",
+      "source": "GetTemplateMolecule",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7568653225898743
+    },
+    {
+      "id": "edge_02a111b221710414ad2e",
+      "source": "SetAromaticity",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7951935529708862
+    },
+    {
+      "id": "edge_0343a55cdfee11c39ad2",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetGETAWAY",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8831953406333923
+    },
+    {
+      "id": "edge_035a9b0c97c08d5245a3",
+      "source": "GetTemplateMolecule",
+      "target": "GetAliphaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8521312475204468
+    },
+    {
+      "id": "edge_0370f38803f574d8e3f0",
+      "source": "MurckoDecompose",
+      "target": "AssignRadicals",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8301402926445007
+    },
+    {
+      "id": "edge_03945aa749390b7bcd6c",
+      "source": "MurckoDecompose",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8167585134506226
+    },
+    {
+      "id": "edge_03e2f5c39592f2935fee",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "IsMetalByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.837020993232727
+    },
+    {
+      "id": "edge_0481d0c9f68f4d8c1685",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7586002349853516
+    },
+    {
+      "id": "edge_04bcec268f0cae2ef397",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAtomPairCode",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.838412880897522
+    },
+    {
+      "id": "edge_04d8e335be87b6071ed6",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8411834239959717
+    },
+    {
+      "id": "edge_05abe23cb6ebe4d8652c",
+      "source": "GetTemplateMolecule",
+      "target": "GetHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8467466831207275
+    },
+    {
+      "id": "edge_060fc59da7a2662d7f1f",
+      "source": "SetAromaticity",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7311340570449829
+    },
+    {
+      "id": "edge_06fb7be21e0b3620887d",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7712010145187378
+    },
+    {
+      "id": "edge_081be6f61b74d35e6917",
+      "source": "AddHydrogens",
+      "target": "BuildRdkitFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8153212666511536
+    },
+    {
+      "id": "edge_08d79b95beb8a0aeb463",
+      "source": "MurckoDecompose",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7590774297714233
+    },
+    {
+      "id": "edge_08ea08c5493ed79b4b22",
+      "source": "GetFormulaByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.9749687314033508
+    },
+    {
+      "id": "edge_08fe5cb5897a16f182fa",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetAdjacencyMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7507334351539612
+    },
+    {
+      "id": "edge_0a2602013c7635f85a46",
+      "source": "GetTemplateMolecule",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8584824800491333
+    },
+    {
+      "id": "edge_0a3ace6640e418004a04",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetKappa1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8120283484458923
+    },
+    {
+      "id": "edge_0a709f8d12e23bc103ec",
+      "source": "SetAromaticity",
+      "target": "DetermineBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8216996192932129
+    },
+    {
+      "id": "edge_0bcb5d1c33a035d3593f",
+      "source": "AddHydrogens",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8069089651107788
+    },
+    {
+      "id": "edge_0bd7acd20410083145b2",
+      "source": "SetAromaticity",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7758064270019531
+    },
+    {
+      "id": "edge_0cd08a02c31b957851eb",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "MurckoDecompose",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8007736802101135
+    },
+    {
+      "id": "edge_0d7238ab3c73ebc81f94",
+      "source": "SELFIEStoSMILES",
+      "target": "Enumerate",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8948708176612854
+    },
+    {
+      "id": "edge_0d7e945d368818ec5de0",
+      "source": "AddHydrogens",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8245148062705994
+    },
+    {
+      "id": "edge_0d98c4012809a78fe875",
+      "source": "ComputeProtPara",
+      "target": "ComputeProtScale",
+      "input": "protein",
+      "kind": "input",
+      "score": 0.851399302482605
+    },
+    {
+      "id": "edge_0e80319a8fe0213465e7",
+      "source": "Kekulize",
+      "target": "GetRdkFingerprintFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8992283940315247
+    },
+    {
+      "id": "edge_0e8c333a57e40587dd81",
+      "source": "GetTemplateMolecule",
+      "target": "SMILESToWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8080009818077087
+    },
+    {
+      "id": "edge_0ec6b099c7edbc79f1a6",
+      "source": "MurckoDecompose",
+      "target": "CalculatePmi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7664216756820679
+    },
+    {
+      "id": "edge_0f4e1d415402ddb9ec2c",
+      "source": "AddHydrogens",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7727388739585876
+    },
+    {
+      "id": "edge_0fb9d905c0c0d4b414f7",
+      "source": "SetAromaticity",
+      "target": "SMILEStoSELFIES",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7121150493621826
+    },
+    {
+      "id": "edge_10c2b7a8c0fafe6e1125",
+      "source": "GetFormulaByMaterialId",
+      "target": "GetMoleculeIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8017216324806213
+    },
+    {
+      "id": "edge_10c95292012aac9904d3",
+      "source": "PeptideFormulaCalculator",
+      "target": "GetInitialStructuresByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7469562292098999
+    },
+    {
+      "id": "edge_113d6821e333ae177dc6",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAutocorrelation2D",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7299438714981079
+    },
+    {
+      "id": "edge_11a343093490e77ccafb",
+      "source": "SetAromaticity",
+      "target": "GetAsphericity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7902971506118774
+    },
+    {
+      "id": "edge_11cdd2a0ee366c54af05",
+      "source": "InChIKeyToSMILES",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9541516900062561
+    },
+    {
+      "id": "edge_12021c7ccac649622751",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7868202924728394
+    },
+    {
+      "id": "edge_12307dcdc30603ba17bc",
+      "source": "MurckoDecompose",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8141106367111206
+    },
+    {
+      "id": "edge_13ca5aef487314b52bcd",
+      "source": "Kekulize",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8899366855621338
+    },
+    {
+      "id": "edge_1401a89b7b69d3dc834b",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "GetVolumeByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7439851760864258
+    },
+    {
+      "id": "edge_1452f3f1724d2523bf58",
+      "source": "SELFIEStoSMILES",
+      "target": "CalculateMolecularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8074060678482056
+    },
+    {
+      "id": "edge_1454b44270cf8ca2d213",
+      "source": "InChIKeyToSMILES",
+      "target": "SMILESToInChI",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9671227931976318
+    },
+    {
+      "id": "edge_149c960c8ffaabbec419",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.799003541469574
+    },
+    {
+      "id": "edge_14a0e7c44da4c8aef9a8",
+      "source": "SELFIEStoSMILES",
+      "target": "DetermineBondOrders",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7720466256141663
+    },
+    {
+      "id": "edge_14f7872babe8adc64002",
+      "source": "Kekulize",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.765448808670044
+    },
+    {
+      "id": "edge_16806604874ccd638b90",
+      "source": "InChIKeyToSMILES",
+      "target": "CanSerialize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8551009893417358
+    },
+    {
+      "id": "edge_16d12b21dc37431f1ecb",
+      "source": "SELFIEStoSMILES",
+      "target": "GetInertialShapeFactor",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7735769152641296
+    },
+    {
+      "id": "edge_170ec69036d777019273",
+      "source": "Kekulize",
+      "target": "GetChi1n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8931295871734619
+    },
+    {
+      "id": "edge_176c81e89a6f829b67d7",
+      "source": "SELFIEStoSMILES",
+      "target": "GetFeatureInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8451169729232788
+    },
+    {
+      "id": "edge_17b1959083dbac3ec01a",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetVolumeByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7606123685836792
+    },
+    {
+      "id": "edge_17f5f93d79c01551b918",
+      "source": "AddHydrogens",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.789914608001709
+    },
+    {
+      "id": "edge_17fb8ef3b54b59420dbe",
+      "source": "SetAromaticity",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8048049807548523
+    },
+    {
+      "id": "edge_1888bc66b13c730cfc03",
+      "source": "SetAromaticity",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7920188307762146
+    },
+    {
+      "id": "edge_196dfc756198759efae7",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GenerateEstateFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8050810694694519
+    },
+    {
+      "id": "edge_19f783dcc5d3b03c7f1a",
+      "source": "PeptideFormulaCalculator",
+      "target": "GetDensityByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7308924794197083
+    },
+    {
+      "id": "edge_1a50d9398ed8b8adeca7",
+      "source": "NameToSMILES",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8392009735107422
+    },
+    {
+      "id": "edge_1a80045f55e4a137caa1",
+      "source": "GetTemplateMolecule",
+      "target": "GetAsphericity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7364748120307922
+    },
+    {
+      "id": "edge_1b52826525646db64e4e",
+      "source": "GetTemplateMolecule",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7943324446678162
+    },
+    {
+      "id": "edge_1b694c5408e44dd473ae",
+      "source": "MurckoDecompose",
+      "target": "AssignPattyTypes",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7403101921081543
+    },
+    {
+      "id": "edge_1b6c32b25aa220b70fd7",
+      "source": "SetAromaticity",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8618032932281494
+    },
+    {
+      "id": "edge_1ba4956cd5497919e836",
+      "source": "SetAromaticity",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8296051621437073
+    },
+    {
+      "id": "edge_1c0f289d2d63e2e31313",
+      "source": "InChIKeyToSMILES",
+      "target": "GetBCUT",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8813682198524475
+    },
+    {
+      "id": "edge_1c29633ab573e65a860e",
+      "source": "DegenerateCodonCalculatorbyAminoAcid",
+      "target": "CalculateAminoAcidbyDegenerateCodon",
+      "input": "codon",
+      "kind": "input",
+      "score": 0.9761805534362793
+    },
+    {
+      "id": "edge_1cf5fd359f3f50ab8d7f",
+      "source": "SELFIEStoSMILES",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7923371195793152
+    },
+    {
+      "id": "edge_1d24fb2f59ce9f905ff4",
+      "source": "SetAromaticity",
+      "target": "BuildTorsionsFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8240599036216736
+    },
+    {
+      "id": "edge_1d5fe2a5fcd66d938543",
+      "source": "SetAromaticity",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8118459582328796
+    },
+    {
+      "id": "edge_1ea6b805c35e266f1f21",
+      "source": "SELFIEStoSMILES",
+      "target": "MurckoDecompose",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8999139666557312
+    },
+    {
+      "id": "edge_1ed412e21cb3f4c1355e",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.831292986869812
+    },
+    {
+      "id": "edge_1ef4ba1856b143eb3f74",
+      "source": "SELFIEStoSMILES",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9120959043502808
+    },
+    {
+      "id": "edge_1ef72afc9734521d4746",
+      "source": "GetTemplateMolecule",
+      "target": "GetAtomFeature",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8192031979560852
+    },
+    {
+      "id": "edge_1f6fe47e52c991e4a526",
+      "source": "GetTemplateMolecule",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7442787885665894
+    },
+    {
+      "id": "edge_1febd554d10d949ee253",
+      "source": "Kekulize",
+      "target": "GetNPR2",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.851731538772583
+    },
+    {
+      "id": "edge_20ae4ab83477b482e2fd",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CalculateEstateVsa",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7813798189163208
+    },
+    {
+      "id": "edge_213c73e02aa8da48484b",
+      "source": "GetTemplateMolecule",
+      "target": "GetCrippenDescriptors",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8668946027755737
+    },
+    {
+      "id": "edge_2193df6f4cdde7774722",
+      "source": "MurckoDecompose",
+      "target": "GetNPR2",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8315736651420593
+    },
+    {
+      "id": "edge_21c9c820c72681e7061f",
+      "source": "SELFIEStoSMILES",
+      "target": "GetFormalChargeOfAtoms",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7736629843711853
+    },
+    {
+      "id": "edge_22b7a1fa802ca184d2dd",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7326680421829224
+    },
+    {
+      "id": "edge_231b8583fa73ca08b728",
+      "source": "GetTemplateMolecule",
+      "target": "CalculateEstateVsa",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7784625291824341
+    },
+    {
+      "id": "edge_2376432cfcf669c3a097",
+      "source": "GetTemplateMolecule",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7635769844055176
+    },
+    {
+      "id": "edge_239a3d20e61af49da2da",
+      "source": "SetAromaticity",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8090921640396118
+    },
+    {
+      "id": "edge_23d3e1ceef606ab306fd",
+      "source": "Kekulize",
+      "target": "BuildTorsionsFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8716343641281128
+    },
+    {
+      "id": "edge_23d48eccdc7c10b3f616",
+      "source": "GetTemplateMolecule",
+      "target": "GetHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8115965127944946
+    },
+    {
+      "id": "edge_23de0fef850c47cad8a7",
+      "source": "SetAromaticity",
+      "target": "FuncGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7618658542633057
+    },
+    {
+      "id": "edge_2442bd50f151f81dc735",
+      "source": "SELFIEStoSMILES",
+      "target": "TypeAtomsInMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9026826620101929
+    },
+    {
+      "id": "edge_24526d3154072ceb9d4b",
+      "source": "AddHydrogens",
+      "target": "GenerateMolKeyFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.828693151473999
+    },
+    {
+      "id": "edge_24b2fe1c5418976b3639",
+      "source": "SetAromaticity",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7735519409179688
+    },
+    {
+      "id": "edge_2511a26e50609d742171",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "IsMetalByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7622125744819641
+    },
+    {
+      "id": "edge_255255a716458743e3fe",
+      "source": "MurckoDecompose",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7996974587440491
+    },
+    {
+      "id": "edge_256ebd8cf7788d8edc48",
+      "source": "InChIKeyToSMILES",
+      "target": "GetFeatureInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8499225974082947
+    },
+    {
+      "id": "edge_2578a520dba031e40557",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetNPR1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.770155668258667
+    },
+    {
+      "id": "edge_25905329bfaa8a5c1aa1",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAtomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7888999581336975
+    },
+    {
+      "id": "edge_25f8794097929a825bff",
+      "source": "SELFIEStoSMILES",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8795572519302368
+    },
+    {
+      "id": "edge_25fbf0e2c846ed684e21",
+      "source": "AddHydrogens",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7331147193908691
+    },
+    {
+      "id": "edge_2612ce94ff31b5437d90",
+      "source": "GetTemplateMolecule",
+      "target": "GetRingSystems",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8324059247970581
+    },
+    {
+      "id": "edge_263c6daccbd7b6ce6099",
+      "source": "GetTemplateMolecule",
+      "target": "GetSpiroAtomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8103326559066772
+    },
+    {
+      "id": "edge_26ca8e621f54890c3d1c",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8046477437019348
+    },
+    {
+      "id": "edge_26dda24980990bcb7d7b",
+      "source": "GetTemplateMolecule",
+      "target": "AddWavyBondsForStereoAny",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8243632316589355
+    },
+    {
+      "id": "edge_2729cb722befff92017f",
+      "source": "InChIKeyToSMILES",
+      "target": "GenerateEstateFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8240776658058167
+    },
+    {
+      "id": "edge_287619271b86c719b04a",
+      "source": "SELFIEStoSMILES",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8263570070266724
+    },
+    {
+      "id": "edge_28c6142c50307783bdd0",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetMaterialIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7970055341720581
+    },
+    {
+      "id": "edge_28ca38ecd8e9b8326997",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetMoleculeIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7201120257377625
+    },
+    {
+      "id": "edge_28f0c3a672eb9b775161",
+      "source": "GetTemplateMolecule",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8042309284210205
+    },
+    {
+      "id": "edge_296247913073d4fb943d",
+      "source": "Kekulize",
+      "target": "GetChi0n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.880155086517334
+    },
+    {
+      "id": "edge_29a8c2a1d70ce2c70025",
+      "source": "GetTemplateMolecule",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9099680185317993
+    },
+    {
+      "id": "edge_29c0d9d41812f69aee69",
+      "source": "MurckoDecompose",
+      "target": "GetAdjacencyMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7483220100402832
+    },
+    {
+      "id": "edge_2a56ce38951fd7c95c4b",
+      "source": "SELFIEStoSMILES",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8088940978050232
+    },
+    {
+      "id": "edge_2b04b6c3a4677a1c3c16",
+      "source": "NameToSMILES",
+      "target": "GetStereoCodeFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.915637195110321
+    },
+    {
+      "id": "edge_2b65c88d7756d877f0a3",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CalculatePmi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7064208984375
+    },
+    {
+      "id": "edge_2c8fc93e8f6c7a6466a2",
+      "source": "MurckoDecompose",
+      "target": "GetChi1v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8675891160964966
+    },
+    {
+      "id": "edge_2d19314ec7ce3c89877b",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "DetermineBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.871865451335907
+    },
+    {
+      "id": "edge_2e9266b006d885c15494",
+      "source": "GetTemplateMolecule",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7478144764900208
+    },
+    {
+      "id": "edge_2ea7dbbbb4ccc44be0f4",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetRotatableBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7974615097045898
+    },
+    {
+      "id": "edge_2eb175eb8f982e5af87e",
+      "source": "AddHydrogens",
+      "target": "GetRotatableBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7903322577476501
+    },
+    {
+      "id": "edge_2f0b3a0d2515480729bd",
+      "source": "Kekulize",
+      "target": "DetermineBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8489806652069092
+    },
+    {
+      "id": "edge_2f7baca749a2fd844ddb",
+      "source": "SELFIEStoSMILES",
+      "target": "GetRotatableBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8104804754257202
+    },
+    {
+      "id": "edge_2fa62169a5d59415b87b",
+      "source": "Kekulize",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8638374209403992
+    },
+    {
+      "id": "edge_306c5fd7e59bf89fd94e",
+      "source": "PeptideFormulaCalculator",
+      "target": "GetVolumeByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.6954580545425415
+    },
+    {
+      "id": "edge_31475ff5d6d0326c65a6",
+      "source": "InChIKeyToSMILES",
+      "target": "GetSaturatedHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8083731532096863
+    },
+    {
+      "id": "edge_315f70983cf6e1ffe008",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7692728638648987
+    },
+    {
+      "id": "edge_3190ed7cf9e914b61bbf",
+      "source": "SetAromaticity",
+      "target": "GetMorganFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7589827179908752
+    },
+    {
+      "id": "edge_31b2c71b908b1b132642",
+      "source": "SELFIEStoSMILES",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8810224533081055
+    },
+    {
+      "id": "edge_31bbb5df2b942ab01193",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "SmallMoleculeSimilarityCalculation",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8189264535903931
+    },
+    {
+      "id": "edge_323adc23860cc13b867d",
+      "source": "InChIKeyToSMILES",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.849551260471344
+    },
+    {
+      "id": "edge_325d1b3ee66fcfe8c227",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GenerateMolKeyFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.904606282711029
+    },
+    {
+      "id": "edge_329583556df46de836fb",
+      "source": "SetAromaticity",
+      "target": "DetermineBondOrders",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7990667223930359
+    },
+    {
+      "id": "edge_32ac8ff02c5d8b908095",
+      "source": "PeptideFormulaCalculator",
+      "target": "IsMagneticByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7331166863441467
+    },
+    {
+      "id": "edge_32bc9258bef86c816331",
+      "source": "AddHydrogens",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7862298488616943
+    },
+    {
+      "id": "edge_32d79d6d2502c5b8d419",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "SMILESToInChI",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9053757190704346
+    },
+    {
+      "id": "edge_32dbfe838fb68ff32aa7",
+      "source": "MurckoDecompose",
+      "target": "GetChi0v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8602902889251709
+    },
+    {
+      "id": "edge_32ef09774703357e53ba",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "AddHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8146967887878418
+    },
+    {
+      "id": "edge_339cfd0fe2d2013db86a",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetAtomPairCode",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8421441316604614
+    },
+    {
+      "id": "edge_33b047ee295e11c3e92d",
+      "source": "InChIKeyToSMILES",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8331617712974548
+    },
+    {
+      "id": "edge_33baad5bbe513b57a00d",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAutocorrelation2D",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7681585550308228
+    },
+    {
+      "id": "edge_33e51d2adfbfb84b42ef",
+      "source": "AddHydrogens",
+      "target": "GetChi2n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8104093074798584
+    },
+    {
+      "id": "edge_33f6adfa919635f29c59",
+      "source": "GetTemplateMolecule",
+      "target": "CanSerialize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7914259433746338
+    },
+    {
+      "id": "edge_340df8c3cfd6ddd7147e",
+      "source": "Kekulize",
+      "target": "GetNPR1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8601868748664856
+    },
+    {
+      "id": "edge_34f0c67353b4a266712e",
+      "source": "GetTemplateMolecule",
+      "target": "GetFeatureInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7868669033050537
+    },
+    {
+      "id": "edge_3544129d162ea4b367d3",
+      "source": "SELFIEStoSMILES",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8272615671157837
+    },
+    {
+      "id": "edge_358554850c6fd8b27df7",
+      "source": "SELFIEStoSMILES",
+      "target": "GetUnspecifiedAtomStereoCentersNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.780110776424408
+    },
+    {
+      "id": "edge_358ebd30ca9ae159b7f5",
+      "source": "MurckoDecompose",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7960174083709717
+    },
+    {
+      "id": "edge_35f151d0d2db3c57c784",
+      "source": "AddHydrogens",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7909417152404785
+    },
+    {
+      "id": "edge_3621fa33d5fa3d67f7ef",
+      "source": "AddHydrogens",
+      "target": "RemoveStereochemistry",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.845958948135376
+    },
+    {
+      "id": "edge_371e69938965faebae70",
+      "source": "MurckoDecompose",
+      "target": "GetAsphericity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7353522777557373
+    },
+    {
+      "id": "edge_376a9091b34618c7277a",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetHybridization",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8218531608581543
+    },
+    {
+      "id": "edge_377d3ee1dda9225e6995",
+      "source": "Kekulize",
+      "target": "CalculatePBF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8312844634056091
+    },
+    {
+      "id": "edge_37ba9fcb8c96a0b36edb",
+      "source": "Kekulize",
+      "target": "ProcessFingerprintMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8877201080322266
+    },
+    {
+      "id": "edge_37df65c2895019037ce2",
+      "source": "SELFIEStoSMILES",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8631794452667236
+    },
+    {
+      "id": "edge_38a0bbcf35124b8f8cb5",
+      "source": "SELFIEStoSMILES",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8118077516555786
+    },
+    {
+      "id": "edge_39a57cb24d218e5c48b7",
+      "source": "SetAromaticity",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7384954690933228
+    },
+    {
+      "id": "edge_3a0e9931593d976b929b",
+      "source": "GetTemplateMolecule",
+      "target": "GenerateEstateFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7829405069351196
+    },
+    {
+      "id": "edge_3a317422bb2401a7375b",
+      "source": "InChIToSMILES",
+      "target": "SMILESToInChI",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9592043161392212
+    },
+    {
+      "id": "edge_3a611746b9a061498239",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetChi0v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.872315526008606
+    },
+    {
+      "id": "edge_3b0f8f1680ba72db79cc",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8081794381141663
+    },
+    {
+      "id": "edge_3bf4991d7bf02b5bfab5",
+      "source": "SetAromaticity",
+      "target": "GetUseLegacyStereoPerception",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7689682245254517
+    },
+    {
+      "id": "edge_3c572b3d2e86051c413b",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7464531660079956
+    },
+    {
+      "id": "edge_3c5750aa0b2c75ada179",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetSpiroAtomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7916572690010071
+    },
+    {
+      "id": "edge_3c6f38eff3cb7de8e5d3",
+      "source": "InChIKeyToSMILES",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.775882363319397
+    },
+    {
+      "id": "edge_3c7645b4dba6e4d7a2cd",
+      "source": "InChIToSMILES",
+      "target": "SmallMoleculeSimilarityCalculation",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8234328031539917
+    },
+    {
+      "id": "edge_3c9dcd075b2fcec80d3f",
+      "source": "AddHydrogens",
+      "target": "CustomPropertyVSA",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7787928581237793
+    },
+    {
+      "id": "edge_3e217b44df26cbb3f608",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAtomStereoCentersNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7435930967330933
+    },
+    {
+      "id": "edge_3e95648f2a587a50a26e",
+      "source": "GetTemplateMolecule",
+      "target": "GetUnspecifiedAtomStereoCentersNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7860791683197021
+    },
+    {
+      "id": "edge_3eec5ee6a14ed939dcbb",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetAmideBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7940685749053955
+    },
+    {
+      "id": "edge_3f2c7c20527b17c879eb",
+      "source": "AddHydrogens",
+      "target": "MergeQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7983598709106445
+    },
+    {
+      "id": "edge_409cb81238201e7ce771",
+      "source": "InChIKeyToSMILES",
+      "target": "GetRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.797702968120575
+    },
+    {
+      "id": "edge_40b0c32653b353b24d1b",
+      "source": "GetMolFormula",
+      "target": "GetFormationEnergyPerAtomByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8721715807914734
+    },
+    {
+      "id": "edge_41f373c0ffef1b091e31",
+      "source": "MurckoDecompose",
+      "target": "GetGETAWAY",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8582590222358704
+    },
+    {
+      "id": "edge_42566f33bfd5f70801a2",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7401283383369446
+    },
+    {
+      "id": "edge_42de8cb4fecf8bb45d54",
+      "source": "GetTemplateMolecule",
+      "target": "GetNPR2",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8199887275695801
+    },
+    {
+      "id": "edge_431a9dcaeb91ae07ccdb",
+      "source": "GetTemplateMolecule",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.77313232421875
+    },
+    {
+      "id": "edge_431e0ab45ffe94a6e776",
+      "source": "InChIKeyToSMILES",
+      "target": "GetFormalChargeOfAtoms",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7449420690536499
+    },
+    {
+      "id": "edge_4324febbd69f97e661d5",
+      "source": "AddHydrogens",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7778784036636353
+    },
+    {
+      "id": "edge_438dcd2168e350341974",
+      "source": "InChIKeyToSMILES",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8060064315795898
+    },
+    {
+      "id": "edge_43ba1a1cc8c8136db64c",
+      "source": "SetAromaticity",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9111168384552002
+    },
+    {
+      "id": "edge_44060a9bb3e687924f87",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8349749445915222
+    },
+    {
+      "id": "edge_442c218fa9f108bde48f",
+      "source": "InChIKeyToSMILES",
+      "target": "MurckoDecompose",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8637183308601379
+    },
+    {
+      "id": "edge_443388c830e4c7ef6ac2",
+      "source": "SELFIEStoSMILES",
+      "target": "GetChi0n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9054409265518188
+    },
+    {
+      "id": "edge_44619574899f2aafbdd0",
+      "source": "SetAromaticity",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7952936887741089
+    },
+    {
+      "id": "edge_447d1c8d67f7d140941d",
+      "source": "MurckoDecompose",
+      "target": "DetermineBondOrders",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7860838770866394
+    },
+    {
+      "id": "edge_4491d3fd667ae4b91bf7",
+      "source": "AddHydrogens",
+      "target": "GetNPR1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7659314870834351
+    },
+    {
+      "id": "edge_44ec9f0bdc8678199ef3",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8195785284042358
+    },
+    {
+      "id": "edge_44fbde0db2631b3e7b0f",
+      "source": "GetTemplateMolecule",
+      "target": "GetChi1v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8659436106681824
+    },
+    {
+      "id": "edge_45079545d523da529ad4",
+      "source": "MurckoDecompose",
+      "target": "GetUseLegacyStereoPerception",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8205538392066956
+    },
+    {
+      "id": "edge_455716ace0e6b4dbd777",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.798231840133667
+    },
+    {
+      "id": "edge_45e1a2343e20a48cb689",
+      "source": "AddHydrogens",
+      "target": "BuildTorsionsFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8088976740837097
+    },
+    {
+      "id": "edge_45f85cf91409751b1ba2",
+      "source": "MurckoDecompose",
+      "target": "GetRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8014823198318481
+    },
+    {
+      "id": "edge_470252953476738d9d10",
+      "source": "MurckoDecompose",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8229906558990479
+    },
+    {
+      "id": "edge_47367d1982fe132160d6",
+      "source": "SetAromaticity",
+      "target": "AddWavyBondsForStereoAny",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8227924108505249
+    },
+    {
+      "id": "edge_47636a20a11f427bc79a",
+      "source": "SetAromaticity",
+      "target": "CalculateRDF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7666184902191162
+    },
+    {
+      "id": "edge_47ee068ff786a9665af6",
+      "source": "GetMolFormula",
+      "target": "GetMoleculeIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.9568965435028076
+    },
+    {
+      "id": "edge_49386e198f72f219171a",
+      "source": "GetTemplateMolecule",
+      "target": "CalculateMolecularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8087387084960938
+    },
+    {
+      "id": "edge_493a02711e14bad3c374",
+      "source": "SetAromaticity",
+      "target": "GetChi0v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8158145546913147
+    },
+    {
+      "id": "edge_497f04c43898e4aa06f2",
+      "source": "SELFIEStoSMILES",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8084107041358948
+    },
+    {
+      "id": "edge_49aa83be3c8bcdea66b8",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7955178618431091
+    },
+    {
+      "id": "edge_49b4d1fe016497f7856d",
+      "source": "GetTemplateMolecule",
+      "target": "DetermineBondOrders",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7744143605232239
+    },
+    {
+      "id": "edge_49b70b8cf8e858126104",
+      "source": "GetTemplateMolecule",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.818103015422821
+    },
+    {
+      "id": "edge_4a05ff4c52f0b88f4a1e",
+      "source": "MurckoDecompose",
+      "target": "FuncGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8209834694862366
+    },
+    {
+      "id": "edge_4b5b29aba7e21e4ad65d",
+      "source": "Kekulize",
+      "target": "AddHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8469310998916626
+    },
+    {
+      "id": "edge_4b85e41af9c3eaf79936",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetChi1n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8906984329223633
+    },
+    {
+      "id": "edge_4caa5e9af3bebf9d75a6",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "HasQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8666054606437683
+    },
+    {
+      "id": "edge_4d7937b9e03e9026b578",
+      "source": "NameToSMILES",
+      "target": "Enumerate",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9320961833000183
+    },
+    {
+      "id": "edge_4da76346ce49bd323676",
+      "source": "MurckoDecompose",
+      "target": "CalculatePBF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8143306374549866
+    },
+    {
+      "id": "edge_4de9f3c3e0bc10ada648",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7348825335502625
+    },
+    {
+      "id": "edge_4e4b83e117c05ef2dd04",
+      "source": "MurckoDecompose",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.768810510635376
+    },
+    {
+      "id": "edge_4e6f2454c004a77621ee",
+      "source": "SELFIEStoSMILES",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9249283671379089
+    },
+    {
+      "id": "edge_4e8f35279b6fb2756d97",
+      "source": "AddHydrogens",
+      "target": "GetLabuteASA",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7850881814956665
+    },
+    {
+      "id": "edge_4e9146bace0c3a1000ac",
+      "source": "InChIKeyToSMILES",
+      "target": "GetHeavyAtomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7677735090255737
+    },
+    {
+      "id": "edge_4f22a0f8e788f77d4fc4",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8311981558799744
+    },
+    {
+      "id": "edge_4f26e5fefc3da2807f8e",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8373363018035889
+    },
+    {
+      "id": "edge_4f9c63773d3069c3e3ff",
+      "source": "MurckoDecompose",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8460513353347778
+    },
+    {
+      "id": "edge_4fd83333bb9814227cb0",
+      "source": "AddHydrogens",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7947978377342224
+    },
+    {
+      "id": "edge_50172ee3855f4129d97e",
+      "source": "NameToSMILES",
+      "target": "GenerateMolKeyFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.941604733467102
+    },
+    {
+      "id": "edge_50577cdd85ebba070871",
+      "source": "MurckoDecompose",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8333649635314941
+    },
+    {
+      "id": "edge_507846496bbbeb210b99",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "BuildTorsionsFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8404954671859741
+    },
+    {
+      "id": "edge_511d7323f6a3913810bb",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetTemplateMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8255372643470764
+    },
+    {
+      "id": "edge_526ca64c6cf46c754620",
+      "source": "InChIKeyToSMILES",
+      "target": "HasQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8988834023475647
+    },
+    {
+      "id": "edge_526d81396f6e1d2ae1c7",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAtomFeature",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7749310731887817
+    },
+    {
+      "id": "edge_52ad6d527e1bcbeddd1d",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "FuncGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7650665044784546
+    },
+    {
+      "id": "edge_52ced2cd0379a1543c8e",
+      "source": "SELFIEStoSMILES",
+      "target": "GetHybridization",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8351654410362244
+    },
+    {
+      "id": "edge_52e30d44f3f9a092988b",
+      "source": "GetMolFormula",
+      "target": "IsMetalByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.834397554397583
+    },
+    {
+      "id": "edge_537b739b506f339d69e2",
+      "source": "SetAromaticity",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7848281264305115
+    },
+    {
+      "id": "edge_53a559773b5036bdde07",
+      "source": "Kekulize",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8291226029396057
+    },
+    {
+      "id": "edge_53ffffc21a6383dcab4d",
+      "source": "GetTemplateMolecule",
+      "target": "GetFormalChargeOfAtoms",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.780268132686615
+    },
+    {
+      "id": "edge_542271f1e1205f542a13",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8261137008666992
+    },
+    {
+      "id": "edge_544567cce81af75c802e",
+      "source": "AddHydrogens",
+      "target": "GetPatternFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7591652274131775
+    },
+    {
+      "id": "edge_544eb1eb2afa9fdb844b",
+      "source": "GetTemplateMolecule",
+      "target": "BuildTorsionsFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8483321070671082
+    },
+    {
+      "id": "edge_5450c14d5533ded31450",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetHeteroatomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7829623222351074
+    },
+    {
+      "id": "edge_54cae2d974f796431d27",
+      "source": "AddHydrogens",
+      "target": "GetTemplateMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8270100951194763
+    },
+    {
+      "id": "edge_54f4f13a5dbcc51f458e",
+      "source": "GetTemplateMolecule",
+      "target": "GetLipinskiHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7789313793182373
+    },
+    {
+      "id": "edge_559fb422f23b39a4f226",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8851947784423828
+    },
+    {
+      "id": "edge_55e261b35238ab31811a",
+      "source": "MurckoDecompose",
+      "target": "SMILEStoSELFIES",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7827918529510498
+    },
+    {
+      "id": "edge_55e9ed3b12a2fd914a1e",
+      "source": "GetTemplateMolecule",
+      "target": "GetMORSE",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.783744752407074
+    },
+    {
+      "id": "edge_560b097a553ce7a1c3c9",
+      "source": "SELFIEStoSMILES",
+      "target": "SMILEStoSELFIES",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9053016901016235
+    },
+    {
+      "id": "edge_562b5b7652e3333c7efe",
+      "source": "InChIKeyToSMILES",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8692343235015869
+    },
+    {
+      "id": "edge_562bb11949f454ae419d",
+      "source": "Kekulize",
+      "target": "GetHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8327747583389282
+    },
+    {
+      "id": "edge_5683052c59cbfadd1af8",
+      "source": "InChIKeyToSMILES",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8031027913093567
+    },
+    {
+      "id": "edge_56e8115a113508419b61",
+      "source": "AddHydrogens",
+      "target": "GetAtomPairFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7665933966636658
+    },
+    {
+      "id": "edge_575922cedc9637c2f907",
+      "source": "InChIToSMILES",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9085081815719604
+    },
+    {
+      "id": "edge_577150e4dc5fe81df1ef",
+      "source": "SELFIEStoSMILES",
+      "target": "GetLipinskiHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7929937839508057
+    },
+    {
+      "id": "edge_58499466f077d20219c6",
+      "source": "AddHydrogens",
+      "target": "DetermineBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8098135590553284
+    },
+    {
+      "id": "edge_58e6fd441691b9244b9a",
+      "source": "InChIKeyToSMILES",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7752394676208496
+    },
+    {
+      "id": "edge_5910344db30afeb5ffe4",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetInitialStructuresByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.6722727417945862
+    },
+    {
+      "id": "edge_5996c472619e0727ca46",
+      "source": "InChIKeyToSMILES",
+      "target": "Kekulize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.913467526435852
+    },
+    {
+      "id": "edge_59b43883bae65a6cc88e",
+      "source": "Kekulize",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8123391270637512
+    },
+    {
+      "id": "edge_59c329802a422238277d",
+      "source": "Kekulize",
+      "target": "CalculateEstateVsa",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.799977719783783
+    },
+    {
+      "id": "edge_5a22ba472c6040313ae5",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "MergeQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8214458227157593
+    },
+    {
+      "id": "edge_5a676286dec6be0883d0",
+      "source": "GetTemplateMolecule",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8471541404724121
+    },
+    {
+      "id": "edge_5b9dd5bd169a6fa9488d",
+      "source": "SetAromaticity",
+      "target": "GetNPR2",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7537753582000732
+    },
+    {
+      "id": "edge_5bc6dfd2911f497fc370",
+      "source": "GetTemplateMolecule",
+      "target": "GetAromaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7718687653541565
+    },
+    {
+      "id": "edge_5cd84466c2386d866407",
+      "source": "GetAtomPairFingerprint",
+      "target": "MolSimilarity",
+      "input": "smiles_pair",
+      "kind": "input",
+      "score": 0.8101906776428223
+    },
+    {
+      "id": "edge_5d253a0df9cc81ba5508",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CalculateRDF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7580476999282837
+    },
+    {
+      "id": "edge_5dea834ced8d6166e929",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8271201252937317
+    },
+    {
+      "id": "edge_5e0b0611a82f2abccbf0",
+      "source": "SELFIEStoSMILES",
+      "target": "GetRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8228501081466675
+    },
+    {
+      "id": "edge_5e3a830f8eb12d4ca87f",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAromaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7929012179374695
+    },
+    {
+      "id": "edge_5e534897b7e0c066b053",
+      "source": "AddHydrogens",
+      "target": "GetHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8064842820167542
+    },
+    {
+      "id": "edge_5e5e79eeed69b76f58ea",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "DetermineBondOrders",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.83002769947052
+    },
+    {
+      "id": "edge_5ed43215b2785de1ae02",
+      "source": "SetAromaticity",
+      "target": "GetNPR1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7621767520904541
+    },
+    {
+      "id": "edge_5ee219efa42db5d1be2c",
+      "source": "Kekulize",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8924973011016846
+    },
+    {
+      "id": "edge_60149404925dc3ca8afa",
+      "source": "Kekulize",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8394116759300232
+    },
+    {
+      "id": "edge_61667e06b6d1d5b49d74",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CustomPropertyVSA",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8446033000946045
+    },
+    {
+      "id": "edge_622dcbaacb630857ca45",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "AssignStereoChemistry",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8693991899490356
+    },
+    {
+      "id": "edge_62767a3f4b74c7cebd30",
+      "source": "GetTemplateMolecule",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.773521363735199
+    },
+    {
+      "id": "edge_63bbf8a17d0df76b341c",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8115973472595215
+    },
+    {
+      "id": "edge_64ba74878ec6652c154d",
+      "source": "MurckoDecompose",
+      "target": "GetAtomFeature",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8123610615730286
+    },
+    {
+      "id": "edge_64cd895ee601fab491be",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetVolumeByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7258018851280212
+    },
+    {
+      "id": "edge_64e1e4ac5e3deee341e7",
+      "source": "GetTemplateMolecule",
+      "target": "CalculateTPSA",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8378912806510925
+    },
+    {
+      "id": "edge_64e9e74e447e9f05f995",
+      "source": "SMILEStoSELFIES",
+      "target": "SELFIEStoSMILES",
+      "input": "selfies",
+      "kind": "input",
+      "score": 0.8585290312767029
+    },
+    {
+      "id": "edge_66ed781480dfb39391bb",
+      "source": "Kekulize",
+      "target": "GetMORSE",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8187108635902405
+    },
+    {
+      "id": "edge_6734e4ad99d3ebd33436",
+      "source": "MurckoDecompose",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8243303298950195
+    },
+    {
+      "id": "edge_674196f6861282d95baa",
+      "source": "Kekulize",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7995138168334961
+    },
+    {
+      "id": "edge_676d245aac31331ec6bf",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8073081374168396
+    },
+    {
+      "id": "edge_67852742db0542b8d47c",
+      "source": "Kekulize",
+      "target": "GetAtomFeature",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.822108805179596
+    },
+    {
+      "id": "edge_67d3b708053f53315a4e",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "IsMetalByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7986341714859009
+    },
+    {
+      "id": "edge_67dff8a92235473c9e65",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "AssignRadicals",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.817606508731842
+    },
+    {
+      "id": "edge_67fa39058939b3f32dda",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7600792646408081
+    },
+    {
+      "id": "edge_6910f88eae26bfaa9af2",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetMoleculeIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.6764096021652222
+    },
+    {
+      "id": "edge_693a20409ccbf4cb361c",
+      "source": "AddHydrogens",
+      "target": "GetMolFormula",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7956026792526245
+    },
+    {
+      "id": "edge_6a9d3cad290b75192a2a",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7359365224838257
+    },
+    {
+      "id": "edge_6abc0556bba1d41f1491",
+      "source": "InChIKeyToSMILES",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8117106556892395
+    },
+    {
+      "id": "edge_6b1d363d266d272809ba",
+      "source": "Kekulize",
+      "target": "CalculateRDF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8570703268051147
+    },
+    {
+      "id": "edge_6ba2544effd9dcd6260d",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetChi0v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.819482684135437
+    },
+    {
+      "id": "edge_6bb41d5596cbc1202924",
+      "source": "AddHydrogens",
+      "target": "GetChi1n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.827710747718811
+    },
+    {
+      "id": "edge_6bcaf7cd8c3997325bfa",
+      "source": "SELFIEStoSMILES",
+      "target": "GetSpiroAtomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.805348813533783
+    },
+    {
+      "id": "edge_6c174e49bd9773c4cc59",
+      "source": "GetTemplateMolecule",
+      "target": "GetModifiedBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7993781566619873
+    },
+    {
+      "id": "edge_6c46d48e22084e00c6a9",
+      "source": "SetAromaticity",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7286259531974792
+    },
+    {
+      "id": "edge_6c8666f5eb3c15475bc1",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7673231363296509
+    },
+    {
+      "id": "edge_6cc5ef6bf3adb3ec27f7",
+      "source": "InChIKeyToSMILES",
+      "target": "AssignPattyTypes",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7686342000961304
+    },
+    {
+      "id": "edge_6d5bb3758abf365a312a",
+      "source": "InChIKeyToSMILES",
+      "target": "SmallMoleculeSimilarityCalculation",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8097254037857056
+    },
+    {
+      "id": "edge_6d6cdef3e25d1cff1add",
+      "source": "MurckoDecompose",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8215637803077698
+    },
+    {
+      "id": "edge_6d78c5a058910a6a778b",
+      "source": "Kekulize",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8380676507949829
+    },
+    {
+      "id": "edge_6dac5ce009e8ca812430",
+      "source": "SELFIEStoSMILES",
+      "target": "GetStereoCodeFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9145600199699402
+    },
+    {
+      "id": "edge_6db6c4e4a515b655c62a",
+      "source": "Kekulize",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8165334463119507
+    },
+    {
+      "id": "edge_6dc46fb459b7ced913a0",
+      "source": "AddHydrogens",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.779899537563324
+    },
+    {
+      "id": "edge_6e2392312d09c9c98f82",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetSaturatedCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8128030300140381
+    },
+    {
+      "id": "edge_6e62f80977afbb0103b3",
+      "source": "SELFIEStoSMILES",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.784679651260376
+    },
+    {
+      "id": "edge_6e9e41beed2eaa10af91",
+      "source": "SetAromaticity",
+      "target": "AssignPattyTypes",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7328031063079834
+    },
+    {
+      "id": "edge_6eaeb123d085076b95e4",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetRdkFingerprintFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8931765556335449
+    },
+    {
+      "id": "edge_6f1a761f22ea4d42cfa0",
+      "source": "Kekulize",
+      "target": "MurckoDecompose",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8931632041931152
+    },
+    {
+      "id": "edge_6f5b05ea10f3f854a4f5",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7546730637550354
+    },
+    {
+      "id": "edge_6f7876e09d7418b9b555",
+      "source": "GetTemplateMolecule",
+      "target": "GetKappa2",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7937763929367065
+    },
+    {
+      "id": "edge_6f9fc8b9723957236396",
+      "source": "SetAromaticity",
+      "target": "ProcessFingerprintMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8229875564575195
+    },
+    {
+      "id": "edge_6fd028b9494fd571b615",
+      "source": "InChIKeyToSMILES",
+      "target": "ProcessFingerprintMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8800929188728333
+    },
+    {
+      "id": "edge_6fd67d1cd7dfb4a5691e",
+      "source": "GetTemplateMolecule",
+      "target": "GetUSRCAT",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7932006120681763
+    },
+    {
+      "id": "edge_70d2f0c17b0f85678d82",
+      "source": "AddHydrogens",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.77879798412323
+    },
+    {
+      "id": "edge_713b8d9cf46830a366a4",
+      "source": "MurckoDecompose",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8106252551078796
+    },
+    {
+      "id": "edge_716e74cae3bfb6c38d65",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAsphericity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7547354102134705
+    },
+    {
+      "id": "edge_720a6a776cde5809f9b1",
+      "source": "Kekulize",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8017399311065674
+    },
+    {
+      "id": "edge_7226338dc5880feb93f2",
+      "source": "GetTemplateMolecule",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8009522557258606
+    },
+    {
+      "id": "edge_728c0411018b4d637e1a",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetAutocorrelation3D",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7663888931274414
+    },
+    {
+      "id": "edge_738033db79a0e5e9a91b",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7942392230033875
+    },
+    {
+      "id": "edge_73895eb07e6287088583",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8241719603538513
+    },
+    {
+      "id": "edge_738d64da639bd22cd640",
+      "source": "InChIKeyToSMILES",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7925734519958496
+    },
+    {
+      "id": "edge_73973ab56142d74fd9c4",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetDensityAtomicByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7767024636268616
+    },
+    {
+      "id": "edge_74670695513e027efd82",
+      "source": "GetTemplateMolecule",
+      "target": "GetHybridization",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.848250150680542
+    },
+    {
+      "id": "edge_76662e2915c2a0ae4e72",
+      "source": "GetTemplateMolecule",
+      "target": "FuncGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8158498406410217
+    },
+    {
+      "id": "edge_769887e3be5afbde3f02",
+      "source": "SetAromaticity",
+      "target": "GetMORSE",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7336103916168213
+    },
+    {
+      "id": "edge_7721cb7bebf4c6b4cc06",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "MergeQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7383795380592346
+    },
+    {
+      "id": "edge_77b10bb90536cdc47d35",
+      "source": "GetTemplateMolecule",
+      "target": "SmallMoleculeSimilarityCalculation",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8275938034057617
+    },
+    {
+      "id": "edge_784237f521e746f309e3",
+      "source": "GetTemplateMolecule",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.865349531173706
+    },
+    {
+      "id": "edge_78747c9af12d0fc747dc",
+      "source": "SetAromaticity",
+      "target": "GetAliphaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.860271692276001
+    },
+    {
+      "id": "edge_79102aa61b6e3892ad01",
+      "source": "GetTemplateMolecule",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7798967957496643
+    },
+    {
+      "id": "edge_79474d140d851d2f0474",
+      "source": "GetTemplateMolecule",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.842496395111084
+    },
+    {
+      "id": "edge_79bc816c898fd027c8b3",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAtomPairCode",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8385089635848999
+    },
+    {
+      "id": "edge_7bfc9d74d9056b4b8b16",
+      "source": "GetTemplateMolecule",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8215351104736328
+    },
+    {
+      "id": "edge_7c118cc24f53fc736d26",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8307924866676331
+    },
+    {
+      "id": "edge_7c55316ac77aec7cd4dc",
+      "source": "SetAromaticity",
+      "target": "GetHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7524129152297974
+    },
+    {
+      "id": "edge_7c8b29dbc8c21ed5f44f",
+      "source": "SELFIEStoSMILES",
+      "target": "AssignRadicals",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8496878743171692
+    },
+    {
+      "id": "edge_7ca0fb21435e858eff30",
+      "source": "GetTemplateMolecule",
+      "target": "CalculatePMI1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7410709857940674
+    },
+    {
+      "id": "edge_7cd12bd2f4edc8464d15",
+      "source": "Kekulize",
+      "target": "GetLipinskiHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.798854649066925
+    },
+    {
+      "id": "edge_7d34e909015043e72d64",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.700471818447113
+    },
+    {
+      "id": "edge_7d737e9a78342233d343",
+      "source": "GetTemplateMolecule",
+      "target": "HapticBondsToDative",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7849919199943542
+    },
+    {
+      "id": "edge_7edd6438ba7f7e28af22",
+      "source": "GetTemplateMolecule",
+      "target": "CalculatePmi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7508033514022827
+    },
+    {
+      "id": "edge_7ee2929ebe6e683ea48b",
+      "source": "Kekulize",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8430601358413696
+    },
+    {
+      "id": "edge_7f50bfd73dc021ec03b3",
+      "source": "MurckoDecompose",
+      "target": "GetAromaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7881559729576111
+    },
+    {
+      "id": "edge_7fea1809ee3adc84b484",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetChi1v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8204833269119263
+    },
+    {
+      "id": "edge_7fef8a3c962bd418c475",
+      "source": "AddHydrogens",
+      "target": "AddWavyBondsForStereoAny",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8205583691596985
+    },
+    {
+      "id": "edge_8005ab68f3e09b3fa6bb",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8009750247001648
+    },
+    {
+      "id": "edge_801ae5f84a7b84fc28aa",
+      "source": "GetTemplateMolecule",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7332010865211487
+    },
+    {
+      "id": "edge_8092accb10011251f148",
+      "source": "GetTemplateMolecule",
+      "target": "AssignCIPLabels",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.756313681602478
+    },
+    {
+      "id": "edge_811cc34f3a01d34b6a6c",
+      "source": "AddHydrogens",
+      "target": "Enumerate",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7897157669067383
+    },
+    {
+      "id": "edge_8120125f775afb568790",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7640877366065979
+    },
+    {
+      "id": "edge_813fe721dca09e24b974",
+      "source": "MurckoDecompose",
+      "target": "GetLipinskiHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7846500873565674
+    },
+    {
+      "id": "edge_8140ac82500ff4472923",
+      "source": "MurckoDecompose",
+      "target": "ProcessFingerprintMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8760551810264587
+    },
+    {
+      "id": "edge_81ab14515afdf30e4df1",
+      "source": "SetAromaticity",
+      "target": "GetSaturatedCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8504219651222229
+    },
+    {
+      "id": "edge_827158407a728549e5ff",
+      "source": "SetAromaticity",
+      "target": "GetLipinskiHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7943422794342041
+    },
+    {
+      "id": "edge_8278a68b15e635b00993",
+      "source": "GetTemplateMolecule",
+      "target": "SMILESToInChI",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8686400651931763
+    },
+    {
+      "id": "edge_82b9fe4b31ee14b8a9a6",
+      "source": "AddHydrogens",
+      "target": "GetAtomFeature",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7760217189788818
+    },
+    {
+      "id": "edge_82cb61a6c4f564518168",
+      "source": "SELFIEStoSMILES",
+      "target": "CustomPropertyVSA",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8919675350189209
+    },
+    {
+      "id": "edge_82e6a8c6936e76943054",
+      "source": "InChIKeyToSMILES",
+      "target": "Enumerate",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8832605481147766
+    },
+    {
+      "id": "edge_82ec8eb63355612758da",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8071670532226562
+    },
+    {
+      "id": "edge_8302ea6b2012a3375678",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7983964681625366
+    },
+    {
+      "id": "edge_83f666fe01b34ec0d733",
+      "source": "GetTemplateMolecule",
+      "target": "Enumerate",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.834894061088562
+    },
+    {
+      "id": "edge_840aaf02a6b7a49434e1",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "IsMagneticByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7736465930938721
+    },
+    {
+      "id": "edge_8492a4975baade30585d",
+      "source": "GetTemplateMolecule",
+      "target": "GetUseLegacyStereoPerception",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7910362482070923
+    },
+    {
+      "id": "edge_8560584cffe0f62d6bf1",
+      "source": "ComputeProtPara",
+      "target": "ComputeAnnealingTemperature",
+      "input": "protein",
+      "kind": "input",
+      "score": 0.7994126677513123
+    },
+    {
+      "id": "edge_85d4959cfe887774b8d0",
+      "source": "GetTemplateMolecule",
+      "target": "AssignStereoChemistry",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8724297881126404
+    },
+    {
+      "id": "edge_85ea24c41ff7813f1a9c",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7978355884552002
+    },
+    {
+      "id": "edge_86e97e28345c126aa448",
+      "source": "Kekulize",
+      "target": "GetChi1v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8879392147064209
+    },
+    {
+      "id": "edge_883bf0982a65403ac387",
+      "source": "SetAromaticity",
+      "target": "CalculatePmi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7335600852966309
+    },
+    {
+      "id": "edge_88d3e4082ffa744c3c61",
+      "source": "Kekulize",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8759994506835938
+    },
+    {
+      "id": "edge_893b615bab0653a9d19c",
+      "source": "SELFIEStoSMILES",
+      "target": "GetUseLegacyStereoPerception",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8548740744590759
+    },
+    {
+      "id": "edge_89521fb10d1b3b7fd6ef",
+      "source": "GetTemplateMolecule",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7858909368515015
+    },
+    {
+      "id": "edge_89724df39dfa690c3b7c",
+      "source": "GetMolFormula",
+      "target": "GetEnergyPerAtomByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8748946785926819
+    },
+    {
+      "id": "edge_89ba4128948e0f0a0263",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8631576895713806
+    },
+    {
+      "id": "edge_89bc65b257bca135be01",
+      "source": "MurckoDecompose",
+      "target": "GetRingSystems",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8457088470458984
+    },
+    {
+      "id": "edge_89e99e3003f13dfd565c",
+      "source": "SetAromaticity",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8358787894248962
+    },
+    {
+      "id": "edge_89f764dfb5cc4b41efaa",
+      "source": "MurckoDecompose",
+      "target": "CalculateRDF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8243914246559143
+    },
+    {
+      "id": "edge_8ab1d418ce489b52c134",
+      "source": "SetAromaticity",
+      "target": "CalculateEstateVsa",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7472405433654785
+    },
+    {
+      "id": "edge_8b60e6a2fd0af8d5fcf4",
+      "source": "SELFIEStoSMILES",
+      "target": "GetGETAWAY",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9182885885238647
+    },
+    {
+      "id": "edge_8b72bce629cd3c13eb57",
+      "source": "SELFIEStoSMILES",
+      "target": "GetNPR2",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8676145076751709
+    },
+    {
+      "id": "edge_8b760b2a2dd59fc67e3e",
+      "source": "Kekulize",
+      "target": "SMILEStoSELFIES",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8176480531692505
+    },
+    {
+      "id": "edge_8b8bb5ff3922103fc6df",
+      "source": "NameToSMILES",
+      "target": "CalculateMolecularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8269445896148682
+    },
+    {
+      "id": "edge_8baab648bedd8b93bbdb",
+      "source": "AddHydrogens",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8072060942649841
+    },
+    {
+      "id": "edge_8baf4e2514eafc53f853",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CreateShingling",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.837317168712616
+    },
+    {
+      "id": "edge_8bbc539e0160e1e2dcd8",
+      "source": "SetAromaticity",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8032361268997192
+    },
+    {
+      "id": "edge_8bbd117785e2c9199e24",
+      "source": "SELFIEStoSMILES",
+      "target": "CreateShingling",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8594467639923096
+    },
+    {
+      "id": "edge_8be4a1c4c797c8416221",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8267767429351807
+    },
+    {
+      "id": "edge_8bf324e723a1a80a3178",
+      "source": "GetTemplateMolecule",
+      "target": "GetNPR1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8281752467155457
+    },
+    {
+      "id": "edge_8c23e9d2a3a737345c07",
+      "source": "Kekulize",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.838060736656189
+    },
+    {
+      "id": "edge_8cef8ca242c94dce07c0",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "IsMetalByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7898117303848267
+    },
+    {
+      "id": "edge_8d29063cf232f66995a4",
+      "source": "AddHydrogens",
+      "target": "BuildAvalonFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8192416429519653
+    },
+    {
+      "id": "edge_8d4063440845df9d8ebf",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "IsMagneticByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7896559834480286
+    },
+    {
+      "id": "edge_8d5c52eb56eb8b84bd92",
+      "source": "InChIKeyToSMILES",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.870790421962738
+    },
+    {
+      "id": "edge_8d8507cbe348bfc78b34",
+      "source": "MurckoDecompose",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8464290499687195
+    },
+    {
+      "id": "edge_8daba688523e9662107c",
+      "source": "PeptideFormulaCalculator",
+      "target": "GetMoleculeIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8771326541900635
+    },
+    {
+      "id": "edge_8dd4e91af54b262a25a3",
+      "source": "Kekulize",
+      "target": "GetGETAWAY",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8862473964691162
+    },
+    {
+      "id": "edge_8e7424604f5b9f1fbb78",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "AddHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.831335186958313
+    },
+    {
+      "id": "edge_8ef1df2db9006c57c3f4",
+      "source": "SELFIEStoSMILES",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.814609169960022
+    },
+    {
+      "id": "edge_8ffe60fd9a7e936ab7ed",
+      "source": "NameToSMILES",
+      "target": "SmallMoleculeSimilarityCalculation",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8310763835906982
+    },
+    {
+      "id": "edge_9062027df86689553468",
+      "source": "GetTemplateMolecule",
+      "target": "RemoveHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8222495317459106
+    },
+    {
+      "id": "edge_91bd758575a639b6bb69",
+      "source": "SetAromaticity",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8272905945777893
+    },
+    {
+      "id": "edge_91e9f9ede64a2aff0ffc",
+      "source": "InChIKeyToSMILES",
+      "target": "GetModifiedBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.816204309463501
+    },
+    {
+      "id": "edge_9208f1baa5e69ee36bf5",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8040093183517456
+    },
+    {
+      "id": "edge_92e8e4868133a8cd7d8c",
+      "source": "AddHydrogens",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7820907831192017
+    },
+    {
+      "id": "edge_937006f1faf8f5909a93",
+      "source": "GetTemplateMolecule",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7889334559440613
+    },
+    {
+      "id": "edge_93d45e95023de4b3fd10",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8270399570465088
+    },
+    {
+      "id": "edge_93fe6bcec737ba0ba435",
+      "source": "SELFIEStoSMILES",
+      "target": "GetLabuteASA",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.89512038230896
+    },
+    {
+      "id": "edge_9423f35e24f2f2fb48be",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "GetDensityAtomicByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8201172351837158
+    },
+    {
+      "id": "edge_9443695874a88a2c7dba",
+      "source": "Kekulize",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8621640801429749
+    },
+    {
+      "id": "edge_94d16cd085978d559242",
+      "source": "InChIToSMILES",
+      "target": "Enumerate",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9111311435699463
+    },
+    {
+      "id": "edge_9521fce96108f41fc4dd",
+      "source": "PeptideFormulaCalculator",
+      "target": "IsMetalByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8034035563468933
+    },
+    {
+      "id": "edge_95300a852dea3bea5b5a",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetDensityByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7362593412399292
+    },
+    {
+      "id": "edge_97ba8eb8b7de2b9d5a06",
+      "source": "MurckoDecompose",
+      "target": "GetSaturatedCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8360881805419922
+    },
+    {
+      "id": "edge_98789dac24b20523c915",
+      "source": "GetTemplateMolecule",
+      "target": "AssignPattyTypes",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7370282411575317
+    },
+    {
+      "id": "edge_98a6bd6ff2fde4f1b748",
+      "source": "InChIKeyToSMILES",
+      "target": "BuildAvalonFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8933577537536621
+    },
+    {
+      "id": "edge_990e05126e6ee2a78bc5",
+      "source": "NameToSMILES",
+      "target": "GetUSRCAT",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8717133402824402
+    },
+    {
+      "id": "edge_99743da016b8ef9c9be6",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "RemoveHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8032832145690918
+    },
+    {
+      "id": "edge_99fc04bfeff08623bda5",
+      "source": "SELFIEStoSMILES",
+      "target": "CalculateEstateVsa",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8224730491638184
+    },
+    {
+      "id": "edge_9a14018d50ba737180b2",
+      "source": "GetTemplateMolecule",
+      "target": "CreateShingling",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7948086261749268
+    },
+    {
+      "id": "edge_9a3f23119539ad203f11",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "GetDensityByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7464451789855957
+    },
+    {
+      "id": "edge_9aa51d4c19d6099f80c8",
+      "source": "SetAromaticity",
+      "target": "AddHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8174382448196411
+    },
+    {
+      "id": "edge_9ac49898eb3e6f5d094e",
+      "source": "InChIKeyToSMILES",
+      "target": "GetUseLegacyStereoPerception",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8022787570953369
+    },
+    {
+      "id": "edge_9ad472f8d11db609fe08",
+      "source": "AddHydrogens",
+      "target": "GetFeatureInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7498827576637268
+    },
+    {
+      "id": "edge_9af6ee351ad0c842cc4c",
+      "source": "GetTemplateMolecule",
+      "target": "GetChi2n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8411726951599121
+    },
+    {
+      "id": "edge_9b2624318cd51f4cef03",
+      "source": "AddHydrogens",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8195335865020752
+    },
+    {
+      "id": "edge_9babea166af2c867fdc6",
+      "source": "SetAromaticity",
+      "target": "GetRingSystems",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8246651887893677
+    },
+    {
+      "id": "edge_9bcc2e4b7df93515d9e6",
+      "source": "InChIKeyToSMILES",
+      "target": "TypeAtomsInMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8898286819458008
+    },
+    {
+      "id": "edge_9c8f96fdaabaf061c9cb",
+      "source": "SELFIEStoSMILES",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8603698015213013
+    },
+    {
+      "id": "edge_9c9c27934e8fd9beb3c2",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7834469676017761
+    },
+    {
+      "id": "edge_9d1be83ba28468908e0d",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetInitialStructuresByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7068253755569458
+    },
+    {
+      "id": "edge_9da5a7a39bc9bd3523a2",
+      "source": "MurckoDecompose",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8216790556907654
+    },
+    {
+      "id": "edge_9db9695b53850284af34",
+      "source": "Kekulize",
+      "target": "GetAliphaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8531992435455322
+    },
+    {
+      "id": "edge_9e05af2f11e5e461c646",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7896515727043152
+    },
+    {
+      "id": "edge_9e6e3b38e0415c463b70",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "SMILEStoSELFIES",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7242987155914307
+    },
+    {
+      "id": "edge_9e717077a2f6f1f76c7f",
+      "source": "MurckoDecompose",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7988786101341248
+    },
+    {
+      "id": "edge_9e9fa3f468d61227bcd5",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7814537882804871
+    },
+    {
+      "id": "edge_9f3562c299cf16f531e0",
+      "source": "GetFormulaByMaterialId",
+      "target": "GetInitialStructuresByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8231420516967773
+    },
+    {
+      "id": "edge_9f7fc407761ceab2df50",
+      "source": "MurckoDecompose",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8958820700645447
+    },
+    {
+      "id": "edge_9fb5383076c907ef4161",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetMolFormula",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.866031289100647
+    },
+    {
+      "id": "edge_a048860195aca2d5af96",
+      "source": "InChIKeyToSMILES",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8855143189430237
+    },
+    {
+      "id": "edge_a0657d25262df4396b3f",
+      "source": "AddHydrogens",
+      "target": "GetAutocorrelation3D",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7214189171791077
+    },
+    {
+      "id": "edge_a08aead216b9f218f875",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetChi2v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.817805290222168
+    },
+    {
+      "id": "edge_a0d17ee94d0642ebdc53",
+      "source": "MurckoDecompose",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.845824122428894
+    },
+    {
+      "id": "edge_a104d1d3d0c1832a864f",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "AssignPattyTypes",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7124844789505005
+    },
+    {
+      "id": "edge_a16bd1d9a9fc57b56afe",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7767157554626465
+    },
+    {
+      "id": "edge_a1b6d02249eef486cc43",
+      "source": "AddHydrogens",
+      "target": "DetermineBondOrders",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7495082020759583
+    },
+    {
+      "id": "edge_a22026e073234b59bdf1",
+      "source": "GetTemplateMolecule",
+      "target": "GetKappa1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7944457530975342
+    },
+    {
+      "id": "edge_a25570b818ab7905faee",
+      "source": "SetAromaticity",
+      "target": "GetChi0n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7991105914115906
+    },
+    {
+      "id": "edge_a3140eda65be8b7dc7c0",
+      "source": "GetTemplateMolecule",
+      "target": "GetBCUT",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8469961881637573
+    },
+    {
+      "id": "edge_a317518c0732430ca21e",
+      "source": "SetAromaticity",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.919235348701477
+    },
+    {
+      "id": "edge_a3b8be325fa94d9572ae",
+      "source": "SetAromaticity",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7357438802719116
+    },
+    {
+      "id": "edge_a4a189372136cf0044a7",
+      "source": "GetTemplateMolecule",
+      "target": "CalculateRDF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8183942437171936
+    },
+    {
+      "id": "edge_a503496102b0af5126fd",
+      "source": "AddHydrogens",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.708491861820221
+    },
+    {
+      "id": "edge_a536b793dedca90fcfc2",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CalculateEstateVsa",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7589482665061951
+    },
+    {
+      "id": "edge_a5526925f2ed0558bb62",
+      "source": "InChIKeyToSMILES",
+      "target": "GetKappa3",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8291367888450623
+    },
+    {
+      "id": "edge_a6d7bdc4b987ac53a4b3",
+      "source": "InChIKeyToSMILES",
+      "target": "GetPatternFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8470181226730347
+    },
+    {
+      "id": "edge_a6fc7c990c630ef0ab30",
+      "source": "GetFormulaByMaterialId",
+      "target": "GetVolumeByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8284611701965332
+    },
+    {
+      "id": "edge_a742ea10f47e96f732ef",
+      "source": "SELFIEStoSMILES",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9061409831047058
+    },
+    {
+      "id": "edge_a786e6c047c6aa71b2f5",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetSaturatedCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7999544739723206
+    },
+    {
+      "id": "edge_a8f4a0bdf325ef751b60",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetGETAWAY",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8037111759185791
+    },
+    {
+      "id": "edge_a9020478b840f3c55c3a",
+      "source": "MurckoDecompose",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8481787443161011
+    },
+    {
+      "id": "edge_a9275bd221d0a50f410b",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "ProcessFingerprintMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.817493200302124
+    },
+    {
+      "id": "edge_a959d2477d554b6873fb",
+      "source": "SELFIEStoSMILES",
+      "target": "GetChi2n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8859031200408936
+    },
+    {
+      "id": "edge_a95df7d7c2afacdd33e4",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetDensityAtomicByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7299419641494751
+    },
+    {
+      "id": "edge_a9885e0f7eef4bc6c8e9",
+      "source": "GetTemplateMolecule",
+      "target": "HasQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8433979749679565
+    },
+    {
+      "id": "edge_ab1c102af2c00a08476b",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAtomPairFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8222908973693848
+    },
+    {
+      "id": "edge_ab29ce20767d55a6723e",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9006932377815247
+    },
+    {
+      "id": "edge_aba80969503aff6b71f3",
+      "source": "Kekulize",
+      "target": "AddWavyBondsForStereoAny",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8237524032592773
+    },
+    {
+      "id": "edge_ac140f101f26ff0fb318",
+      "source": "AddHydrogens",
+      "target": "GenerateEstateFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7525043487548828
+    },
+    {
+      "id": "edge_ac683d62991a3aba9fa6",
+      "source": "AddHydrogens",
+      "target": "GetAliphaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.828423798084259
+    },
+    {
+      "id": "edge_ac95784e47a69c79f455",
+      "source": "InChIKeyToSMILES",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7653458118438721
+    },
+    {
+      "id": "edge_acbce691cf9f136775fe",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "GetInitialStructuresByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7722914814949036
+    },
+    {
+      "id": "edge_acd64358970775c98ec5",
+      "source": "Kekulize",
+      "target": "GetSaturatedCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8394619226455688
+    },
+    {
+      "id": "edge_ad00e36eec97dbdade79",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7700884342193604
+    },
+    {
+      "id": "edge_ad0c2ff32a49fbc10d4f",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetMaterialIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7440153360366821
+    },
+    {
+      "id": "edge_ae1d5ea44f84e5c0f509",
+      "source": "SELFIEStoSMILES",
+      "target": "DetermineBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8689968585968018
+    },
+    {
+      "id": "edge_af28888ef4bac0270745",
+      "source": "SELFIEStoSMILES",
+      "target": "GetExactMolceularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.774182915687561
+    },
+    {
+      "id": "edge_afbc66efcf5e3cc47ccc",
+      "source": "Kekulize",
+      "target": "GetTemplateMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8929163813591003
+    },
+    {
+      "id": "edge_aff282e179771dc40313",
+      "source": "InChIToSMILES",
+      "target": "GenerateMolKeyFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.925323486328125
+    },
+    {
+      "id": "edge_b053cf87689479684b04",
+      "source": "SELFIEStoSMILES",
+      "target": "BuildAvalonFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9247716665267944
+    },
+    {
+      "id": "edge_b07ebbbe8d53016d146c",
+      "source": "GetTemplateMolecule",
+      "target": "GetAutocorrelation2D",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7209371328353882
+    },
+    {
+      "id": "edge_b095cf8cc3b5490a1b34",
+      "source": "AddHydrogens",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.806103527545929
+    },
+    {
+      "id": "edge_b0a0a6e3be68108ba9fe",
+      "source": "GetFormulaByMaterialId",
+      "target": "GetDensityAtomicByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8009953498840332
+    },
+    {
+      "id": "edge_b0db484343557d56cb94",
+      "source": "Kekulize",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8700553774833679
+    },
+    {
+      "id": "edge_b11bde7297e199a92f41",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetInitialStructuresByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7096583843231201
+    },
+    {
+      "id": "edge_b11fcbc6395d1321b86f",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAliphaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8200629949569702
+    },
+    {
+      "id": "edge_b1601164360dd242e842",
+      "source": "SetAromaticity",
+      "target": "GetAromaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8957741260528564
+    },
+    {
+      "id": "edge_b1c76f57def9bcee99b2",
+      "source": "InChIKeyToSMILES",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8296536803245544
+    },
+    {
+      "id": "edge_b1fc4dcd4e79f928e51a",
+      "source": "Kekulize",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8091858625411987
+    },
+    {
+      "id": "edge_b23ebb689624a292bbe2",
+      "source": "GetTemplateMolecule",
+      "target": "GetExactMolceularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7912150621414185
+    },
+    {
+      "id": "edge_b26ad79b89b39b4f373d",
+      "source": "GetTemplateMolecule",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7715350389480591
+    },
+    {
+      "id": "edge_b272b187d10fce04b649",
+      "source": "SELFIEStoSMILES",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8299816846847534
+    },
+    {
+      "id": "edge_b2992062c5c45246f590",
+      "source": "GetTemplateMolecule",
+      "target": "GetAtomPairCode",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8250773549079895
+    },
+    {
+      "id": "edge_b2ac9343d4d8ae70d704",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAdjacencyMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7196391820907593
+    },
+    {
+      "id": "edge_b39bd2eb209cc8fb9728",
+      "source": "Kekulize",
+      "target": "MergeQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8282871842384338
+    },
+    {
+      "id": "edge_b3f08fd6a92771822587",
+      "source": "GetTemplateMolecule",
+      "target": "CalculateSpherocityIndex",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7681147456169128
+    },
+    {
+      "id": "edge_b43b9e28091b81642fd3",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CalculatePBF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7634673714637756
+    },
+    {
+      "id": "edge_b645dfdb636775a078f5",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAromaticCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8110979795455933
+    },
+    {
+      "id": "edge_b65463cc57408651db3d",
+      "source": "Kekulize",
+      "target": "GetAsphericity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7238651514053345
+    },
+    {
+      "id": "edge_b6558f9ed25f5d78fcdd",
+      "source": "GetTemplateMolecule",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8065863847732544
+    },
+    {
+      "id": "edge_b6d86be69d768216ffa4",
+      "source": "InChIKeyToSMILES",
+      "target": "GetRotatableBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7772119641304016
+    },
+    {
+      "id": "edge_b6f2b7cd58339a4b0b8d",
+      "source": "DNARNACodonOptimization",
+      "target": "TranslateDNAtoAminoAcidSequence",
+      "input": "sequence",
+      "kind": "input",
+      "score": 0.8186982274055481
+    },
+    {
+      "id": "edge_b7573949d4ee2a542c6e",
+      "source": "SetAromaticity",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7778404951095581
+    },
+    {
+      "id": "edge_b769b3867a3f922f8b71",
+      "source": "InChIToSMILES",
+      "target": "GetStereoCodeFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8987314701080322
+    },
+    {
+      "id": "edge_b79c2db11b7f5a86db67",
+      "source": "GetFormulaByMaterialId",
+      "target": "IsMagneticByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8539700508117676
+    },
+    {
+      "id": "edge_b7c7cac4c3092389e5a3",
+      "source": "GetTemplateMolecule",
+      "target": "GetFractionCSP3",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7554376721382141
+    },
+    {
+      "id": "edge_b7d9be3ef1b4b6313193",
+      "source": "MurckoDecompose",
+      "target": "GetMorganFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8019802570343018
+    },
+    {
+      "id": "edge_b81ae9bdaeea232dbb6f",
+      "source": "SELFIEStoSMILES",
+      "target": "HasQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9084885716438293
+    },
+    {
+      "id": "edge_b8a9f223f4c9cd6ffbb5",
+      "source": "SELFIEStoSMILES",
+      "target": "GenerateEstateFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8521379232406616
+    },
+    {
+      "id": "edge_b8b85b56154f007f3a3a",
+      "source": "SetAromaticity",
+      "target": "Kekulize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8472319841384888
+    },
+    {
+      "id": "edge_b8c784e5966504f33a99",
+      "source": "SetAromaticity",
+      "target": "GetRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7791826725006104
+    },
+    {
+      "id": "edge_b909804ff74e0a5f5f20",
+      "source": "AddHydrogens",
+      "target": "MurckoDecompose",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8072627782821655
+    },
+    {
+      "id": "edge_ba04b9e46b07e7c1f2f6",
+      "source": "SetAromaticity",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8075886964797974
+    },
+    {
+      "id": "edge_ba639f5d615012ee8d89",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "ProcessFingerprintMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8867215514183044
+    },
+    {
+      "id": "edge_ba6fc27071eed9e3ba89",
+      "source": "MurckoDecompose",
+      "target": "GetRdkFingerprintFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.86961430311203
+    },
+    {
+      "id": "edge_bab3bb815d68cf9c01c1",
+      "source": "PeptideFormulaCalculator",
+      "target": "GetMaterialIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7811155319213867
+    },
+    {
+      "id": "edge_bb1fb746fd32aba60789",
+      "source": "GetTemplateMolecule",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8428996205329895
+    },
+    {
+      "id": "edge_bcb47719948ee4117e4d",
+      "source": "GetTemplateMolecule",
+      "target": "GetHeteroatomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7737451791763306
+    },
+    {
+      "id": "edge_bdaccc689d51e49c9dd2",
+      "source": "MurckoDecompose",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7544946670532227
+    },
+    {
+      "id": "edge_bdeb08f1d4d465b5b070",
+      "source": "InChIKeyToSMILES",
+      "target": "AssignRadicals",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8298513293266296
+    },
+    {
+      "id": "edge_be2124c0220bd2c0c05f",
+      "source": "SetAromaticity",
+      "target": "RemoveHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8020747900009155
+    },
+    {
+      "id": "edge_bed049ff4812983bf61e",
+      "source": "AddHydrogens",
+      "target": "TypeAtomsInMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.843633770942688
+    },
+    {
+      "id": "edge_beec947bc8d35d066420",
+      "source": "GetTemplateMolecule",
+      "target": "GetMolFrags",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8502143621444702
+    },
+    {
+      "id": "edge_bf41c03e82682c9fc8fd",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetMoleculeIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7204414010047913
+    },
+    {
+      "id": "edge_c0271ea5c7da65462950",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "TypeAtomsInMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8788309097290039
+    },
+    {
+      "id": "edge_c05a7fa721ce8abc5bf9",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7856428623199463
+    },
+    {
+      "id": "edge_c0fd1ac16bb30ec48298",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAdjacencyMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7446975708007812
+    },
+    {
+      "id": "edge_c168467c41661b5028d8",
+      "source": "MurckoDecompose",
+      "target": "RemoveHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.843012809753418
+    },
+    {
+      "id": "edge_c1c496419e10015fff3d",
+      "source": "Kekulize",
+      "target": "GetMorganFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8031354546546936
+    },
+    {
+      "id": "edge_c24cfebc41a922b74b7d",
+      "source": "MurckoDecompose",
+      "target": "GetHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8179643750190735
+    },
+    {
+      "id": "edge_c28f9c34255c07ffb1fc",
+      "source": "InChIKeyToSMILES",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7580893039703369
+    },
+    {
+      "id": "edge_c2b633e8285f8575ae46",
+      "source": "SELFIEStoSMILES",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8545951247215271
+    },
+    {
+      "id": "edge_c326f0d272090d21af9b",
+      "source": "Kekulize",
+      "target": "FuncGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8433442115783691
+    },
+    {
+      "id": "edge_c3d10a3fbe00855c82a1",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8096486330032349
+    },
+    {
+      "id": "edge_c3f650fb6a3793ea0996",
+      "source": "NameToSMILES",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8730635643005371
+    },
+    {
+      "id": "edge_c479e3ea71562496f1c1",
+      "source": "SELFIEStoSMILES",
+      "target": "SmallMoleculeSimilarityCalculation",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8077545762062073
+    },
+    {
+      "id": "edge_c4bcbea6c5c07f5ed12b",
+      "source": "Kekulize",
+      "target": "GetAllowNontetrahedralChirality",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.81760573387146
+    },
+    {
+      "id": "edge_c5149ec12459edf869b1",
+      "source": "GetTemplateMolecule",
+      "target": "GetRotatableBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8184820413589478
+    },
+    {
+      "id": "edge_c5b75f29724f5e4752da",
+      "source": "GetFormulaByMaterialId",
+      "target": "GetDensityByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8261047005653381
+    },
+    {
+      "id": "edge_c64871352cc6e39720fb",
+      "source": "InChIKeyToSMILES",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7705422639846802
+    },
+    {
+      "id": "edge_c65884fa1be50e9d4f9b",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "IsMagneticByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7588926553726196
+    },
+    {
+      "id": "edge_c6e0b9116ddde382512c",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "BuildRdkitFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9128919839859009
+    },
+    {
+      "id": "edge_c76bada741521284a1a1",
+      "source": "SELFIEStoSMILES",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8093631863594055
+    },
+    {
+      "id": "edge_c86185777c87fc38aefb",
+      "source": "AddHydrogens",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8021045327186584
+    },
+    {
+      "id": "edge_c86433fff636d2ee7fc1",
+      "source": "InChIKeyToSMILES",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.841762900352478
+    },
+    {
+      "id": "edge_c897b85924c844197d14",
+      "source": "GetTemplateMolecule",
+      "target": "GetAdjacencyMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7238982915878296
+    },
+    {
+      "id": "edge_c8a03506740bfaf51145",
+      "source": "AddHydrogens",
+      "target": "CanSerialize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7549263834953308
+    },
+    {
+      "id": "edge_c8a7bea582598ef8c053",
+      "source": "Kekulize",
+      "target": "DetermineBondOrders",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7636563777923584
+    },
+    {
+      "id": "edge_c8bccb16a70d1592f56a",
+      "source": "MurckoDecompose",
+      "target": "GetChi0n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8558884263038635
+    },
+    {
+      "id": "edge_c98f6c8e1430d151dc17",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7764381170272827
+    },
+    {
+      "id": "edge_c9a8c2259d01b9e62b0d",
+      "source": "GetTemplateMolecule",
+      "target": "GetBridgeheadAtomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7806054353713989
+    },
+    {
+      "id": "edge_c9fea9cf56f4a39fbde9",
+      "source": "SELFIEStoSMILES",
+      "target": "GetRingSystems",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8486406803131104
+    },
+    {
+      "id": "edge_ca099c325507053bdf4a",
+      "source": "Kekulize",
+      "target": "GetRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7959879636764526
+    },
+    {
+      "id": "edge_ca1bc80ca3935733827d",
+      "source": "DNARNACodonOptimization",
+      "target": "DegenerateCodonCalculatorbyAminoAcid",
+      "input": "sequence",
+      "kind": "input",
+      "score": 0.864994466304779
+    },
+    {
+      "id": "edge_ca5b0cc81994a5efca3a",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.759034276008606
+    },
+    {
+      "id": "edge_ca707760cf6cee337eac",
+      "source": "GetTemplateMolecule",
+      "target": "BuildRdkitFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8563003540039062
+    },
+    {
+      "id": "edge_ca9177b50bcdd49d1344",
+      "source": "MurckoDecompose",
+      "target": "GetTemplateMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8701846599578857
+    },
+    {
+      "id": "edge_ca9f8a239fb880f1eea9",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetChi1n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8138728737831116
+    },
+    {
+      "id": "edge_cac6ca3853f968e2e77a",
+      "source": "Kekulize",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.831526517868042
+    },
+    {
+      "id": "edge_cae386dbfb2373304e4a",
+      "source": "InChIKeyToSMILES",
+      "target": "BuildRdkitFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8918548226356506
+    },
+    {
+      "id": "edge_caeef4b7294624fa6afc",
+      "source": "GetTemplateMolecule",
+      "target": "GetCoulombMat",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.818636417388916
+    },
+    {
+      "id": "edge_cbe354c6ea156321e5eb",
+      "source": "NameToSMILES",
+      "target": "GetUSR",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9294865131378174
+    },
+    {
+      "id": "edge_cbe3aee095a3b0593294",
+      "source": "GetTotalMagnetizationNormalizedFormulaUnitsByMaterialId",
+      "target": "GetDensityByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7429274916648865
+    },
+    {
+      "id": "edge_cc0a2fea8b77120251c9",
+      "source": "SetAromaticity",
+      "target": "EncodeSECFP",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7074490785598755
+    },
+    {
+      "id": "edge_cc1f7a42b9c3c0dad166",
+      "source": "Kekulize",
+      "target": "GetChi0v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.879491925239563
+    },
+    {
+      "id": "edge_ccbdc9c1f1e61ccba428",
+      "source": "MurckoDecompose",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8294039964675903
+    },
+    {
+      "id": "edge_ccc1d7ccf5248004cf1d",
+      "source": "Kekulize",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7749596238136292
+    },
+    {
+      "id": "edge_ccd015cfbe37049e0b00",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetDensityByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7476540803909302
+    },
+    {
+      "id": "edge_ccfdb1a67a9b1112405f",
+      "source": "MurckoDecompose",
+      "target": "AddWavyBondsForStereoAny",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8128976821899414
+    },
+    {
+      "id": "edge_cd1a9585cb25f43a38b9",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetRingSystems",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8029828667640686
+    },
+    {
+      "id": "edge_cd25771c5f97f87163d2",
+      "source": "MurckoDecompose",
+      "target": "BuildTorsionsFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8665785193443298
+    },
+    {
+      "id": "edge_cd8d63e7605572341fa8",
+      "source": "Kekulize",
+      "target": "GetAromaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7770125269889832
+    },
+    {
+      "id": "edge_cdd7c1c588b2fd9c3072",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetRdkFingerprintFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7988042235374451
+    },
+    {
+      "id": "edge_ce9b7a5b6b6f1a528207",
+      "source": "Kekulize",
+      "target": "RemoveHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8466730117797852
+    },
+    {
+      "id": "edge_cebd3879b020e9ca5bf0",
+      "source": "SetAromaticity",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7285912036895752
+    },
+    {
+      "id": "edge_ceca70353609cefb96a4",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7897329330444336
+    },
+    {
+      "id": "edge_cf1b07b9776783ca728b",
+      "source": "GetTemplateMolecule",
+      "target": "DetermineBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8447881937026978
+    },
+    {
+      "id": "edge_cff53375de0f6ee3e7f0",
+      "source": "SetAromaticity",
+      "target": "AssignRadicals",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7950426936149597
+    },
+    {
+      "id": "edge_d00e80c98d544abad4fa",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8077226877212524
+    },
+    {
+      "id": "edge_d03ec2bd7dfb1912e8c5",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8998028635978699
+    },
+    {
+      "id": "edge_d09db39fb06025d1dd8f",
+      "source": "SELFIEStoSMILES",
+      "target": "CalculateSpherocityIndex",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7839007377624512
+    },
+    {
+      "id": "edge_d09f7813316f96dac124",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetNPR1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8589928150177002
+    },
+    {
+      "id": "edge_d116a4dbbe4753606199",
+      "source": "SetAromaticity",
+      "target": "GetChi1n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8205474615097046
+    },
+    {
+      "id": "edge_d12cd7fcec1d35d2b5c2",
+      "source": "AddHydrogens",
+      "target": "AssignStereoChemistry",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8501486778259277
+    },
+    {
+      "id": "edge_d177b2ce9c5f2723b89f",
+      "source": "GetTemplateMolecule",
+      "target": "CustomPropertyVSA",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8309234380722046
+    },
+    {
+      "id": "edge_d1918c4e2856b1aa1306",
+      "source": "AddHydrogens",
+      "target": "GetAtomStereoCentersNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7635437250137329
+    },
+    {
+      "id": "edge_d1997ebd909915a98c3f",
+      "source": "InChIKeyToSMILES",
+      "target": "GetMolFormula",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8714369535446167
+    },
+    {
+      "id": "edge_d1d25b8f96826c36ed7f",
+      "source": "AddHydrogens",
+      "target": "GetStereoCodeFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8055824041366577
+    },
+    {
+      "id": "edge_d1e993773601de5c7f34",
+      "source": "InChIToSMILES",
+      "target": "CalculateMolecularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8196908235549927
+    },
+    {
+      "id": "edge_d2042839e58702216d5d",
+      "source": "SELFIEStoSMILES",
+      "target": "GetModifiedBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8378348350524902
+    },
+    {
+      "id": "edge_d24e44a4df9b3cef552a",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAtomStereoCentersNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7756670713424683
+    },
+    {
+      "id": "edge_d2dd81f8053d29d85a3b",
+      "source": "Kekulize",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8247029781341553
+    },
+    {
+      "id": "edge_d2ed97b979804be61c9f",
+      "source": "MurckoDecompose",
+      "target": "GetChi1n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8689491152763367
+    },
+    {
+      "id": "edge_d31b69c7508f1511b039",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetNPR2",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7629827857017517
+    },
+    {
+      "id": "edge_d349665f34cce1a8e2af",
+      "source": "SELFIEStoSMILES",
+      "target": "ProcessFingerprintMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.905731737613678
+    },
+    {
+      "id": "edge_d3a90c2e5540d56b9202",
+      "source": "SetAromaticity",
+      "target": "GetChi1v",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8192049264907837
+    },
+    {
+      "id": "edge_d3bdcff9a402b38e5ce3",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAtomFeature",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8417345285415649
+    },
+    {
+      "id": "edge_d3faa78bb178db55507c",
+      "source": "AddHydrogens",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.822479784488678
+    },
+    {
+      "id": "edge_d4410c86c7c508846d8a",
+      "source": "SetAromaticity",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7768716216087341
+    },
+    {
+      "id": "edge_d4742fcd7741ff6103f2",
+      "source": "SELFIEStoSMILES",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8066170811653137
+    },
+    {
+      "id": "edge_d4ac8edc0ed0f6f46ebd",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7945086359977722
+    },
+    {
+      "id": "edge_d4d36a139434f09dfb57",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7232627272605896
+    },
+    {
+      "id": "edge_d55dce8c098ca9de1bf1",
+      "source": "GetTemplateMolecule",
+      "target": "GetRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7842684984207153
+    },
+    {
+      "id": "edge_d5a5cd17ad0b70d411be",
+      "source": "SetAromaticity",
+      "target": "GetAtomFeature",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.805517315864563
+    },
+    {
+      "id": "edge_d5b8d6cbb6c7dc569865",
+      "source": "MurckoDecompose",
+      "target": "DetermineBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8471332788467407
+    },
+    {
+      "id": "edge_d6449a1be8521d20357d",
+      "source": "GetTemplateMolecule",
+      "target": "CalculatePMI3",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7328593134880066
+    },
+    {
+      "id": "edge_d6e25712504f86d7f9eb",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetChi0n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8035147190093994
+    },
+    {
+      "id": "edge_d701b3b4d84afcc5f935",
+      "source": "Kekulize",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8061262965202332
+    },
+    {
+      "id": "edge_d773e84eb00489fb277c",
+      "source": "SELFIEStoSMILES",
+      "target": "AddWavyBondsForStereoAny",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8271760940551758
+    },
+    {
+      "id": "edge_d7b3fabc669ab8192bd4",
+      "source": "GetTemplateMolecule",
+      "target": "GetChi1n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8660135269165039
+    },
+    {
+      "id": "edge_d7c644fe3182bdabea82",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "EncodeMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9142430424690247
+    },
+    {
+      "id": "edge_d8478c9a685b53b0058a",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetMorganFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7474744915962219
+    },
+    {
+      "id": "edge_d882ad4c33d685754421",
+      "source": "SetAromaticity",
+      "target": "GetHeteroatomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7997753620147705
+    },
+    {
+      "id": "edge_d8c28f3b39e52d69e1e2",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "BuildAvalonFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9070447683334351
+    },
+    {
+      "id": "edge_d8c2da08de726c64dffc",
+      "source": "AddHydrogens",
+      "target": "FuncGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7741799354553223
+    },
+    {
+      "id": "edge_d99051b1695cd5cda3d5",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAliphaticRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7920830845832825
+    },
+    {
+      "id": "edge_d9bf3f88632fde29db35",
+      "source": "GetFormulaByMaterialId",
+      "target": "IsMetalByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.9025760889053345
+    },
+    {
+      "id": "edge_d9cd98f3a29b600fbaa6",
+      "source": "PeptideFormulaCalculator",
+      "target": "GetDensityAtomicByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8082501888275146
+    },
+    {
+      "id": "edge_da1eff063dfec3cff27e",
+      "source": "SELFIEStoSMILES",
+      "target": "GetCrippenDescriptors",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8853161334991455
+    },
+    {
+      "id": "edge_db1cbb481d796096215c",
+      "source": "MurckoDecompose",
+      "target": "MergeQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7972016334533691
+    },
+    {
+      "id": "edge_db233f3df2ac65da1608",
+      "source": "GetTemplateMolecule",
+      "target": "GetAutocorrelation3D",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7647872567176819
+    },
+    {
+      "id": "edge_db9b6e321990c4ddbe43",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetVolumeByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7556814551353455
+    },
+    {
+      "id": "edge_dcb8f26a45bc89da5a18",
+      "source": "AddHydrogens",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.799506664276123
+    },
+    {
+      "id": "edge_dd69907fba4f7f164daa",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetLipinskiHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7824496626853943
+    },
+    {
+      "id": "edge_dd6c6dbe8fbce3d14cc6",
+      "source": "SELFIEStoSMILES",
+      "target": "GetHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8308071494102478
+    },
+    {
+      "id": "edge_dde388210d2bc7c53f16",
+      "source": "SetAromaticity",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7478803396224976
+    },
+    {
+      "id": "edge_ddf3d9bc37fc774eb630",
+      "source": "SELFIEStoSMILES",
+      "target": "GetMACCSKeysFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.848125696182251
+    },
+    {
+      "id": "edge_ddfc1010c4b1b00423bb",
+      "source": "AddHydrogens",
+      "target": "GetAmideBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7963621616363525
+    },
+    {
+      "id": "edge_de8936ce7a4d391d6c07",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "IsMagneticByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.759870171546936
+    },
+    {
+      "id": "edge_df7808d6dc750ebbc2a7",
+      "source": "MurckoDecompose",
+      "target": "AddHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8240908980369568
+    },
+    {
+      "id": "edge_e09818431d97ccd8af67",
+      "source": "AddHydrogens",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8489394187927246
+    },
+    {
+      "id": "edge_e0db8cccabeb892572dc",
+      "source": "MurckoDecompose",
+      "target": "CheckValidRingCut",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8118685483932495
+    },
+    {
+      "id": "edge_e0fe09dd1e7f382bec15",
+      "source": "AddHydrogens",
+      "target": "CalculatePBF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7589309215545654
+    },
+    {
+      "id": "edge_e1b0ba981bc56ccd60c3",
+      "source": "InChIKeyToSMILES",
+      "target": "RemoveHydrogens",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8066378235816956
+    },
+    {
+      "id": "edge_e210382200fe85b65ed0",
+      "source": "MurckoDecompose",
+      "target": "Kekulize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9055224061012268
+    },
+    {
+      "id": "edge_e221c2fbefcf8f32719d",
+      "source": "GetTemplateMolecule",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8141206502914429
+    },
+    {
+      "id": "edge_e287eb68d55f0a88dd01",
+      "source": "InChIKeyToSMILES",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9073087573051453
+    },
+    {
+      "id": "edge_e29cb65122787b38b4dc",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetMORSE",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7390828728675842
+    },
+    {
+      "id": "edge_e2a0679fd430da167035",
+      "source": "SELFIEStoSMILES",
+      "target": "GetUSRCAT",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.851150393486023
+    },
+    {
+      "id": "edge_e2e8c7eb822926c1b6d4",
+      "source": "GetTemplateMolecule",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8169509768486023
+    },
+    {
+      "id": "edge_e3264af74d991fcb0032",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "GetMaterialIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.8271895051002502
+    },
+    {
+      "id": "edge_e330b7e0823cca30773b",
+      "source": "AddHydrogens",
+      "target": "Kekulize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8495429754257202
+    },
+    {
+      "id": "edge_e3490dde21e42eae68cf",
+      "source": "SetAromaticity",
+      "target": "GetTemplateMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.812766969203949
+    },
+    {
+      "id": "edge_e34ae24acb53ac6cf6cb",
+      "source": "GetTemplateMolecule",
+      "target": "GetAromaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8378633856773376
+    },
+    {
+      "id": "edge_e42bd59799c0dcf04499",
+      "source": "SetAromaticity",
+      "target": "GetRdkFingerprintFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.824374258518219
+    },
+    {
+      "id": "edge_e45cf08e0e5ee98b362f",
+      "source": "MurckoDecompose",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8033208847045898
+    },
+    {
+      "id": "edge_e516cadbf0024c351900",
+      "source": "SELFIEStoSMILES",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8430601358413696
+    },
+    {
+      "id": "edge_e54a9bfe0f8f1fbae53d",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetBCUT",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8676571249961853
+    },
+    {
+      "id": "edge_e5624356c351aba64ae5",
+      "source": "SetAromaticity",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7396606206893921
+    },
+    {
+      "id": "edge_e59e84b7ab6f3df59e85",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GenerateFraggleFragments",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7540206909179688
+    },
+    {
+      "id": "edge_e5a06b2a0664fe802f0e",
+      "source": "SELFIEStoSMILES",
+      "target": "AssignStereoChemistry",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8915138840675354
+    },
+    {
+      "id": "edge_e632e88a86470224506b",
+      "source": "Kekulize",
+      "target": "AssignRadicals",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8523960113525391
+    },
+    {
+      "id": "edge_e69d9f933c1b6bfc7403",
+      "source": "SetAromaticity",
+      "target": "GetGETAWAY",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8037341833114624
+    },
+    {
+      "id": "edge_e6e5d3141973cf21581f",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7944372892379761
+    },
+    {
+      "id": "edge_e79b71ba92e6b1e0c46d",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "ConvertSmilesToInchi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8899924755096436
+    },
+    {
+      "id": "edge_e7ec53c7bf95e599d4aa",
+      "source": "GetTemplateMolecule",
+      "target": "GetAtomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7945053577423096
+    },
+    {
+      "id": "edge_e806dd11c91fe8850210",
+      "source": "GetTemplateMolecule",
+      "target": "GetGETAWAY",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8540100455284119
+    },
+    {
+      "id": "edge_e8128d7a6d53dc1b5137",
+      "source": "GetTemplateMolecule",
+      "target": "SetBondStereoFromDirections",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7922084927558899
+    },
+    {
+      "id": "edge_e845c000593967078b13",
+      "source": "Kekulize",
+      "target": "GetAdjacencyMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7356936931610107
+    },
+    {
+      "id": "edge_e867792ffbe6091061cf",
+      "source": "InChIKeyToSMILES",
+      "target": "GetChi2n",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8852396011352539
+    },
+    {
+      "id": "edge_e8bb6eed454c4f183b82",
+      "source": "SetAromaticity",
+      "target": "GetAdjacencyMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.717437744140625
+    },
+    {
+      "id": "edge_e8da0f9b0d0f56144d31",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetTemplateMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8779417276382446
+    },
+    {
+      "id": "edge_e9203182e19698cab8de",
+      "source": "Kekulize",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7677294611930847
+    },
+    {
+      "id": "edge_e93460e882ecbd5f3dc2",
+      "source": "MurckoDecompose",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7731438279151917
+    },
+    {
+      "id": "edge_e9431469e93d2f6ce7e3",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8016030788421631
+    },
+    {
+      "id": "edge_e94522429cc9ea96ca14",
+      "source": "Kekulize",
+      "target": "CalculatePmi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7703039050102234
+    },
+    {
+      "id": "edge_e96af51702120006ddc4",
+      "source": "AddHydrogens",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7243837714195251
+    },
+    {
+      "id": "edge_e9a631b9037fe54d9a22",
+      "source": "GetTemplateMolecule",
+      "target": "MergeQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7872629165649414
+    },
+    {
+      "id": "edge_ea37a4ac18ee36cbc6e3",
+      "source": "InChIKeyToSMILES",
+      "target": "GetAmideBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7733865976333618
+    },
+    {
+      "id": "edge_ea51d55e5bda5356bc3b",
+      "source": "MurckoDecompose",
+      "target": "GetHallKierAlpha",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8360963463783264
+    },
+    {
+      "id": "edge_ea91f4abc558037e3bae",
+      "source": "GetFormulaDischargeByBatteryId",
+      "target": "GetDensityAtomicByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7224698662757874
+    },
+    {
+      "id": "edge_eadf7ce07eb060c1725b",
+      "source": "AddHydrogens",
+      "target": "GetCrippenDescriptors",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8121004104614258
+    },
+    {
+      "id": "edge_eb65102e7f32b2801a3b",
+      "source": "SELFIEStoSMILES",
+      "target": "GetSaturatedHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8176250457763672
+    },
+    {
+      "id": "edge_ebe7674c5ee3aa13dc6f",
+      "source": "InChIKeyToSMILES",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8184968829154968
+    },
+    {
+      "id": "edge_eca88194eaf7031d0a5b",
+      "source": "Kekulize",
+      "target": "CalculateWHIM",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8310139775276184
+    },
+    {
+      "id": "edge_ecbd3a20771a971d95e7",
+      "source": "Kekulize",
+      "target": "GetHeteroatomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7583683133125305
+    },
+    {
+      "id": "edge_ed2b1628b165bd25af17",
+      "source": "MurckoDecompose",
+      "target": "GetConnectivityInvariants",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7704302072525024
+    },
+    {
+      "id": "edge_eda27e27fc679bdd6031",
+      "source": "SELFIEStoSMILES",
+      "target": "AssignPattyTypes",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.798358142375946
+    },
+    {
+      "id": "edge_edc69b113d31df3bd757",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetAtomPairFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8354126811027527
+    },
+    {
+      "id": "edge_edcffa207dddd60b0850",
+      "source": "MurckoDecompose",
+      "target": "GetMORSE",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8182183504104614
+    },
+    {
+      "id": "edge_edd4daf77e6b3cdc0c37",
+      "source": "GetTemplateMolecule",
+      "target": "GetSaturatedCarbocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8162030577659607
+    },
+    {
+      "id": "edge_edeac33675ceb088c375",
+      "source": "SetAromaticity",
+      "target": "GetFormalCharge",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8257230520248413
+    },
+    {
+      "id": "edge_edf1124e06878dca9ccf",
+      "source": "InChIKeyToSMILES",
+      "target": "GetKappa1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8173211812973022
+    },
+    {
+      "id": "edge_ee243ee5c67a3394abec",
+      "source": "GetTemplateMolecule",
+      "target": "BuildAvalonFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8615424036979675
+    },
+    {
+      "id": "edge_ee3c7f5303e04eae0866",
+      "source": "Kekulize",
+      "target": "GetUseLegacyStereoPerception",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8244609832763672
+    },
+    {
+      "id": "edge_eeb42e72552284252003",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8325636982917786
+    },
+    {
+      "id": "edge_ef09fb3df842a17c15f2",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAutocorrelation3D",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8046879768371582
+    },
+    {
+      "id": "edge_ef0f59be2f736ffea467",
+      "source": "GetTemplateMolecule",
+      "target": "SetAromaticity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8168002367019653
+    },
+    {
+      "id": "edge_ef16c5d82bde7ff4bbab",
+      "source": "MurckoDecompose",
+      "target": "BuildMorganFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8768274784088135
+    },
+    {
+      "id": "edge_efa13548acb91172cd76",
+      "source": "SELFIEStoSMILES",
+      "target": "GetPatternFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8610228300094604
+    },
+    {
+      "id": "edge_efa525247593bc0fe390",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetPatternFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8517262935638428
+    },
+    {
+      "id": "edge_efd6344aa17aed308e93",
+      "source": "GetTemplateMolecule",
+      "target": "EncodeMolecule",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8984822034835815
+    },
+    {
+      "id": "edge_f03632323c39739e3b58",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7813771963119507
+    },
+    {
+      "id": "edge_f05d09f30b08ec2c5e09",
+      "source": "MurckoDecompose",
+      "target": "GetNPR1",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8387911915779114
+    },
+    {
+      "id": "edge_f0a549472b8185aabdfc",
+      "source": "MurckoDecompose",
+      "target": "GetAliphaticHeterocyclesNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8468412160873413
+    },
+    {
+      "id": "edge_f0adc0a8029ddfd1f9b2",
+      "source": "Kekulize",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7859377264976501
+    },
+    {
+      "id": "edge_f0ae5a8176a742c6f7c1",
+      "source": "GetBatteryFormulaByBatteryId",
+      "target": "GetMaterialIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.7805138826370239
+    },
+    {
+      "id": "edge_f0ddaa9411e449da2bf9",
+      "source": "AddHydrogens",
+      "target": "GetModifiedBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7798042297363281
+    },
+    {
+      "id": "edge_f0fb4a5f8fd96baa22d4",
+      "source": "Kekulize",
+      "target": "CondenseAbbreviationSubstanceGroups",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.829582691192627
+    },
+    {
+      "id": "edge_f0fc12d6384ece8484ca",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetDistanceMatrix",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7683591842651367
+    },
+    {
+      "id": "edge_f11049db421cfa5e7647",
+      "source": "SELFIEStoSMILES",
+      "target": "GetAmideBondsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7932461500167847
+    },
+    {
+      "id": "edge_f277e8c00ea4e1699832",
+      "source": "GetTemplateMolecule",
+      "target": "SMILEStoSELFIES",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7789315581321716
+    },
+    {
+      "id": "edge_f2884d32fb73c84d480b",
+      "source": "InChIKeyToSMILES",
+      "target": "RemoveStereochemistry",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8373185396194458
+    },
+    {
+      "id": "edge_f2885379a1bde4fa0596",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "GetModifiedBonds",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8194934129714966
+    },
+    {
+      "id": "edge_f2970ece814616ffcd02",
+      "source": "Kekulize",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8356177806854248
+    },
+    {
+      "id": "edge_f394f8adf4827039f3c4",
+      "source": "ConvertingPeptide2SMILES",
+      "target": "Kekulize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.9192873239517212
+    },
+    {
+      "id": "edge_f3f71cb1a8e764e546e4",
+      "source": "GetTemplateMolecule",
+      "target": "GetHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7152234315872192
+    },
+    {
+      "id": "edge_f40c0e29024e2c76b215",
+      "source": "AddHydrogens",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8198240995407104
+    },
+    {
+      "id": "edge_f55c30f19de9b317cf69",
+      "source": "SetAromaticity",
+      "target": "MurckoDecompose",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7939386367797852
+    },
+    {
+      "id": "edge_f6fd300282babb7d2a53",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "CheckPatent",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.6926408410072327
+    },
+    {
+      "id": "edge_f73cf0cf2c6f29990672",
+      "source": "Kekulize",
+      "target": "CalculateEstateIndices",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7535165548324585
+    },
+    {
+      "id": "edge_f77c94ccfb518b6c3d6f",
+      "source": "Kekulize",
+      "target": "GetRingSystems",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8437036275863647
+    },
+    {
+      "id": "edge_f7cd90590adb86dcddbb",
+      "source": "SELFIEStoSMILES",
+      "target": "SMILESToWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8795581459999084
+    },
+    {
+      "id": "edge_f7ec0919dfbb7d0b1411",
+      "source": "Kekulize",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8077285289764404
+    },
+    {
+      "id": "edge_f80f0506e91f93a73af5",
+      "source": "SetAromaticity",
+      "target": "AssignOxidationNumbers",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8090590834617615
+    },
+    {
+      "id": "edge_f8a1e87512decd084f6a",
+      "source": "GetTemplateMolecule",
+      "target": "GetPatternFingerprint",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8066867589950562
+    },
+    {
+      "id": "edge_f8e78e9dee536344acae",
+      "source": "MurckoDecompose",
+      "target": "CalculateEstateVsa",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7895811796188354
+    },
+    {
+      "id": "edge_f8f9500b768fa5fcdd91",
+      "source": "GetFormulaAlphabeticalByMoleculeId",
+      "target": "GetMoleculeIdByFormula",
+      "input": "formula",
+      "kind": "input",
+      "score": 0.9141563177108765
+    },
+    {
+      "id": "edge_f94d49c82291140d567f",
+      "source": "InChIToSMILES",
+      "target": "GetAtomPairCode",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8478538990020752
+    },
+    {
+      "id": "edge_f99e828476e5ce5ce8f9",
+      "source": "GetTemplateMolecule",
+      "target": "GetKappa3",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8095947504043579
+    },
+    {
+      "id": "edge_f9b960d81332564fc48b",
+      "source": "MurckoDecompose",
+      "target": "Deprotect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8416509628295898
+    },
+    {
+      "id": "edge_f9cd12229ca00de4f7b6",
+      "source": "SetAromaticity",
+      "target": "CalculatePBF",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7605328559875488
+    },
+    {
+      "id": "edge_fa37f95d5691010949e2",
+      "source": "MurckoDecompose",
+      "target": "GetAtomPairFingerprintAsBitVect",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7884982824325562
+    },
+    {
+      "id": "edge_fc413793f238459f33cd",
+      "source": "MurckoDecompose",
+      "target": "GetHeteroatomsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7808211445808411
+    },
+    {
+      "id": "edge_fc75eaac1098b7781071",
+      "source": "GetTemplateMolecule",
+      "target": "GetSaturatedRingsNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8011664748191833
+    },
+    {
+      "id": "edge_fd51e1a816ca9a63232d",
+      "source": "SELFIEStoSMILES",
+      "target": "RemoveStereochemistry",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8630584478378296
+    },
+    {
+      "id": "edge_fd52b68add99b220258b",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "Kekulize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8394678831100464
+    },
+    {
+      "id": "edge_fd9de928d663c4af4103",
+      "source": "Kekulize",
+      "target": "AssignPattyTypes",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7656326293945312
+    },
+    {
+      "id": "edge_fdabfda581d67689985d",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetAsphericity",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7502586245536804
+    },
+    {
+      "id": "edge_fde70a9fa75f37ef157d",
+      "source": "SetAromaticity",
+      "target": "MergeQueryHs",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7276430726051331
+    },
+    {
+      "id": "edge_fe1a1f710396c9bcf9b3",
+      "source": "MurckoDecompose",
+      "target": "GetLipinskiHBANum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7925549745559692
+    },
+    {
+      "id": "edge_fe287b305bc6269462c0",
+      "source": "Kekulize",
+      "target": "ShowMol",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.909532368183136
+    },
+    {
+      "id": "edge_fe9a412e4ae109ea6669",
+      "source": "MurckoDecompose",
+      "target": "BuildAtomPairFpFromSmiles",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.847145676612854
+    },
+    {
+      "id": "edge_fee4cf6a1b54ebe140e7",
+      "source": "InChIKeyToSMILES",
+      "target": "GetExactMolceularWeight",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7620101571083069
+    },
+    {
+      "id": "edge_ff089c27488e31f7b0fa",
+      "source": "SELFIEStoSMILES",
+      "target": "CanSerialize",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.8922181129455566
+    },
+    {
+      "id": "edge_ff45980216b1eed533c5",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "AssignRadicals",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7579154968261719
+    },
+    {
+      "id": "edge_ff6c23db071424e3a98a",
+      "source": "AddWavyBondsForStereoAny",
+      "target": "GetHBDNum",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7706915140151978
+    },
+    {
+      "id": "edge_ffce49ad175b4622d1a6",
+      "source": "SetAromaticity",
+      "target": "CalculatePhi",
+      "input": "smiles",
+      "kind": "input",
+      "score": 0.7843599915504456
+    }
+  ]
+}

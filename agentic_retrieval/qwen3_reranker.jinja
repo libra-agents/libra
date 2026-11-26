@@ -1,0 +1,14 @@
+{# Adapted and modified from vLLM's Qwen3 reranker template. #}
+{# SPDX-License-Identifier: Apache-2.0; see THIRD_PARTY_LICENSES/Apache-2.0.txt. #}
+<|im_start|>system
+Judge whether the Document meets the requirements based on the Query and the Instruct provided. Note that the answer can only be "yes" or "no".<|im_end|>
+<|im_start|>user
+<Instruct>: Given a user task, determine whether the tool is necessary and appropriate to solve the task.
+
+<Query>: {{ messages | selectattr("role", "eq", "query") | map(attribute="content") | first }}
+
+<Document>: {{ messages | selectattr("role", "eq", "document") | map(attribute="content") | first }}<|im_end|>
+<|im_start|>assistant
+<think>
+
+</think>

@@ -1,0 +1,4524 @@
+[
+  {
+    "name": "GorillaFileSystem.cat",
+    "category": "GorillaFileSystem",
+    "function": "cat",
+    "signature": "(file_name: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Display the contents of a file of any extension from currrent directory.\nParameter descriptions: {\"file_name\": \"The name of the file from current directory to display. No path is allowed. \"}\nResponse schema: {\"properties\": {\"file_content\": {\"description\": \"The content of the file.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "The name of the file from current directory to display. No path is allowed. "
+        }
+      },
+      "required": [
+        "file_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "file_content": {
+          "type": "string",
+          "description": "The content of the file."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.cd",
+    "category": "GorillaFileSystem",
+    "function": "cd",
+    "signature": "(folder: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Change the current working directory to the specified folder.\nParameter descriptions: {\"folder\": \"The folder of the directory to change to. You can only change one folder level at a time. \"}\nResponse schema: {\"properties\": {\"current_working_directory\": {\"description\": \"The new current working directory path.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "folder": {
+          "type": "string",
+          "description": "The folder of the directory to change to. You can only change one folder level at a time. "
+        }
+      },
+      "required": [
+        "folder"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "current_working_directory": {
+          "type": "string",
+          "description": "The new current working directory path."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.cp",
+    "category": "GorillaFileSystem",
+    "function": "cp",
+    "signature": "(source: str, destination: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Copy a file or directory from one location to another.  If the destination is a directory, the source file or directory will be copied into the destination directory.  Both source and destination must be local to the current directory.\nParameter descriptions: {\"destination\": \"The destination name to copy the file or directory to. If the destination is a directory, the source will be copied into this directory. No file paths allowed. \", \"source\": \"The name of the file or directory to copy.\"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The result of the copy operation or an error message if the operation fails.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "The name of the file or directory to copy."
+        },
+        "destination": {
+          "type": "string",
+          "description": "The destination name to copy the file or directory to. If the destination is a directory, the source will be copied into this directory. No file paths allowed. "
+        }
+      },
+      "required": [
+        "source",
+        "destination"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "string",
+          "description": "The result of the copy operation or an error message if the operation fails."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.diff",
+    "category": "GorillaFileSystem",
+    "function": "diff",
+    "signature": "(file_name1: str, file_name2: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Compare two files of any extension line by line at the current directory.\nParameter descriptions: {\"file_name1\": \"The name of the first file in current directory.\", \"file_name2\": \"The name of the second file in current directory. \"}\nResponse schema: {\"properties\": {\"diff_lines\": {\"description\": \"The differences between the two files.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name1": {
+          "type": "string",
+          "description": "The name of the first file in current directory."
+        },
+        "file_name2": {
+          "type": "string",
+          "description": "The name of the second file in current directory. "
+        }
+      },
+      "required": [
+        "file_name1",
+        "file_name2"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "diff_lines": {
+          "type": "string",
+          "description": "The differences between the two files."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.du",
+    "category": "GorillaFileSystem",
+    "function": "du",
+    "signature": "(human_readable: bool = False)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Estimate the disk usage of a directory and its contents.\nParameter descriptions: {\"human_readable\": \"If True, returns the size in human-readable format (e.g., KB, MB). \"}\nResponse schema: {\"properties\": {\"disk_usage\": {\"description\": \"The estimated disk usage.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "human_readable": {
+          "type": "boolean",
+          "description": "If True, returns the size in human-readable format (e.g., KB, MB). ",
+          "default": false
+        }
+      },
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "disk_usage": {
+          "type": "string",
+          "description": "The estimated disk usage."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.echo",
+    "category": "GorillaFileSystem",
+    "function": "echo",
+    "signature": "(content: str, file_name: str = None)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Write content to a file at current directory or display it in the terminal.\nParameter descriptions: {\"content\": \"The content to write or display.\", \"file_name\": \"The name of the file at current directory to write the content to. Defaults to None. \"}\nResponse schema: {\"properties\": {\"terminal_output\": {\"description\": \"The content if no file name is provided, or None if written to file.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "The content to write or display."
+        },
+        "file_name": {
+          "type": "string",
+          "description": "The name of the file at current directory to write the content to. Defaults to None. ",
+          "default": "None"
+        }
+      },
+      "required": [
+        "content"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "terminal_output": {
+          "type": "string",
+          "description": "The content if no file name is provided, or None if written to file."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.find",
+    "category": "GorillaFileSystem",
+    "function": "find",
+    "signature": "(path: str = '.', name: str = None)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Find any file or directories under specific path that contain name in its file name.  This method searches for files of any extension and directories within a specified path that match the given name. If no name is provided, it returns all files and directories in the specified path and its subdirectories. Note: This method performs a recursive search through all subdirectories of the given path.\nParameter descriptions: {\"name\": \"The name of the file or directory to search for. If None, all items are returned. \", \"path\": \"The directory path to start the search. Defaults to the current directory (\\\".\\\").\"}\nResponse schema: {\"properties\": {\"matches\": {\"description\": \"A list of matching file and directory paths relative to the given path.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "path": {
+          "type": "string",
+          "description": "The directory path to start the search. Defaults to the current directory (\".\").",
+          "default": "."
+        },
+        "name": {
+          "type": "string",
+          "description": "The name of the file or directory to search for. If None, all items are returned. ",
+          "default": "None"
+        }
+      },
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "matches": {
+          "type": "array",
+          "description": "A list of matching file and directory paths relative to the given path.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.grep",
+    "category": "GorillaFileSystem",
+    "function": "grep",
+    "signature": "(file_name: str, pattern: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Search for lines in a file of any extension at current directory that contain the specified pattern.\nParameter descriptions: {\"file_name\": \"The name of the file to search. No path is allowed and you can only perform on file at local directory.\", \"pattern\": \"The pattern to search for. \"}\nResponse schema: {\"properties\": {\"matching_lines\": {\"description\": \"Lines that match the pattern.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "The name of the file to search. No path is allowed and you can only perform on file at local directory."
+        },
+        "pattern": {
+          "type": "string",
+          "description": "The pattern to search for. "
+        }
+      },
+      "required": [
+        "file_name",
+        "pattern"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "matching_lines": {
+          "type": "array",
+          "description": "Lines that match the pattern.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.ls",
+    "category": "GorillaFileSystem",
+    "function": "ls",
+    "signature": "(a: bool = False)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: List the contents of the current directory.\nParameter descriptions: {\"a\": \"Show hidden files and directories. Defaults to False. \"}\nResponse schema: {\"properties\": {\"current_directory_content\": {\"description\": \"A list of the contents of the specified directory.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "a": {
+          "type": "boolean",
+          "description": "Show hidden files and directories. Defaults to False. ",
+          "default": false
+        }
+      },
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "current_directory_content": {
+          "type": "array",
+          "description": "A list of the contents of the specified directory.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.mkdir",
+    "category": "GorillaFileSystem",
+    "function": "mkdir",
+    "signature": "(dir_name: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Create a new directory in the current directory.\nParameter descriptions: {\"dir_name\": \"The name of the new directory at current directory. You can only create directory at current directory.\"}\nResponse schema: {\"properties\": {}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "dir_name": {
+          "type": "string",
+          "description": "The name of the new directory at current directory. You can only create directory at current directory."
+        }
+      },
+      "required": [
+        "dir_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {}
+    }
+  },
+  {
+    "name": "GorillaFileSystem.mv",
+    "category": "GorillaFileSystem",
+    "function": "mv",
+    "signature": "(source: str, destination: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Move a file or directory from one location to another.\nParameter descriptions: {\"destination\": \"The destination name to move the file or directory to. Destination must be local to the current directory and cannot be a path. If destination is not an existing directory like when renaming something, destination is the new file name. \", \"source\": \"Source name of the file or directory to move. Source must be local to the current directory.\"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The result of the move operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "source": {
+          "type": "string",
+          "description": "Source name of the file or directory to move. Source must be local to the current directory."
+        },
+        "destination": {
+          "type": "string",
+          "description": "The destination name to move the file or directory to. Destination must be local to the current directory and cannot be a path. If destination is not an existing directory like when renaming something, destination is the new file name. "
+        }
+      },
+      "required": [
+        "source",
+        "destination"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "string",
+          "description": "The result of the move operation."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.pwd",
+    "category": "GorillaFileSystem",
+    "function": "pwd",
+    "signature": "()",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Return the current working directory path.\nResponse schema: {\"properties\": {\"current_working_directory\": {\"description\": \"The current working directory path.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "current_working_directory": {
+          "type": "string",
+          "description": "The current working directory path."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.rm",
+    "category": "GorillaFileSystem",
+    "function": "rm",
+    "signature": "(file_name: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Remove a file or directory.\nParameter descriptions: {\"file_name\": \"The name of the file or directory to remove. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The result of the remove operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "The name of the file or directory to remove. "
+        }
+      },
+      "required": [
+        "file_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "string",
+          "description": "The result of the remove operation."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.rmdir",
+    "category": "GorillaFileSystem",
+    "function": "rmdir",
+    "signature": "(dir_name: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Remove a directory at current directory.\nParameter descriptions: {\"dir_name\": \"The name of the directory to remove. Directory must be local to the current directory. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The result of the remove operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "dir_name": {
+          "type": "string",
+          "description": "The name of the directory to remove. Directory must be local to the current directory. "
+        }
+      },
+      "required": [
+        "dir_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "string",
+          "description": "The result of the remove operation."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.sort",
+    "category": "GorillaFileSystem",
+    "function": "sort",
+    "signature": "(file_name: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Sort the contents of a file line by line.\nParameter descriptions: {\"file_name\": \"The name of the file appeared at current directory to sort. \"}\nResponse schema: {\"properties\": {\"sorted_content\": {\"description\": \"The sorted content of the file.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "The name of the file appeared at current directory to sort. "
+        }
+      },
+      "required": [
+        "file_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "sorted_content": {
+          "type": "string",
+          "description": "The sorted content of the file."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.tail",
+    "category": "GorillaFileSystem",
+    "function": "tail",
+    "signature": "(file_name: str, lines: int = 10)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Display the last part of a file of any extension.\nParameter descriptions: {\"file_name\": \"The name of the file to display. No path is allowed and you can only perform on file at local directory.\", \"lines\": \"The number of lines to display from the end of the file. Defaults to 10. \"}\nResponse schema: {\"properties\": {\"last_lines\": {\"description\": \"The last part of the file.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "The name of the file to display. No path is allowed and you can only perform on file at local directory."
+        },
+        "lines": {
+          "type": "integer",
+          "description": "The number of lines to display from the end of the file. Defaults to 10. ",
+          "default": 10
+        }
+      },
+      "required": [
+        "file_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "last_lines": {
+          "type": "string",
+          "description": "The last part of the file."
+        }
+      }
+    }
+  },
+  {
+    "name": "GorillaFileSystem.touch",
+    "category": "GorillaFileSystem",
+    "function": "touch",
+    "signature": "(file_name: str)",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Create a new file of any extension in the current directory.\nParameter descriptions: {\"file_name\": \"The name of the new file in the current directory. file_name is local to the current directory and does not allow path.\"}\nResponse schema: {\"properties\": {}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "The name of the new file in the current directory. file_name is local to the current directory and does not allow path."
+        }
+      },
+      "required": [
+        "file_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {}
+    }
+  },
+  {
+    "name": "GorillaFileSystem.wc",
+    "category": "GorillaFileSystem",
+    "function": "wc",
+    "signature": "(file_name: str, mode: str = 'l')",
+    "docstring": "This tool belongs to the Gorilla file system. It is a simple file system that allows users to perform basic file operations such as navigating directories, creating files and directories, reading and writing to files, etc. Tool description: Count the number of lines, words, and characters in a file of any extension from current directory.\nParameter descriptions: {\"file_name\": \"Name of the file of current directory to perform wc operation on.\", \"mode\": \"Mode of operation ('l' for lines, 'w' for words, 'c' for characters). \"}\nResponse schema: {\"properties\": {\"count\": {\"description\": \"The count of the number of lines, words, or characters in the file.\", \"type\": \"integer\"}, \"type\": {\"description\": \"The type of unit we are counting. [Enum]: [\\\"lines\\\", \\\"words\\\", \\\"characters\\\"]\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "file_name": {
+          "type": "string",
+          "description": "Name of the file of current directory to perform wc operation on."
+        },
+        "mode": {
+          "type": "string",
+          "description": "Mode of operation ('l' for lines, 'w' for words, 'c' for characters). ",
+          "default": "l"
+        }
+      },
+      "required": [
+        "file_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "description": "The count of the number of lines, words, or characters in the file."
+        },
+        "type": {
+          "type": "string",
+          "description": "The type of unit we are counting. [Enum]: [\"lines\", \"words\", \"characters\"]"
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.absolute_value",
+    "category": "MathAPI",
+    "function": "absolute_value",
+    "signature": "(number: float)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Calculate the absolute value of a number.\nParameter descriptions: {\"number\": \"The number to calculate the absolute value of. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The absolute value of the number.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "number": {
+          "type": "float",
+          "description": "The number to calculate the absolute value of. "
+        }
+      },
+      "required": [
+        "number"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The absolute value of the number."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.add",
+    "category": "MathAPI",
+    "function": "add",
+    "signature": "(a: float, b: float)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Add two numbers.\nParameter descriptions: {\"a\": \"First number.\", \"b\": \"Second number. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Sum of the two numbers.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "a": {
+          "type": "float",
+          "description": "First number."
+        },
+        "b": {
+          "type": "float",
+          "description": "Second number. "
+        }
+      },
+      "required": [
+        "a",
+        "b"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Sum of the two numbers."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.divide",
+    "category": "MathAPI",
+    "function": "divide",
+    "signature": "(a: float, b: float)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Divide one number by another.\nParameter descriptions: {\"a\": \"Numerator.\", \"b\": \"Denominator. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Quotient of the division.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "a": {
+          "type": "float",
+          "description": "Numerator."
+        },
+        "b": {
+          "type": "float",
+          "description": "Denominator. "
+        }
+      },
+      "required": [
+        "a",
+        "b"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Quotient of the division."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.imperial_si_conversion",
+    "category": "MathAPI",
+    "function": "imperial_si_conversion",
+    "signature": "(value: float, unit_in: str, unit_out: str)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Convert a value between imperial and SI units.\nParameter descriptions: {\"unit_in\": \"Unit of the input value.\", \"unit_out\": \"Unit to convert the value to. \", \"value\": \"Value to be converted.\"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Converted value in the new unit.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "value": {
+          "type": "float",
+          "description": "Value to be converted."
+        },
+        "unit_in": {
+          "type": "string",
+          "description": "Unit of the input value."
+        },
+        "unit_out": {
+          "type": "string",
+          "description": "Unit to convert the value to. "
+        }
+      },
+      "required": [
+        "value",
+        "unit_in",
+        "unit_out"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Converted value in the new unit."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.logarithm",
+    "category": "MathAPI",
+    "function": "logarithm",
+    "signature": "(value: float, base: float, precision: int)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Compute the logarithm of a number with adjustable precision using mpmath.\nParameter descriptions: {\"base\": \"The base of the logarithm.\", \"precision\": \"Desired precision for the result. \", \"value\": \"The number to compute the logarithm of.\"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The logarithm of the number with respect to the given base.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "value": {
+          "type": "float",
+          "description": "The number to compute the logarithm of."
+        },
+        "base": {
+          "type": "float",
+          "description": "The base of the logarithm."
+        },
+        "precision": {
+          "type": "integer",
+          "description": "Desired precision for the result. "
+        }
+      },
+      "required": [
+        "value",
+        "base",
+        "precision"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The logarithm of the number with respect to the given base."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.max_value",
+    "category": "MathAPI",
+    "function": "max_value",
+    "signature": "(numbers: list[float])",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Find the maximum value in a list of numbers.\nParameter descriptions: {\"numbers\": \"List of numbers to find the maximum from. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The maximum value in the list.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "float"
+          },
+          "description": "List of numbers to find the maximum from. "
+        }
+      },
+      "required": [
+        "numbers"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The maximum value in the list."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.mean",
+    "category": "MathAPI",
+    "function": "mean",
+    "signature": "(numbers: list[float])",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Calculate the mean of a list of numbers.\nParameter descriptions: {\"numbers\": \"List of numbers to calculate the mean of. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Mean of the numbers.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "float"
+          },
+          "description": "List of numbers to calculate the mean of. "
+        }
+      },
+      "required": [
+        "numbers"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Mean of the numbers."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.min_value",
+    "category": "MathAPI",
+    "function": "min_value",
+    "signature": "(numbers: list[float])",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Find the minimum value in a list of numbers.\nParameter descriptions: {\"numbers\": \"List of numbers to find the minimum from. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The minimum value in the list.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "float"
+          },
+          "description": "List of numbers to find the minimum from. "
+        }
+      },
+      "required": [
+        "numbers"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The minimum value in the list."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.multiply",
+    "category": "MathAPI",
+    "function": "multiply",
+    "signature": "(a: float, b: float)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Multiply two numbers.\nParameter descriptions: {\"a\": \"First number.\", \"b\": \"Second number. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Product of the two numbers.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "a": {
+          "type": "float",
+          "description": "First number."
+        },
+        "b": {
+          "type": "float",
+          "description": "Second number. "
+        }
+      },
+      "required": [
+        "a",
+        "b"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Product of the two numbers."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.percentage",
+    "category": "MathAPI",
+    "function": "percentage",
+    "signature": "(part: float, whole: float)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Calculate the percentage of a part relative to a whole.\nParameter descriptions: {\"part\": \"The part value.\", \"whole\": \"The whole value. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The percentage of the part relative to the whole.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "part": {
+          "type": "float",
+          "description": "The part value."
+        },
+        "whole": {
+          "type": "float",
+          "description": "The whole value. "
+        }
+      },
+      "required": [
+        "part",
+        "whole"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The percentage of the part relative to the whole."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.power",
+    "category": "MathAPI",
+    "function": "power",
+    "signature": "(base: float, exponent: float)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Raise a number to a power.\nParameter descriptions: {\"base\": \"The base number.\", \"exponent\": \"The exponent. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The base raised to the power of the exponent.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "base": {
+          "type": "float",
+          "description": "The base number."
+        },
+        "exponent": {
+          "type": "float",
+          "description": "The exponent. "
+        }
+      },
+      "required": [
+        "base",
+        "exponent"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The base raised to the power of the exponent."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.round_number",
+    "category": "MathAPI",
+    "function": "round_number",
+    "signature": "(number: float, decimal_places: int = 0)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Round a number to a specified number of decimal places.\nParameter descriptions: {\"decimal_places\": \"The number of decimal places to round to. Defaults to 0. \", \"number\": \"The number to round.\"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The rounded number.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "number": {
+          "type": "float",
+          "description": "The number to round."
+        },
+        "decimal_places": {
+          "type": "integer",
+          "description": "The number of decimal places to round to. Defaults to 0. ",
+          "default": 0
+        }
+      },
+      "required": [
+        "number"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The rounded number."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.si_unit_conversion",
+    "category": "MathAPI",
+    "function": "si_unit_conversion",
+    "signature": "(value: float, unit_in: str, unit_out: str)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Convert a value from one SI unit to another.\nParameter descriptions: {\"unit_in\": \"Unit of the input value.\", \"unit_out\": \"Unit to convert the value to. \", \"value\": \"Value to be converted.\"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Converted value in the new unit.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "value": {
+          "type": "float",
+          "description": "Value to be converted."
+        },
+        "unit_in": {
+          "type": "string",
+          "description": "Unit of the input value."
+        },
+        "unit_out": {
+          "type": "string",
+          "description": "Unit to convert the value to. "
+        }
+      },
+      "required": [
+        "value",
+        "unit_in",
+        "unit_out"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Converted value in the new unit."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.square_root",
+    "category": "MathAPI",
+    "function": "square_root",
+    "signature": "(number: float, precision: int)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Calculate the square root of a number with adjustable precision using the decimal module.\nParameter descriptions: {\"number\": \"The number to calculate the square root of.\", \"precision\": \"Desired precision for the result. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The square root of the number, or an error message.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "number": {
+          "type": "float",
+          "description": "The number to calculate the square root of."
+        },
+        "precision": {
+          "type": "integer",
+          "description": "Desired precision for the result. "
+        }
+      },
+      "required": [
+        "number",
+        "precision"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The square root of the number, or an error message."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.standard_deviation",
+    "category": "MathAPI",
+    "function": "standard_deviation",
+    "signature": "(numbers: list[float])",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Calculate the standard deviation of a list of numbers.\nParameter descriptions: {\"numbers\": \"List of numbers to calculate the standard deviation of. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Standard deviation of the numbers.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "float"
+          },
+          "description": "List of numbers to calculate the standard deviation of. "
+        }
+      },
+      "required": [
+        "numbers"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Standard deviation of the numbers."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.subtract",
+    "category": "MathAPI",
+    "function": "subtract",
+    "signature": "(a: float, b: float)",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Subtract one number from another.\nParameter descriptions: {\"a\": \"Number to subtract from.\", \"b\": \"Number to subtract. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"Difference between the two numbers.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "a": {
+          "type": "float",
+          "description": "Number to subtract from."
+        },
+        "b": {
+          "type": "float",
+          "description": "Number to subtract. "
+        }
+      },
+      "required": [
+        "a",
+        "b"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "Difference between the two numbers."
+        }
+      }
+    }
+  },
+  {
+    "name": "MathAPI.sum_values",
+    "category": "MathAPI",
+    "function": "sum_values",
+    "signature": "(numbers: list[float])",
+    "docstring": "This tool belongs to the Math API, which provides various mathematical operations. Tool description: Calculate the sum of a list of numbers.\nParameter descriptions: {\"numbers\": \"List of numbers to sum. \"}\nResponse schema: {\"properties\": {\"result\": {\"description\": \"The sum of all numbers in the list.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "numbers": {
+          "type": "array",
+          "items": {
+            "type": "float"
+          },
+          "description": "List of numbers to sum. "
+        }
+      },
+      "required": [
+        "numbers"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "result": {
+          "type": "float",
+          "description": "The sum of all numbers in the list."
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.add_contact",
+    "category": "MessageAPI",
+    "function": "add_contact",
+    "signature": "(user_name: str)",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Add a contact to the workspace.\nParameter descriptions: {\"user_name\": \"User name of contact to be added.\"}\nResponse schema: {\"properties\": {\"added_status\": {\"description\": \"True if the contact was added successfully, False otherwise.\", \"type\": \"boolean\"}, \"message\": {\"description\": \"A message describing the result of the addition attempt.\", \"type\": \"string\"}, \"user_id\": {\"description\": \"User ID of the added contact.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "user_name": {
+          "type": "string",
+          "description": "User name of contact to be added."
+        }
+      },
+      "required": [
+        "user_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "added_status": {
+          "type": "boolean",
+          "description": "True if the contact was added successfully, False otherwise."
+        },
+        "user_id": {
+          "type": "string",
+          "description": "User ID of the added contact."
+        },
+        "message": {
+          "type": "string",
+          "description": "A message describing the result of the addition attempt."
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.delete_message",
+    "category": "MessageAPI",
+    "function": "delete_message",
+    "signature": "(receiver_id: str)",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Delete the latest message sent to a receiver.\nParameter descriptions: {\"receiver_id\": \"User ID of the user to send the message to.\"}\nResponse schema: {\"properties\": {\"deleted_status\": {\"description\": \"True if the message was deleted successfully, False otherwise.\", \"type\": \"boolean\"}, \"message\": {\"description\": \"A message describing the result of the deletion attempt.\", \"type\": \"string\"}, \"receiver_id\": {\"description\": \"ID of the receiver of the deleted message.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "receiver_id": {
+          "type": "string",
+          "description": "User ID of the user to send the message to."
+        }
+      },
+      "required": [
+        "receiver_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "deleted_status": {
+          "type": "boolean",
+          "description": "True if the message was deleted successfully, False otherwise."
+        },
+        "receiver_id": {
+          "type": "string",
+          "description": "ID of the receiver of the deleted message."
+        },
+        "message": {
+          "type": "string",
+          "description": "A message describing the result of the deletion attempt."
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.get_message_stats",
+    "category": "MessageAPI",
+    "function": "get_message_stats",
+    "signature": "()",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Get statistics about messages for the current user.\nResponse schema: {\"properties\": {\"stats\": {\"description\": \"Dictionary containing message statistics.\", \"properties\": {\"received_count\": {\"description\": \"Number of messages received by the current user.\", \"type\": \"integer\"}, \"total_contacts\": {\"description\": \"Total number of contacts the user has interacted with.\", \"type\": \"integer\"}}, \"type\": \"dict\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "stats": {
+          "type": "dict",
+          "description": "Dictionary containing message statistics.",
+          "properties": {
+            "received_count": {
+              "type": "integer",
+              "description": "Number of messages received by the current user."
+            },
+            "total_contacts": {
+              "type": "integer",
+              "description": "Total number of contacts the user has interacted with."
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.get_user_id",
+    "category": "MessageAPI",
+    "function": "get_user_id",
+    "signature": "(user: str)",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Get user ID from user name.\nParameter descriptions: {\"user\": \"User name of the user. \"}\nResponse schema: {\"properties\": {\"user_id\": {\"description\": \"User ID of the user\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "user": {
+          "type": "string",
+          "description": "User name of the user. "
+        }
+      },
+      "required": [
+        "user"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID of the user"
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.list_users",
+    "category": "MessageAPI",
+    "function": "list_users",
+    "signature": "()",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: List all users in the workspace.\nResponse schema: {\"properties\": {\"user_list\": {\"description\": \"List of all users in the workspace.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "user_list": {
+          "type": "array",
+          "description": "List of all users in the workspace.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.message_get_login_status",
+    "category": "MessageAPI",
+    "function": "message_get_login_status",
+    "signature": "()",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Get the login status of the current user.\nResponse schema: {\"properties\": {\"login_status\": {\"description\": \"True if the current user is logged in, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "login_status": {
+          "type": "boolean",
+          "description": "True if the current user is logged in, False otherwise."
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.message_login",
+    "category": "MessageAPI",
+    "function": "message_login",
+    "signature": "(user_id: str)",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Log in a user with the given user ID to messeage application.\nParameter descriptions: {\"user_id\": \"User ID of the user to log in. \"}\nResponse schema: {\"properties\": {\"login_status\": {\"description\": \"True if login was successful, False otherwise.\", \"type\": \"boolean\"}, \"message\": {\"description\": \"A message describing the result of the login attempt.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "user_id": {
+          "type": "string",
+          "description": "User ID of the user to log in. "
+        }
+      },
+      "required": [
+        "user_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "login_status": {
+          "type": "boolean",
+          "description": "True if login was successful, False otherwise."
+        },
+        "message": {
+          "type": "string",
+          "description": "A message describing the result of the login attempt."
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.search_messages",
+    "category": "MessageAPI",
+    "function": "search_messages",
+    "signature": "(keyword: str)",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Search for messages containing a specific keyword.\nParameter descriptions: {\"keyword\": \"The keyword to search for in messages.\"}\nResponse schema: {\"properties\": {\"results\": {\"description\": \"List of dictionaries containing matching messages.\", \"items\": {\"properties\": {\"message\": {\"description\": \"The message containing the keyword.\", \"type\": \"string\"}, \"receiver_id\": {\"description\": \"User ID of the receiver of the message.\", \"type\": \"string\"}}, \"type\": \"dict\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "keyword": {
+          "type": "string",
+          "description": "The keyword to search for in messages."
+        }
+      },
+      "required": [
+        "keyword"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "results": {
+          "type": "array",
+          "description": "List of dictionaries containing matching messages.",
+          "items": {
+            "type": "dict",
+            "properties": {
+              "receiver_id": {
+                "type": "string",
+                "description": "User ID of the receiver of the message."
+              },
+              "message": {
+                "type": "string",
+                "description": "The message containing the keyword."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.send_message",
+    "category": "MessageAPI",
+    "function": "send_message",
+    "signature": "(receiver_id: str, message: str)",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: Send a message to a user.\nParameter descriptions: {\"message\": \"Message to be sent.\", \"receiver_id\": \"User ID of the user to send the message to.\"}\nResponse schema: {\"properties\": {\"message\": {\"description\": \"A message describing the result of the send attempt.\", \"type\": \"string\"}, \"message_id\": {\"description\": \"ID of the sent message.\", \"type\": \"integer\"}, \"sent_status\": {\"description\": \"True if the message was sent successfully, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "receiver_id": {
+          "type": "string",
+          "description": "User ID of the user to send the message to."
+        },
+        "message": {
+          "type": "string",
+          "description": "Message to be sent."
+        }
+      },
+      "required": [
+        "receiver_id",
+        "message"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "sent_status": {
+          "type": "boolean",
+          "description": "True if the message was sent successfully, False otherwise."
+        },
+        "message_id": {
+          "type": "integer",
+          "description": "ID of the sent message."
+        },
+        "message": {
+          "type": "string",
+          "description": "A message describing the result of the send attempt."
+        }
+      }
+    }
+  },
+  {
+    "name": "MessageAPI.view_messages_sent",
+    "category": "MessageAPI",
+    "function": "view_messages_sent",
+    "signature": "()",
+    "docstring": "This tool belongs to the Message API, which is used to manage user interactions in a workspace. Tool description: View all historical messages sent by the current user.\nResponse schema: {\"properties\": {\"messages\": {\"description\": \"Dictionary of messages grouped by receiver An example of the messages dictionary is {\\\"USR001\\\":[\\\"Hello\\\"],\\\"USR002\\\":[\\\"World\\\"]}.\", \"type\": \"dict\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "messages": {
+          "type": "dict",
+          "description": "Dictionary of messages grouped by receiver An example of the messages dictionary is {\"USR001\":[\"Hello\"],\"USR002\":[\"World\"]}."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.close_ticket",
+    "category": "TicketAPI",
+    "function": "close_ticket",
+    "signature": "(ticket_id: int)",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Close a ticket.\nParameter descriptions: {\"ticket_id\": \"ID of the ticket to be closed. \"}\nResponse schema: {\"properties\": {\"status\": {\"description\": \"Status of the close operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "ticket_id": {
+          "type": "integer",
+          "description": "ID of the ticket to be closed. "
+        }
+      },
+      "required": [
+        "ticket_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status of the close operation."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.create_ticket",
+    "category": "TicketAPI",
+    "function": "create_ticket",
+    "signature": "(title: str, description: str = '', priority: int = 1)",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Create a ticket in the system and queue it.\nParameter descriptions: {\"description\": \"Description of the ticket. Defaults to an empty string.\", \"priority\": \"Priority of the ticket, from 1 to 5. Defaults to 1. 5 is the highest priority. \", \"title\": \"Title of the ticket.\"}\nResponse schema: {\"properties\": {\"description\": {\"description\": \"Description of the ticket.\", \"type\": \"string\"}, \"id\": {\"description\": \"Unique identifier of the ticket.\", \"type\": \"integer\"}, \"priority\": {\"description\": \"Priority level of the ticket.\", \"type\": \"integer\"}, \"status\": {\"description\": \"Current status of the ticket.\", \"type\": \"string\"}, \"title\": {\"description\": \"Title of the ticket.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Title of the ticket."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the ticket. Defaults to an empty string.",
+          "default": ""
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Priority of the ticket, from 1 to 5. Defaults to 1. 5 is the highest priority. ",
+          "default": 1
+        }
+      },
+      "required": [
+        "title"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier of the ticket."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the ticket."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the ticket."
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the ticket."
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Priority level of the ticket."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.edit_ticket",
+    "category": "TicketAPI",
+    "function": "edit_ticket",
+    "signature": "(ticket_id: int, updates: dict)",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Modify the details of an existing ticket.\nParameter descriptions: {\"ticket_id\": \"ID of the ticket to be changed.\", \"updates\": \"Dictionary containing the fields to be updated.\"}\nResponse schema: {\"properties\": {\"status\": {\"description\": \"Status of the update operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "ticket_id": {
+          "type": "integer",
+          "description": "ID of the ticket to be changed."
+        },
+        "updates": {
+          "type": "dict",
+          "description": "Dictionary containing the fields to be updated.",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "[Optional] New title for the ticket."
+            },
+            "description": {
+              "type": "string",
+              "description": "[Optional] New description for the ticket."
+            },
+            "status": {
+              "type": "string",
+              "description": "[Optional] New status for the ticket."
+            },
+            "priority": {
+              "type": "integer",
+              "description": "[Optional] New priority for the ticket."
+            }
+          }
+        }
+      },
+      "required": [
+        "ticket_id",
+        "updates"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status of the update operation."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.get_ticket",
+    "category": "TicketAPI",
+    "function": "get_ticket",
+    "signature": "(ticket_id: int)",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Get a specific ticket by its ID.\nParameter descriptions: {\"ticket_id\": \"ID of the ticket to retrieve. \"}\nResponse schema: {\"properties\": {\"created_by\": {\"description\": \"Username of the ticket creator.\", \"type\": \"string\"}, \"description\": {\"description\": \"Description of the ticket.\", \"type\": \"string\"}, \"id\": {\"description\": \"Unique identifier of the ticket.\", \"type\": \"integer\"}, \"priority\": {\"description\": \"Priority level of the ticket.\", \"type\": \"integer\"}, \"status\": {\"description\": \"Current status of the ticket.\", \"type\": \"string\"}, \"title\": {\"description\": \"Title of the ticket.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "ticket_id": {
+          "type": "integer",
+          "description": "ID of the ticket to retrieve. "
+        }
+      },
+      "required": [
+        "ticket_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier of the ticket."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the ticket."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the ticket."
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the ticket."
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Priority level of the ticket."
+        },
+        "created_by": {
+          "type": "string",
+          "description": "Username of the ticket creator."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.get_user_tickets",
+    "category": "TicketAPI",
+    "function": "get_user_tickets",
+    "signature": "(status: str = None)",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Get all tickets created by the current user, optionally filtered by status.\nParameter descriptions: {\"status\": \"Status to filter tickets by. If None, return all tickets. \"}\nResponse schema: {\"properties\": {\"created_by\": {\"description\": \"Username of the ticket\", \"type\": \"string\"}, \"description\": {\"description\": \"Description of the ticket.\", \"type\": \"string\"}, \"id\": {\"description\": \"Unique identifier of the ticket.\", \"type\": \"integer\"}, \"priority\": {\"description\": \"Priority level of the ticket.\", \"type\": \"integer\"}, \"status\": {\"description\": \"Current status of the ticket.\", \"type\": \"string\"}, \"title\": {\"description\": \"Title of the ticket.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status to filter tickets by. If None, return all tickets. ",
+          "default": "None"
+        }
+      },
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "Unique identifier of the ticket."
+        },
+        "title": {
+          "type": "string",
+          "description": "Title of the ticket."
+        },
+        "description": {
+          "type": "string",
+          "description": "Description of the ticket."
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the ticket."
+        },
+        "priority": {
+          "type": "integer",
+          "description": "Priority level of the ticket."
+        },
+        "created_by": {
+          "type": "string",
+          "description": "Username of the ticket"
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.logout",
+    "category": "TicketAPI",
+    "function": "logout",
+    "signature": "()",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Log out the current user.\nResponse schema: {\"properties\": {\"success\": {\"description\": \"True if logout was successful, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "description": "True if logout was successful, False otherwise."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.resolve_ticket",
+    "category": "TicketAPI",
+    "function": "resolve_ticket",
+    "signature": "(ticket_id: int, resolution: str)",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Resolve a ticket with a resolution.\nParameter descriptions: {\"resolution\": \"Resolution details for the ticket. \", \"ticket_id\": \"ID of the ticket to be resolved.\"}\nResponse schema: {\"properties\": {\"status\": {\"description\": \"Status of the resolve operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "ticket_id": {
+          "type": "integer",
+          "description": "ID of the ticket to be resolved."
+        },
+        "resolution": {
+          "type": "string",
+          "description": "Resolution details for the ticket. "
+        }
+      },
+      "required": [
+        "ticket_id",
+        "resolution"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status of the resolve operation."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.ticket_get_login_status",
+    "category": "TicketAPI",
+    "function": "ticket_get_login_status",
+    "signature": "()",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Get the login status of the currently authenticated user.\nResponse schema: {\"properties\": {\"login_status\": {\"description\": \"True if a user is logged in, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "login_status": {
+          "type": "boolean",
+          "description": "True if a user is logged in, False otherwise."
+        }
+      }
+    }
+  },
+  {
+    "name": "TicketAPI.ticket_login",
+    "category": "TicketAPI",
+    "function": "ticket_login",
+    "signature": "(username: str, password: str)",
+    "docstring": "This tool belongs to the ticketing system that is part of a company, which allows users to create, view, and manage support business tickets. Tool description: Authenticate a user for ticket system.\nParameter descriptions: {\"password\": \"Password of the user. \", \"username\": \"Username of the user.\"}\nResponse schema: {\"properties\": {\"success\": {\"description\": \"True if login was successful, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "Username of the user."
+        },
+        "password": {
+          "type": "string",
+          "description": "Password of the user. "
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "success": {
+          "type": "boolean",
+          "description": "True if login was successful, False otherwise."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.add_to_watchlist",
+    "category": "TradingBot",
+    "function": "add_to_watchlist",
+    "signature": "(stock: str)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Add a stock to the watchlist.\nParameter descriptions: {\"stock\": \"the stock symbol to add to the watchlist. \"}\nResponse schema: {\"properties\": {\"watchlist\": {\"description\": \"the watchlist.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "stock": {
+          "type": "string",
+          "description": "the stock symbol to add to the watchlist. "
+        }
+      },
+      "required": [
+        "stock"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "watchlist": {
+          "type": "array",
+          "description": "the watchlist.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.cancel_order",
+    "category": "TradingBot",
+    "function": "cancel_order",
+    "signature": "(order_id: int)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Cancel an order.\nParameter descriptions: {\"order_id\": \"ID of the order to cancel. \"}\nResponse schema: {\"properties\": {\"order_id\": {\"description\": \"ID of the cancelled order.\", \"type\": \"integer\"}, \"status\": {\"description\": \"New status of the order after cancellation attempt.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "order_id": {
+          "type": "integer",
+          "description": "ID of the order to cancel. "
+        }
+      },
+      "required": [
+        "order_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "order_id": {
+          "type": "integer",
+          "description": "ID of the cancelled order."
+        },
+        "status": {
+          "type": "string",
+          "description": "New status of the order after cancellation attempt."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.filter_stocks_by_price",
+    "category": "TradingBot",
+    "function": "filter_stocks_by_price",
+    "signature": "(stocks: list[str], min_price: float, max_price: float)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Filter stocks based on a price range.\nParameter descriptions: {\"max_price\": \"Maximum stock price. \", \"min_price\": \"Minimum stock price.\", \"stocks\": \"List of stock symbols to filter.\"}\nResponse schema: {\"properties\": {\"filtered_stocks\": {\"description\": \"Filtered list of stock symbols within the price range.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "stocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of stock symbols to filter."
+        },
+        "min_price": {
+          "type": "float",
+          "description": "Minimum stock price."
+        },
+        "max_price": {
+          "type": "float",
+          "description": "Maximum stock price. "
+        }
+      },
+      "required": [
+        "stocks",
+        "min_price",
+        "max_price"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "filtered_stocks": {
+          "type": "array",
+          "description": "Filtered list of stock symbols within the price range.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.fund_account",
+    "category": "TradingBot",
+    "function": "fund_account",
+    "signature": "(amount: float)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Fund the account with the specified amount.\nParameter descriptions: {\"amount\": \"Amount to fund the account with. \"}\nResponse schema: {\"properties\": {\"new_balance\": {\"description\": \"Updated account balance after funding.\", \"type\": \"float\"}, \"status\": {\"description\": \"Status of the funding operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "amount": {
+          "type": "float",
+          "description": "Amount to fund the account with. "
+        }
+      },
+      "required": [
+        "amount"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status of the funding operation."
+        },
+        "new_balance": {
+          "type": "float",
+          "description": "Updated account balance after funding."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_account_info",
+    "category": "TradingBot",
+    "function": "get_account_info",
+    "signature": "()",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get account information.\nResponse schema: {\"properties\": {\"account_id\": {\"description\": \"ID of the account.\", \"type\": \"integer\"}, \"balance\": {\"description\": \"Current balance of the account.\", \"type\": \"float\"}, \"binding_card\": {\"description\": \"Card number associated with the account.\", \"type\": \"integer\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "account_id": {
+          "type": "integer",
+          "description": "ID of the account."
+        },
+        "balance": {
+          "type": "float",
+          "description": "Current balance of the account."
+        },
+        "binding_card": {
+          "type": "integer",
+          "description": "Card number associated with the account."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_available_stocks",
+    "category": "TradingBot",
+    "function": "get_available_stocks",
+    "signature": "(sector: str)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get a list of stock symbols in the given sector.\nParameter descriptions: {\"sector\": \"The sector to retrieve stocks from (e.g., 'Technology'). \"}\nResponse schema: {\"properties\": {\"stock_list\": {\"description\": \"List of stock symbols in the specified sector.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "sector": {
+          "type": "string",
+          "description": "The sector to retrieve stocks from (e.g., 'Technology'). "
+        }
+      },
+      "required": [
+        "sector"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "stock_list": {
+          "type": "array",
+          "description": "List of stock symbols in the specified sector.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_current_time",
+    "category": "TradingBot",
+    "function": "get_current_time",
+    "signature": "()",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the current time.\nResponse schema: {\"properties\": {\"current_time\": {\"description\": \"Current time in HH:MM AM/PM format.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "current_time": {
+          "type": "string",
+          "description": "Current time in HH:MM AM/PM format."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_order_details",
+    "category": "TradingBot",
+    "function": "get_order_details",
+    "signature": "(order_id: int)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the details of an order.\nParameter descriptions: {\"order_id\": \"ID of the order. \"}\nResponse schema: {\"properties\": {\"amount\": {\"description\": \"Number of shares in the order.\", \"type\": \"integer\"}, \"id\": {\"description\": \"ID of the order.\", \"type\": \"integer\"}, \"order_type\": {\"description\": \"Type of the order.\", \"type\": \"string\"}, \"price\": {\"description\": \"Price at which the order was placed.\", \"type\": \"float\"}, \"status\": {\"description\": \"Current status of the order. [Enum]: [\\\"Open\\\", \\\"Pending\\\", \\\"Completed\\\", \\\"Cancelled\\\"]\", \"type\": \"string\"}, \"symbol\": {\"description\": \"Symbol of the stock in the order.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "order_id": {
+          "type": "integer",
+          "description": "ID of the order. "
+        }
+      },
+      "required": [
+        "order_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "ID of the order."
+        },
+        "order_type": {
+          "type": "string",
+          "description": "Type of the order."
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol of the stock in the order."
+        },
+        "price": {
+          "type": "float",
+          "description": "Price at which the order was placed."
+        },
+        "amount": {
+          "type": "integer",
+          "description": "Number of shares in the order."
+        },
+        "status": {
+          "type": "string",
+          "description": "Current status of the order. [Enum]: [\"Open\", \"Pending\", \"Completed\", \"Cancelled\"]"
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_order_history",
+    "category": "TradingBot",
+    "function": "get_order_history",
+    "signature": "()",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the stock order ID history.\nResponse schema: {\"properties\": {\"order_history\": {\"description\": \"List of orders ID in the order history.\", \"items\": {\"type\": \"integer\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "order_history": {
+          "type": "array",
+          "description": "List of orders ID in the order history.",
+          "items": {
+            "type": "integer"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_stock_info",
+    "category": "TradingBot",
+    "function": "get_stock_info",
+    "signature": "(symbol: str)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the details of a stock.\nParameter descriptions: {\"symbol\": \"Symbol that uniquely identifies the stock. \"}\nResponse schema: {\"properties\": {\"MA(20)\": {\"description\": \"20-day Moving Average of the stock.\", \"type\": \"float\"}, \"MA(5)\": {\"description\": \"5-day Moving Average of the stock.\", \"type\": \"float\"}, \"percent_change\": {\"description\": \"Percentage change in stock price.\", \"type\": \"float\"}, \"price\": {\"description\": \"Current price of the stock.\", \"type\": \"float\"}, \"volume\": {\"description\": \"Trading volume of the stock.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "Symbol that uniquely identifies the stock. "
+        }
+      },
+      "required": [
+        "symbol"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "price": {
+          "type": "float",
+          "description": "Current price of the stock."
+        },
+        "percent_change": {
+          "type": "float",
+          "description": "Percentage change in stock price."
+        },
+        "volume": {
+          "type": "float",
+          "description": "Trading volume of the stock."
+        },
+        "MA(5)": {
+          "type": "float",
+          "description": "5-day Moving Average of the stock."
+        },
+        "MA(20)": {
+          "type": "float",
+          "description": "20-day Moving Average of the stock."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_symbol_by_name",
+    "category": "TradingBot",
+    "function": "get_symbol_by_name",
+    "signature": "(name: str)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the symbol of a stock by company name.\nParameter descriptions: {\"name\": \"Name of the company. \"}\nResponse schema: {\"properties\": {\"symbol\": {\"description\": \"Symbol of the stock or \\\"Stock not found\\\" if not available.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Name of the company. "
+        }
+      },
+      "required": [
+        "name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "Symbol of the stock or \"Stock not found\" if not available."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_transaction_history",
+    "category": "TradingBot",
+    "function": "get_transaction_history",
+    "signature": "(start_date: str = None, end_date: str = None)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the transaction history within a specified date range.\nParameter descriptions: {\"end_date\": \"End date for the history (format: 'YYYY-MM-DD'). \", \"start_date\": \"Start date for the history (format: 'YYYY-MM-DD').\"}\nResponse schema: {\"properties\": {\"transaction_history\": {\"description\": \"List of transactions within the specified date range.\", \"items\": {\"properties\": {\"amount\": {\"description\": \"Amount involved in the transaction.\", \"type\": \"float\"}, \"timestamp\": {\"description\": \"Timestamp of the transaction, formatted as 'YYYY-MM-DD HH:MM:SS'.\", \"type\": \"string\"}, \"type\": {\"description\": \"Type of transaction. [Enum]: [\\\"deposit\\\", \\\"withdrawal\\\"]\", \"type\": \"string\"}}, \"type\": \"dict\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "start_date": {
+          "type": "string",
+          "description": "Start date for the history (format: 'YYYY-MM-DD').",
+          "default": "None"
+        },
+        "end_date": {
+          "type": "string",
+          "description": "End date for the history (format: 'YYYY-MM-DD'). ",
+          "default": "None"
+        }
+      },
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "transaction_history": {
+          "type": "array",
+          "description": "List of transactions within the specified date range.",
+          "items": {
+            "type": "dict",
+            "properties": {
+              "type": {
+                "type": "string",
+                "description": "Type of transaction. [Enum]: [\"deposit\", \"withdrawal\"]"
+              },
+              "amount": {
+                "type": "float",
+                "description": "Amount involved in the transaction."
+              },
+              "timestamp": {
+                "type": "string",
+                "description": "Timestamp of the transaction, formatted as 'YYYY-MM-DD HH:MM:SS'."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.get_watchlist",
+    "category": "TradingBot",
+    "function": "get_watchlist",
+    "signature": "()",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the watchlist.\nResponse schema: {\"properties\": {\"watchlist\": {\"description\": \"List of stock symbols in the watchlist.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "watchlist": {
+          "type": "array",
+          "description": "List of stock symbols in the watchlist.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.notify_price_change",
+    "category": "TradingBot",
+    "function": "notify_price_change",
+    "signature": "(stocks: list[str], threshold: float)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Notify if there is a significant price change in the stocks.\nParameter descriptions: {\"stocks\": \"List of stock symbols to check.\", \"threshold\": \"Percentage change threshold to trigger a notification. \"}\nResponse schema: {\"properties\": {\"notification\": {\"description\": \"Notification message about the price changes.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "stocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of stock symbols to check."
+        },
+        "threshold": {
+          "type": "float",
+          "description": "Percentage change threshold to trigger a notification. "
+        }
+      },
+      "required": [
+        "stocks",
+        "threshold"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "notification": {
+          "type": "string",
+          "description": "Notification message about the price changes."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.place_order",
+    "category": "TradingBot",
+    "function": "place_order",
+    "signature": "(order_type: str, symbol: str, price: float, amount: int)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Place an order.\nParameter descriptions: {\"amount\": \"Number of shares to trade. \", \"order_type\": \"Type of the order (Buy/Sell).\", \"price\": \"Price at which to place the order.\", \"symbol\": \"Symbol of the stock to trade.\"}\nResponse schema: {\"properties\": {\"amount\": {\"description\": \"Number of shares in the order.\", \"type\": \"integer\"}, \"order_id\": {\"description\": \"ID of the newly placed order.\", \"type\": \"integer\"}, \"order_type\": {\"description\": \"Type of the order (Buy/Sell).\", \"type\": \"string\"}, \"price\": {\"description\": \"Price at which the order was placed.\", \"type\": \"float\"}, \"status\": {\"description\": \"Initial status of the order.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "order_type": {
+          "type": "string",
+          "description": "Type of the order (Buy/Sell)."
+        },
+        "symbol": {
+          "type": "string",
+          "description": "Symbol of the stock to trade."
+        },
+        "price": {
+          "type": "float",
+          "description": "Price at which to place the order."
+        },
+        "amount": {
+          "type": "integer",
+          "description": "Number of shares to trade. "
+        }
+      },
+      "required": [
+        "order_type",
+        "symbol",
+        "price",
+        "amount"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "order_id": {
+          "type": "integer",
+          "description": "ID of the newly placed order."
+        },
+        "order_type": {
+          "type": "string",
+          "description": "Type of the order (Buy/Sell)."
+        },
+        "status": {
+          "type": "string",
+          "description": "Initial status of the order."
+        },
+        "price": {
+          "type": "float",
+          "description": "Price at which the order was placed."
+        },
+        "amount": {
+          "type": "integer",
+          "description": "Number of shares in the order."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.remove_stock_from_watchlist",
+    "category": "TradingBot",
+    "function": "remove_stock_from_watchlist",
+    "signature": "(symbol: str)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Remove a stock from the watchlist.\nParameter descriptions: {\"symbol\": \"Symbol of the stock to remove. \"}\nResponse schema: {\"properties\": {\"status\": {\"description\": \"Status of the removal operation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "symbol": {
+          "type": "string",
+          "description": "Symbol of the stock to remove. "
+        }
+      },
+      "required": [
+        "symbol"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status of the removal operation."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.trading_get_login_status",
+    "category": "TradingBot",
+    "function": "trading_get_login_status",
+    "signature": "()",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Get the login status.\nResponse schema: {\"properties\": {\"status\": {\"description\": \"Login status.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "boolean",
+          "description": "Login status."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.trading_login",
+    "category": "TradingBot",
+    "function": "trading_login",
+    "signature": "(username: str, password: str)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Handle user login.\nParameter descriptions: {\"password\": \"Password for authentication. \", \"username\": \"Username for authentication.\"}\nResponse schema: {\"properties\": {\"status\": {\"description\": \"Login status message.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "Username for authentication."
+        },
+        "password": {
+          "type": "string",
+          "description": "Password for authentication. "
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Login status message."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.trading_logout",
+    "category": "TradingBot",
+    "function": "trading_logout",
+    "signature": "()",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Handle user logout for trading system.\nResponse schema: {\"properties\": {\"status\": {\"description\": \"Logout status message.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Logout status message."
+        }
+      }
+    }
+  },
+  {
+    "name": "TradingBot.withdraw_funds",
+    "category": "TradingBot",
+    "function": "withdraw_funds",
+    "signature": "(amount: float)",
+    "docstring": "This tool belongs to the trading system, which allows users to trade stocks, manage their account, and view stock information. Tool description: Withdraw funds from the account balance.\nParameter descriptions: {\"amount\": \"Amount to withdraw from the account. \"}\nResponse schema: {\"properties\": {\"new_balance\": {\"description\": \"Updated account balance after the transaction.\", \"type\": \"float\"}, \"status\": {\"description\": \"Status of the transaction.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "amount": {
+          "type": "float",
+          "description": "Amount to withdraw from the account. "
+        }
+      },
+      "required": [
+        "amount"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "Status of the transaction."
+        },
+        "new_balance": {
+          "type": "float",
+          "description": "Updated account balance after the transaction."
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.authenticate_travel",
+    "category": "TravelAPI",
+    "function": "authenticate_travel",
+    "signature": "(client_id: str, client_secret: str, refresh_token: str, grant_type: str, user_first_name: str, user_last_name: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Authenticate the user with the travel API\nParameter descriptions: {\"client_id\": \"The client applications client_id supplied by App Management\", \"client_secret\": \"The client applications client_secret supplied by App Management\", \"grant_type\": \"The grant type of the authentication request. Here are the options: read_write, read, write\", \"refresh_token\": \"The refresh token obtained from the initial authentication\", \"user_first_name\": \"The first name of the user\", \"user_last_name\": \"The last name of the user\"}\nResponse schema: {\"properties\": {\"access_token\": {\"description\": \"The access token to be used in the Authorization header of future requests\", \"type\": \"string\"}, \"expires_in\": {\"description\": \"The number of time it can use until the access token expires\", \"type\": \"integer\"}, \"scope\": {\"description\": \"The scope of the token\", \"type\": \"string\"}, \"token_type\": {\"description\": \"The type of token\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "client_id": {
+          "type": "string",
+          "description": "The client applications client_id supplied by App Management"
+        },
+        "client_secret": {
+          "type": "string",
+          "description": "The client applications client_secret supplied by App Management"
+        },
+        "refresh_token": {
+          "type": "string",
+          "description": "The refresh token obtained from the initial authentication"
+        },
+        "grant_type": {
+          "type": "string",
+          "description": "The grant type of the authentication request. Here are the options: read_write, read, write"
+        },
+        "user_first_name": {
+          "type": "string",
+          "description": "The first name of the user"
+        },
+        "user_last_name": {
+          "type": "string",
+          "description": "The last name of the user"
+        }
+      },
+      "required": [
+        "client_id",
+        "client_secret",
+        "refresh_token",
+        "grant_type",
+        "user_first_name",
+        "user_last_name"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "expires_in": {
+          "type": "integer",
+          "description": "The number of time it can use until the access token expires"
+        },
+        "access_token": {
+          "type": "string",
+          "description": "The access token to be used in the Authorization header of future requests"
+        },
+        "token_type": {
+          "type": "string",
+          "description": "The type of token"
+        },
+        "scope": {
+          "type": "string",
+          "description": "The scope of the token"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.book_flight",
+    "category": "TravelAPI",
+    "function": "book_flight",
+    "signature": "(access_token: str, card_id: str, travel_date: str, travel_from: str, travel_to: str, travel_class: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Book a flight given the travel information. From and To should be the airport codes in the IATA format.\nParameter descriptions: {\"access_token\": \"The access token obtained from the authenticate\", \"card_id\": \"The ID of the credit card to use for the booking\", \"travel_class\": \"The class of the travel\", \"travel_date\": \"The date of the travel in the format YYYY-MM-DD\", \"travel_from\": \"The location the travel is from\", \"travel_to\": \"The location the travel is to\"}\nResponse schema: {\"properties\": {\"booking_history\": {\"description\": \"The booking history. This field might be empty even though the history is non-empty.\", \"properties\": {\"booking_id\": {\"description\": \"The ID of the booking\", \"type\": \"string\"}, \"transaction_id\": {\"description\": \"The ID of the transaction\", \"type\": \"string\"}, \"travel_class\": {\"description\": \"The class of the travel\", \"type\": \"string\"}, \"travel_cost\": {\"description\": \"The cost of the travel\", \"type\": \"float\"}, \"travel_date\": {\"description\": \"The date of the travel\", \"type\": \"string\"}, \"travel_from\": {\"description\": \"The location the travel is from\", \"type\": \"string\"}, \"travel_to\": {\"description\": \"The location the travel is to\", \"type\": \"string\"}}, \"type\": \"dict\"}, \"booking_id\": {\"description\": \"The ID of the booking\", \"type\": \"string\"}, \"booking_status\": {\"description\": \"The status of the booking, True if successful, False if failed\", \"type\": \"boolean\"}, \"transaction_id\": {\"description\": \"The ID of the transaction\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authenticate"
+        },
+        "card_id": {
+          "type": "string",
+          "description": "The ID of the credit card to use for the booking"
+        },
+        "travel_date": {
+          "type": "string",
+          "description": "The date of the travel in the format YYYY-MM-DD"
+        },
+        "travel_from": {
+          "type": "string",
+          "description": "The location the travel is from"
+        },
+        "travel_to": {
+          "type": "string",
+          "description": "The location the travel is to"
+        },
+        "travel_class": {
+          "type": "string",
+          "description": "The class of the travel"
+        }
+      },
+      "required": [
+        "access_token",
+        "card_id",
+        "travel_date",
+        "travel_from",
+        "travel_to",
+        "travel_class"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "booking_id": {
+          "type": "string",
+          "description": "The ID of the booking"
+        },
+        "transaction_id": {
+          "type": "string",
+          "description": "The ID of the transaction"
+        },
+        "booking_status": {
+          "type": "boolean",
+          "description": "The status of the booking, True if successful, False if failed"
+        },
+        "booking_history": {
+          "type": "dict",
+          "description": "The booking history. This field might be empty even though the history is non-empty.",
+          "properties": {
+            "booking_id": {
+              "type": "string",
+              "description": "The ID of the booking"
+            },
+            "transaction_id": {
+              "type": "string",
+              "description": "The ID of the transaction"
+            },
+            "travel_date": {
+              "type": "string",
+              "description": "The date of the travel"
+            },
+            "travel_from": {
+              "type": "string",
+              "description": "The location the travel is from"
+            },
+            "travel_to": {
+              "type": "string",
+              "description": "The location the travel is to"
+            },
+            "travel_class": {
+              "type": "string",
+              "description": "The class of the travel"
+            },
+            "travel_cost": {
+              "type": "float",
+              "description": "The cost of the travel"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.cancel_booking",
+    "category": "TravelAPI",
+    "function": "cancel_booking",
+    "signature": "(access_token: str, booking_id: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Cancel a booking\nParameter descriptions: {\"access_token\": \"The access token obtained from the authenticate\", \"booking_id\": \"The ID of the booking\"}\nResponse schema: {\"properties\": {\"cancel_status\": {\"description\": \"The status of the cancellation, True if successful, False if failed\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authenticate"
+        },
+        "booking_id": {
+          "type": "string",
+          "description": "The ID of the booking"
+        }
+      },
+      "required": [
+        "access_token",
+        "booking_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "cancel_status": {
+          "type": "boolean",
+          "description": "The status of the cancellation, True if successful, False if failed"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.compute_exchange_rate",
+    "category": "TravelAPI",
+    "function": "compute_exchange_rate",
+    "signature": "(base_currency: str, target_currency: str, value: float)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Compute the exchange rate between two currencies\nParameter descriptions: {\"base_currency\": \"The base currency. [Enum]: USD, RMB, EUR, JPY, GBP, CAD, AUD, INR, RUB, BRL, MXN\", \"target_currency\": \"The target currency. [Enum]: USD, RMB, EUR, JPY, GBP, CAD, AUD, INR, RUB, BRL, MXN\", \"value\": \"The value to convert\"}\nResponse schema: {\"properties\": {\"exchanged_value\": {\"description\": \"The value after the exchange\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "base_currency": {
+          "type": "string",
+          "description": "The base currency. [Enum]: USD, RMB, EUR, JPY, GBP, CAD, AUD, INR, RUB, BRL, MXN"
+        },
+        "target_currency": {
+          "type": "string",
+          "description": "The target currency. [Enum]: USD, RMB, EUR, JPY, GBP, CAD, AUD, INR, RUB, BRL, MXN"
+        },
+        "value": {
+          "type": "float",
+          "description": "The value to convert"
+        }
+      },
+      "required": [
+        "base_currency",
+        "target_currency",
+        "value"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "exchanged_value": {
+          "type": "float",
+          "description": "The value after the exchange"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.contact_customer_support",
+    "category": "TravelAPI",
+    "function": "contact_customer_support",
+    "signature": "(booking_id: str, message: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Contact travel booking customer support, get immediate support on an issue with an online call.\nParameter descriptions: {\"booking_id\": \"The ID of the booking\", \"message\": \"The message to send to customer support\"}\nResponse schema: {\"properties\": {\"customer_support_message\": {\"description\": \"The message from customer support\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "booking_id": {
+          "type": "string",
+          "description": "The ID of the booking"
+        },
+        "message": {
+          "type": "string",
+          "description": "The message to send to customer support"
+        }
+      },
+      "required": [
+        "booking_id",
+        "message"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "customer_support_message": {
+          "type": "string",
+          "description": "The message from customer support"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.get_all_credit_cards",
+    "category": "TravelAPI",
+    "function": "get_all_credit_cards",
+    "signature": "()",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Get all registered credit cards\nResponse schema: {\"properties\": {\"credit_card_list\": {\"description\": \"A dictionary containing all registered credit cards\", \"properties\": {\"balance\": {\"description\": \"The balance of the credit card\", \"type\": \"float\"}, \"card_number\": {\"description\": \"The number of the credit card\", \"type\": \"string\"}, \"card_verification_value\": {\"description\": \"The verification value of the credit card\", \"type\": \"integer\"}, \"cardholder_name\": {\"description\": \"The name of the cardholder\", \"type\": \"string\"}, \"expiration_date\": {\"description\": \"The expiration date of the credit card in the format YYYY-MM-DD\", \"type\": \"string\"}}, \"type\": \"dict\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "credit_card_list": {
+          "type": "dict",
+          "description": "A dictionary containing all registered credit cards",
+          "properties": {
+            "card_number": {
+              "type": "string",
+              "description": "The number of the credit card"
+            },
+            "expiration_date": {
+              "type": "string",
+              "description": "The expiration date of the credit card in the format YYYY-MM-DD"
+            },
+            "cardholder_name": {
+              "type": "string",
+              "description": "The name of the cardholder"
+            },
+            "card_verification_value": {
+              "type": "integer",
+              "description": "The verification value of the credit card"
+            },
+            "balance": {
+              "type": "float",
+              "description": "The balance of the credit card"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.get_booking_history",
+    "category": "TravelAPI",
+    "function": "get_booking_history",
+    "signature": "(access_token: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Retrieve all booking history for the user.\nParameter descriptions: {\"access_token\": \"The access token obtained from the authenticate method. \"}\nResponse schema: {\"properties\": {\"booking_history\": {\"description\": \"A dictionary keyed by booking_id where each value contains the booking details.\", \"properties\": {\"transaction_id\": {\"description\": \"The ID of the transaction\", \"type\": \"string\"}, \"travel_class\": {\"description\": \"The class of the travel\", \"type\": \"string\"}, \"travel_cost\": {\"description\": \"The cost of the travel\", \"type\": \"float\"}, \"travel_date\": {\"description\": \"The date of the travel\", \"type\": \"string\"}, \"travel_from\": {\"description\": \"The location the travel is from\", \"type\": \"string\"}, \"travel_to\": {\"description\": \"The location the travel is to\", \"type\": \"string\"}}, \"type\": \"dict\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authenticate method. "
+        }
+      },
+      "required": [
+        "access_token"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "booking_history": {
+          "type": "dict",
+          "description": "A dictionary keyed by booking_id where each value contains the booking details.",
+          "properties": {
+            "transaction_id": {
+              "type": "string",
+              "description": "The ID of the transaction"
+            },
+            "travel_date": {
+              "type": "string",
+              "description": "The date of the travel"
+            },
+            "travel_from": {
+              "type": "string",
+              "description": "The location the travel is from"
+            },
+            "travel_to": {
+              "type": "string",
+              "description": "The location the travel is to"
+            },
+            "travel_class": {
+              "type": "string",
+              "description": "The class of the travel"
+            },
+            "travel_cost": {
+              "type": "float",
+              "description": "The cost of the travel"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.get_budget_fiscal_year",
+    "category": "TravelAPI",
+    "function": "get_budget_fiscal_year",
+    "signature": "(lastModifiedAfter: str = None, includeRemoved: str = None)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Get the budget fiscal year\nParameter descriptions: {\"includeRemoved\": \"If true, the service will return all Fiscal Years, including those that were previously removed. If not supplied, this field defaults to false.\", \"lastModifiedAfter\": \"Use this field if you only want Fiscal Years that were changed after the supplied date. The supplied date will be interpreted in the UTC time zone. If lastModifiedAfter is not supplied, the service will return all Fiscal Years, regardless of modified date. Example: 2016-03-29T16:12:20. Return in the format of YYYY-MM-DDTHH:MM:SS.\"}\nResponse schema: {\"properties\": {\"budget_fiscal_year\": {\"description\": \"The budget fiscal year\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "lastModifiedAfter": {
+          "type": "string",
+          "description": "Use this field if you only want Fiscal Years that were changed after the supplied date. The supplied date will be interpreted in the UTC time zone. If lastModifiedAfter is not supplied, the service will return all Fiscal Years, regardless of modified date. Example: 2016-03-29T16:12:20. Return in the format of YYYY-MM-DDTHH:MM:SS.",
+          "default": "None"
+        },
+        "includeRemoved": {
+          "type": "string",
+          "description": "If true, the service will return all Fiscal Years, including those that were previously removed. If not supplied, this field defaults to false.",
+          "default": "None"
+        }
+      },
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "budget_fiscal_year": {
+          "type": "string",
+          "description": "The budget fiscal year"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.get_credit_card_balance",
+    "category": "TravelAPI",
+    "function": "get_credit_card_balance",
+    "signature": "(access_token: str, card_id: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Get the balance of a credit card\nParameter descriptions: {\"access_token\": \"The access token obtained from the authenticate\", \"card_id\": \"The ID of the credit card\"}\nResponse schema: {\"properties\": {\"card_balance\": {\"description\": \"The balance of the credit card\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authenticate"
+        },
+        "card_id": {
+          "type": "string",
+          "description": "The ID of the credit card"
+        }
+      },
+      "required": [
+        "access_token",
+        "card_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "card_balance": {
+          "type": "float",
+          "description": "The balance of the credit card"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.get_flight_cost",
+    "category": "TravelAPI",
+    "function": "get_flight_cost",
+    "signature": "(travel_from: str, travel_to: str, travel_date: str, travel_class: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Get the list of cost of a flight in USD based on location, date, and class\nParameter descriptions: {\"travel_class\": \"The class of the travel. Options are: economy, business, first.\", \"travel_date\": \"The date of the travel in the format 'YYYY-MM-DD'\", \"travel_from\": \"The 3 letter code of the departing airport\", \"travel_to\": \"The 3 letter code of the arriving airport\"}\nResponse schema: {\"properties\": {\"travel_cost_list\": {\"description\": \"The list of cost of the travel\", \"items\": {\"type\": \"float\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "travel_from": {
+          "type": "string",
+          "description": "The 3 letter code of the departing airport"
+        },
+        "travel_to": {
+          "type": "string",
+          "description": "The 3 letter code of the arriving airport"
+        },
+        "travel_date": {
+          "type": "string",
+          "description": "The date of the travel in the format 'YYYY-MM-DD'"
+        },
+        "travel_class": {
+          "type": "string",
+          "description": "The class of the travel. Options are: economy, business, first."
+        }
+      },
+      "required": [
+        "travel_from",
+        "travel_to",
+        "travel_date",
+        "travel_class"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "travel_cost_list": {
+          "type": "array",
+          "description": "The list of cost of the travel",
+          "items": {
+            "type": "float"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.get_nearest_airport_by_city",
+    "category": "TravelAPI",
+    "function": "get_nearest_airport_by_city",
+    "signature": "(location: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Get the nearest airport to the given location\nParameter descriptions: {\"location\": \"The name of the location. [Enum]: Rivermist, Stonebrook, Maplecrest, Silverpine, Shadowridge, London, Paris, Sunset Valley, Oakendale, Willowbend, Crescent Hollow, Autumnville, Pinehaven, Greenfield, San Francisco, Los Angeles, New York, Chicago, Boston, Beijing, Hong Kong, Rome, Tokyo\"}\nResponse schema: {\"properties\": {\"nearest_airport\": {\"description\": \"The nearest airport to the given location\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "location": {
+          "type": "string",
+          "description": "The name of the location. [Enum]: Rivermist, Stonebrook, Maplecrest, Silverpine, Shadowridge, London, Paris, Sunset Valley, Oakendale, Willowbend, Crescent Hollow, Autumnville, Pinehaven, Greenfield, San Francisco, Los Angeles, New York, Chicago, Boston, Beijing, Hong Kong, Rome, Tokyo"
+        }
+      },
+      "required": [
+        "location"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "nearest_airport": {
+          "type": "string",
+          "description": "The nearest airport to the given location"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.list_all_airports",
+    "category": "TravelAPI",
+    "function": "list_all_airports",
+    "signature": "()",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: List all available airports\nResponse schema: {\"properties\": {\"airports\": {\"description\": \"A list of all available airports\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "airports": {
+          "type": "array",
+          "description": "A list of all available airports",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.purchase_insurance",
+    "category": "TravelAPI",
+    "function": "purchase_insurance",
+    "signature": "(access_token: str, insurance_type: str, insurance_cost: float, booking_id: str, card_id: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Purchase insurance\nParameter descriptions: {\"access_token\": \"The access token obtained from the authenticate\", \"booking_id\": \"The ID of the booking\", \"card_id\": \"The ID of the credit card to use for the\", \"insurance_cost\": \"The cost of the insurance\", \"insurance_type\": \"The type of insurance to purchase\"}\nResponse schema: {\"properties\": {\"insurance_id\": {\"description\": \"The ID of the insurance\", \"type\": \"string\"}, \"insurance_status\": {\"description\": \"The status of the insurance purchase, True if successful, False if failed\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authenticate"
+        },
+        "insurance_type": {
+          "type": "string",
+          "description": "The type of insurance to purchase"
+        },
+        "insurance_cost": {
+          "type": "float",
+          "description": "The cost of the insurance"
+        },
+        "booking_id": {
+          "type": "string",
+          "description": "The ID of the booking"
+        },
+        "card_id": {
+          "type": "string",
+          "description": "The ID of the credit card to use for the"
+        }
+      },
+      "required": [
+        "access_token",
+        "insurance_type",
+        "booking_id",
+        "insurance_cost",
+        "card_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "insurance_id": {
+          "type": "string",
+          "description": "The ID of the insurance"
+        },
+        "insurance_status": {
+          "type": "boolean",
+          "description": "The status of the insurance purchase, True if successful, False if failed"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.register_credit_card",
+    "category": "TravelAPI",
+    "function": "register_credit_card",
+    "signature": "(access_token: str, card_number: str, expiration_date: str, cardholder_name: str, card_verification_number: int)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Register a credit card\nParameter descriptions: {\"access_token\": \"The access token obtained from the authenticate method\", \"card_number\": \"The credit card number\", \"card_verification_number\": \"The card verification number\", \"cardholder_name\": \"The name of the cardholder\", \"expiration_date\": \"The expiration date of the credit card in the format MM/YYYY\"}\nResponse schema: {\"properties\": {\"card_id\": {\"description\": \"The ID of the registered credit card\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authenticate method"
+        },
+        "card_number": {
+          "type": "string",
+          "description": "The credit card number"
+        },
+        "expiration_date": {
+          "type": "string",
+          "description": "The expiration date of the credit card in the format MM/YYYY"
+        },
+        "cardholder_name": {
+          "type": "string",
+          "description": "The name of the cardholder"
+        },
+        "card_verification_number": {
+          "type": "integer",
+          "description": "The card verification number"
+        }
+      },
+      "required": [
+        "access_token",
+        "card_number",
+        "expiration_date",
+        "cardholder_name",
+        "card_verification_number"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "card_id": {
+          "type": "string",
+          "description": "The ID of the registered credit card"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.retrieve_invoice",
+    "category": "TravelAPI",
+    "function": "retrieve_invoice",
+    "signature": "(access_token: str, booking_id: str = None, insurance_id: str = None)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Retrieve the invoice for a booking.\nParameter descriptions: {\"access_token\": \"The access token obtained from the authenticate\", \"booking_id\": \"The ID of the booking\", \"insurance_id\": \"The ID of the insurance\"}\nResponse schema: {\"properties\": {\"invoice\": {\"description\": \"The invoice for the booking\", \"properties\": {\"booking_id\": {\"description\": \"The ID of the booking\", \"type\": \"string\"}, \"transaction_id\": {\"description\": \"The ID of the transaction\", \"type\": \"string\"}, \"travel_class\": {\"description\": \"The class of the travel\", \"type\": \"string\"}, \"travel_cost\": {\"description\": \"The cost of the travel\", \"type\": \"float\"}, \"travel_date\": {\"description\": \"The date of the travel\", \"type\": \"string\"}, \"travel_from\": {\"description\": \"The location the travel is from\", \"type\": \"string\"}, \"travel_to\": {\"description\": \"The location the travel is to\", \"type\": \"string\"}}, \"type\": \"dict\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authenticate"
+        },
+        "booking_id": {
+          "type": "string",
+          "description": "The ID of the booking",
+          "default": "None"
+        },
+        "insurance_id": {
+          "type": "string",
+          "description": "The ID of the insurance",
+          "default": "None"
+        }
+      },
+      "required": [
+        "access_token"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "invoice": {
+          "type": "dict",
+          "description": "The invoice for the booking",
+          "properties": {
+            "booking_id": {
+              "type": "string",
+              "description": "The ID of the booking"
+            },
+            "travel_date": {
+              "type": "string",
+              "description": "The date of the travel"
+            },
+            "travel_from": {
+              "type": "string",
+              "description": "The location the travel is from"
+            },
+            "travel_to": {
+              "type": "string",
+              "description": "The location the travel is to"
+            },
+            "travel_class": {
+              "type": "string",
+              "description": "The class of the travel"
+            },
+            "travel_cost": {
+              "type": "float",
+              "description": "The cost of the travel"
+            },
+            "transaction_id": {
+              "type": "string",
+              "description": "The ID of the transaction"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.set_budget_limit",
+    "category": "TravelAPI",
+    "function": "set_budget_limit",
+    "signature": "(access_token: str, budget_limit: float)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Set the budget limit for the user\nParameter descriptions: {\"access_token\": \"The access token obtained from the authentication process or initial configuration.\", \"budget_limit\": \"The budget limit to set in USD\"}\nResponse schema: {\"properties\": {\"budget_limit\": {\"description\": \"The budget limit set in USD\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "access_token": {
+          "type": "string",
+          "description": "The access token obtained from the authentication process or initial configuration."
+        },
+        "budget_limit": {
+          "type": "float",
+          "description": "The budget limit to set in USD"
+        }
+      },
+      "required": [
+        "access_token",
+        "budget_limit"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "budget_limit": {
+          "type": "float",
+          "description": "The budget limit set in USD"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.travel_get_login_status",
+    "category": "TravelAPI",
+    "function": "travel_get_login_status",
+    "signature": "()",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Get the status of the login\nResponse schema: {\"properties\": {\"status\": {\"description\": \"The status of the login\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "boolean",
+          "description": "The status of the login"
+        }
+      }
+    }
+  },
+  {
+    "name": "TravelAPI.verify_traveler_information",
+    "category": "TravelAPI",
+    "function": "verify_traveler_information",
+    "signature": "(first_name: str, last_name: str, date_of_birth: str, passport_number: str)",
+    "docstring": "This tool belongs to the travel system, which allows users to book flights, manage credit cards, and view budget information. Tool description: Verify the traveler information\nParameter descriptions: {\"date_of_birth\": \"The date of birth of the traveler in the format YYYY-MM-DD\", \"first_name\": \"The first name of the traveler\", \"last_name\": \"The last name of the traveler\", \"passport_number\": \"The passport number of the traveler\"}\nResponse schema: {\"properties\": {\"verification_failure\": {\"description\": \"The reason for the verification failure\", \"type\": \"string\"}, \"verification_status\": {\"description\": \"The status of the verification, True if successful, False if failed\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "first_name": {
+          "type": "string",
+          "description": "The first name of the traveler"
+        },
+        "last_name": {
+          "type": "string",
+          "description": "The last name of the traveler"
+        },
+        "date_of_birth": {
+          "type": "string",
+          "description": "The date of birth of the traveler in the format YYYY-MM-DD"
+        },
+        "passport_number": {
+          "type": "string",
+          "description": "The passport number of the traveler"
+        }
+      },
+      "required": [
+        "first_name",
+        "last_name",
+        "date_of_birth",
+        "passport_number"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "verification_status": {
+          "type": "boolean",
+          "description": "The status of the verification, True if successful, False if failed"
+        },
+        "verification_failure": {
+          "type": "string",
+          "description": "The reason for the verification failure"
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.authenticate_twitter",
+    "category": "TwitterAPI",
+    "function": "authenticate_twitter",
+    "signature": "(username: str, password: str)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Authenticate a user with username and password.\nParameter descriptions: {\"password\": \"Password of the user.\", \"username\": \"Username of the user.\"}\nResponse schema: {\"properties\": {\"authentication_status\": {\"description\": \"True if authenticated, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "Username of the user."
+        },
+        "password": {
+          "type": "string",
+          "description": "Password of the user."
+        }
+      },
+      "required": [
+        "username",
+        "password"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "authentication_status": {
+          "type": "boolean",
+          "description": "True if authenticated, False otherwise."
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.comment",
+    "category": "TwitterAPI",
+    "function": "comment",
+    "signature": "(tweet_id: int, comment_content: str)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Comment on a tweet for the authenticated user.\nParameter descriptions: {\"comment_content\": \"Content of the comment.\", \"tweet_id\": \"ID of the tweet to comment on.\"}\nResponse schema: {\"properties\": {\"comment_status\": {\"description\": \"Status of the comment action.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "tweet_id": {
+          "type": "integer",
+          "description": "ID of the tweet to comment on."
+        },
+        "comment_content": {
+          "type": "string",
+          "description": "Content of the comment."
+        }
+      },
+      "required": [
+        "tweet_id",
+        "comment_content"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "comment_status": {
+          "type": "string",
+          "description": "Status of the comment action."
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.follow_user",
+    "category": "TwitterAPI",
+    "function": "follow_user",
+    "signature": "(username_to_follow: str)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Follow a user for the authenticated user.\nParameter descriptions: {\"username_to_follow\": \"Username of the user to follow.\"}\nResponse schema: {\"properties\": {\"follow_status\": {\"description\": \"True if followed, False if already following.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "username_to_follow": {
+          "type": "string",
+          "description": "Username of the user to follow."
+        }
+      },
+      "required": [
+        "username_to_follow"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "follow_status": {
+          "type": "boolean",
+          "description": "True if followed, False if already following."
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.get_tweet",
+    "category": "TwitterAPI",
+    "function": "get_tweet",
+    "signature": "(tweet_id: int)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Retrieve a specific tweet.\nParameter descriptions: {\"tweet_id\": \"ID of the tweet to retrieve.\"}\nResponse schema: {\"properties\": {\"content\": {\"description\": \"Content of the tweet.\", \"type\": \"string\"}, \"id\": {\"description\": \"ID of the retrieved tweet.\", \"type\": \"integer\"}, \"mentions\": {\"description\": \"List of users mentioned in the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"tags\": {\"description\": \"List of tags associated with the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"username\": {\"description\": \"Username of the tweet's author.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "tweet_id": {
+          "type": "integer",
+          "description": "ID of the tweet to retrieve."
+        }
+      },
+      "required": [
+        "tweet_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "ID of the retrieved tweet."
+        },
+        "username": {
+          "type": "string",
+          "description": "Username of the tweet's author."
+        },
+        "content": {
+          "type": "string",
+          "description": "Content of the tweet."
+        },
+        "tags": {
+          "type": "array",
+          "description": "List of tags associated with the tweet.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mentions": {
+          "type": "array",
+          "description": "List of users mentioned in the tweet.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.get_tweet_comments",
+    "category": "TwitterAPI",
+    "function": "get_tweet_comments",
+    "signature": "(tweet_id: int)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Retrieve all comments for a specific tweet.\nParameter descriptions: {\"tweet_id\": \"ID of the tweet to retrieve comments for.\"}\nResponse schema: {\"properties\": {\"comments\": {\"description\": \"List of dictionaries, each containing comment information.\", \"items\": {\"properties\": {\"content\": {\"description\": \"Content of the comment.\", \"type\": \"string\"}, \"username\": {\"description\": \"Username of the commenter.\", \"type\": \"string\"}}, \"type\": \"dict\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "tweet_id": {
+          "type": "integer",
+          "description": "ID of the tweet to retrieve comments for."
+        }
+      },
+      "required": [
+        "tweet_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "comments": {
+          "type": "array",
+          "description": "List of dictionaries, each containing comment information.",
+          "items": {
+            "type": "dict",
+            "properties": {
+              "username": {
+                "type": "string",
+                "description": "Username of the commenter."
+              },
+              "content": {
+                "type": "string",
+                "description": "Content of the comment."
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.get_user_stats",
+    "category": "TwitterAPI",
+    "function": "get_user_stats",
+    "signature": "(username: str)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Get statistics for a specific user.\nParameter descriptions: {\"username\": \"Username of the user to get statistics for.\"}\nResponse schema: {\"properties\": {\"following_count\": {\"description\": \"Number of users the specified user is following.\", \"type\": \"integer\"}, \"retweet_count\": {\"description\": \"Number of retweets made by the user.\", \"type\": \"integer\"}, \"tweet_count\": {\"description\": \"Number of tweets posted by the user.\", \"type\": \"integer\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "Username of the user to get statistics for."
+        }
+      },
+      "required": [
+        "username"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "tweet_count": {
+          "type": "integer",
+          "description": "Number of tweets posted by the user."
+        },
+        "following_count": {
+          "type": "integer",
+          "description": "Number of users the specified user is following."
+        },
+        "retweet_count": {
+          "type": "integer",
+          "description": "Number of retweets made by the user."
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.get_user_tweets",
+    "category": "TwitterAPI",
+    "function": "get_user_tweets",
+    "signature": "(username: str)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Retrieve all tweets from a specific user.\nParameter descriptions: {\"username\": \"Username of the user whose tweets to retrieve.\"}\nResponse schema: {\"properties\": {\"user_tweets\": {\"description\": \"List of dictionaries, each containing tweet information.\", \"items\": {\"properties\": {\"content\": {\"description\": \"Content of the tweet.\", \"type\": \"string\"}, \"id\": {\"description\": \"ID of the retrieved tweet.\", \"type\": \"integer\"}, \"mentions\": {\"description\": \"List of users mentioned in the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"tags\": {\"description\": \"List of tags associated with the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"username\": {\"description\": \"Username of the tweet's author.\", \"type\": \"string\"}}, \"type\": \"dict\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "username": {
+          "type": "string",
+          "description": "Username of the user whose tweets to retrieve."
+        }
+      },
+      "required": [
+        "username"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "user_tweets": {
+          "type": "array",
+          "description": "List of dictionaries, each containing tweet information.",
+          "items": {
+            "type": "dict",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "ID of the retrieved tweet."
+              },
+              "username": {
+                "type": "string",
+                "description": "Username of the tweet's author."
+              },
+              "content": {
+                "type": "string",
+                "description": "Content of the tweet."
+              },
+              "tags": {
+                "type": "array",
+                "description": "List of tags associated with the tweet.",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mentions": {
+                "type": "array",
+                "description": "List of users mentioned in the tweet.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.list_all_following",
+    "category": "TwitterAPI",
+    "function": "list_all_following",
+    "signature": "()",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: List all users that the authenticated user is following.\nResponse schema: {\"properties\": {\"following_list\": {\"description\": \"List of all users that the authenticated user is following.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "following_list": {
+          "type": "array",
+          "description": "List of all users that the authenticated user is following.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.mention",
+    "category": "TwitterAPI",
+    "function": "mention",
+    "signature": "(tweet_id: int, mentioned_usernames: list[str])",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Mention specified users in a tweet.\nParameter descriptions: {\"mentioned_usernames\": \"List of usernames to be mentioned.\", \"tweet_id\": \"ID of the tweet where users are mentioned.\"}\nResponse schema: {\"properties\": {\"mention_status\": {\"description\": \"Status of the mention action.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "tweet_id": {
+          "type": "integer",
+          "description": "ID of the tweet where users are mentioned."
+        },
+        "mentioned_usernames": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of usernames to be mentioned."
+        }
+      },
+      "required": [
+        "tweet_id",
+        "mentioned_usernames"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "mention_status": {
+          "type": "string",
+          "description": "Status of the mention action."
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.post_tweet",
+    "category": "TwitterAPI",
+    "function": "post_tweet",
+    "signature": "(content: str, tags: list[str] = [], mentions: list[str] = [])",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Post a tweet for the authenticated user.\nParameter descriptions: {\"content\": \"Content of the tweet.\", \"mentions\": \"List of users mentioned in the tweet. Mention name should start with @. This is only relevant if the user wants to add mentions to the tweet.\", \"tags\": \"List of tags for the tweet. Tag name should start with #. This is only relevant if the user wants to add tags to the tweet.\"}\nResponse schema: {\"properties\": {\"content\": {\"description\": \"Content of the tweet.\", \"type\": \"string\"}, \"id\": {\"description\": \"ID of the posted tweet.\", \"type\": \"integer\"}, \"mentions\": {\"description\": \"List of users mentioned in the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"tags\": {\"description\": \"List of tags associated with the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"username\": {\"description\": \"Username of the poster.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "content": {
+          "type": "string",
+          "description": "Content of the tweet."
+        },
+        "tags": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of tags for the tweet. Tag name should start with #. This is only relevant if the user wants to add tags to the tweet.",
+          "default": []
+        },
+        "mentions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "List of users mentioned in the tweet. Mention name should start with @. This is only relevant if the user wants to add mentions to the tweet.",
+          "default": []
+        }
+      },
+      "required": [
+        "content"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "id": {
+          "type": "integer",
+          "description": "ID of the posted tweet."
+        },
+        "username": {
+          "type": "string",
+          "description": "Username of the poster."
+        },
+        "content": {
+          "type": "string",
+          "description": "Content of the tweet."
+        },
+        "tags": {
+          "type": "array",
+          "description": "List of tags associated with the tweet.",
+          "items": {
+            "type": "string"
+          }
+        },
+        "mentions": {
+          "type": "array",
+          "description": "List of users mentioned in the tweet.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.posting_get_login_status",
+    "category": "TwitterAPI",
+    "function": "posting_get_login_status",
+    "signature": "()",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Get the login status of the current user.\nResponse schema: {\"properties\": {\"login_status\": {\"description\": \"True if the current user is logged in, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "login_status": {
+          "type": "boolean",
+          "description": "True if the current user is logged in, False otherwise."
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.retweet",
+    "category": "TwitterAPI",
+    "function": "retweet",
+    "signature": "(tweet_id: int)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Retweet a tweet for the authenticated user.\nParameter descriptions: {\"tweet_id\": \"ID of the tweet to retweet.\"}\nResponse schema: {\"properties\": {\"retweet_status\": {\"description\": \"Status of the retweet action.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "tweet_id": {
+          "type": "integer",
+          "description": "ID of the tweet to retweet."
+        }
+      },
+      "required": [
+        "tweet_id"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "retweet_status": {
+          "type": "string",
+          "description": "Status of the retweet action."
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.search_tweets",
+    "category": "TwitterAPI",
+    "function": "search_tweets",
+    "signature": "(keyword: str)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Search for tweets containing a specific keyword.\nParameter descriptions: {\"keyword\": \"Keyword to search for in the content of the tweets.\"}\nResponse schema: {\"properties\": {\"matching_tweets\": {\"description\": \"List of dictionaries, each containing tweet information.\", \"items\": {\"properties\": {\"content\": {\"description\": \"Content of the tweet.\", \"type\": \"string\"}, \"id\": {\"description\": \"ID of the retrieved tweet.\", \"type\": \"integer\"}, \"mentions\": {\"description\": \"List of users mentioned in the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"tags\": {\"description\": \"List of tags associated with the tweet.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}, \"username\": {\"description\": \"Username of the tweet's author.\", \"type\": \"string\"}}, \"type\": \"dict\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "keyword": {
+          "type": "string",
+          "description": "Keyword to search for in the content of the tweets."
+        }
+      },
+      "required": [
+        "keyword"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "matching_tweets": {
+          "type": "array",
+          "description": "List of dictionaries, each containing tweet information.",
+          "items": {
+            "type": "dict",
+            "properties": {
+              "id": {
+                "type": "integer",
+                "description": "ID of the retrieved tweet."
+              },
+              "username": {
+                "type": "string",
+                "description": "Username of the tweet's author."
+              },
+              "content": {
+                "type": "string",
+                "description": "Content of the tweet."
+              },
+              "tags": {
+                "type": "array",
+                "description": "List of tags associated with the tweet.",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "mentions": {
+                "type": "array",
+                "description": "List of users mentioned in the tweet.",
+                "items": {
+                  "type": "string"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "TwitterAPI.unfollow_user",
+    "category": "TwitterAPI",
+    "function": "unfollow_user",
+    "signature": "(username_to_unfollow: str)",
+    "docstring": "This tool belongs to the TwitterAPI, which provides core functionality for posting tweets, retweeting, commenting, and following users on Twitter. Tool description: Unfollow a user for the authenticated user.\nParameter descriptions: {\"username_to_unfollow\": \"Username of the user to unfollow.\"}\nResponse schema: {\"properties\": {\"unfollow_status\": {\"description\": \"True if unfollowed, False if not following.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "username_to_unfollow": {
+          "type": "string",
+          "description": "Username of the user to unfollow."
+        }
+      },
+      "required": [
+        "username_to_unfollow"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "unfollow_status": {
+          "type": "boolean",
+          "description": "True if unfollowed, False if not following."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.activateParkingBrake",
+    "category": "VehicleControlAPI",
+    "function": "activateParkingBrake",
+    "signature": "(mode: str)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Activates the parking brake of the vehicle.\nParameter descriptions: {\"mode\": \"The mode to set. [Enum]: [\\\"engage\\\", \\\"release\\\"]\"}\nResponse schema: {\"properties\": {\"_parkingBrakeForce\": {\"description\": \"The force applied to the brake in Newtons.\", \"type\": \"float\"}, \"_slopeAngle\": {\"description\": \"The slope angle in degrees.\", \"type\": \"float\"}, \"parkingBrakeStatus\": {\"description\": \"The status of the brake. [Enum]: [\\\"engaged\\\", \\\"released\\\"]\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "The mode to set. [Enum]: [\"engage\", \"release\"]"
+        }
+      },
+      "required": [
+        "mode"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "parkingBrakeStatus": {
+          "type": "string",
+          "description": "The status of the brake. [Enum]: [\"engaged\", \"released\"]"
+        },
+        "_parkingBrakeForce": {
+          "type": "float",
+          "description": "The force applied to the brake in Newtons."
+        },
+        "_slopeAngle": {
+          "type": "float",
+          "description": "The slope angle in degrees."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.adjustClimateControl",
+    "category": "VehicleControlAPI",
+    "function": "adjustClimateControl",
+    "signature": "(temperature: float, unit: str = 'celsius', fanSpeed: int = 50, mode: str = 'auto')",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Adjusts the climate control of the vehicle.\nParameter descriptions: {\"fanSpeed\": \"The fan speed to set from 0 to 100. Default is 50.\", \"mode\": \"The climate mode to set. [Enum]: [\\\"auto\\\", \\\"cool\\\", \\\"heat\\\", \\\"defrost\\\"]\", \"temperature\": \"The temperature to set in degree. Default to be celsius.\", \"unit\": \"The unit of temperature. [Enum]: [\\\"celsius\\\", \\\"fahrenheit\\\"]\"}\nResponse schema: {\"properties\": {\"climateMode\": {\"description\": \"The current climate mode set.\", \"type\": \"string\"}, \"currentTemperature\": {\"description\": \"The current temperature set in degree Celsius.\", \"type\": \"float\"}, \"humidityLevel\": {\"description\": \"The humidity level in percentage.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "temperature": {
+          "type": "float",
+          "description": "The temperature to set in degree. Default to be celsius."
+        },
+        "unit": {
+          "type": "string",
+          "description": "The unit of temperature. [Enum]: [\"celsius\", \"fahrenheit\"]",
+          "default": "celsius"
+        },
+        "fanSpeed": {
+          "type": "integer",
+          "description": "The fan speed to set from 0 to 100. Default is 50.",
+          "default": 50
+        },
+        "mode": {
+          "type": "string",
+          "description": "The climate mode to set. [Enum]: [\"auto\", \"cool\", \"heat\", \"defrost\"]",
+          "default": "auto"
+        }
+      },
+      "required": [
+        "temperature"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "currentTemperature": {
+          "type": "float",
+          "description": "The current temperature set in degree Celsius."
+        },
+        "climateMode": {
+          "type": "string",
+          "description": "The current climate mode set."
+        },
+        "humidityLevel": {
+          "type": "float",
+          "description": "The humidity level in percentage."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.check_tire_pressure",
+    "category": "VehicleControlAPI",
+    "function": "check_tire_pressure",
+    "signature": "()",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Checks the tire pressure of the vehicle.\nResponse schema: {\"properties\": {\"tirePressure\": {\"description\": \"The tire pressure of the vehicle.\", \"properties\": {\"car_info\": {\"description\": \"The metadata of the car.\", \"type\": \"dict\"}, \"frontLeftTirePressure\": {\"description\": \"The pressure of the front left tire in psi.\", \"type\": \"float\"}, \"frontRightTirePressure\": {\"description\": \"The pressure of the front right tire in psi.\", \"type\": \"float\"}, \"healthy_tire_pressure\": {\"description\": \"True if the tire pressure is healthy, False otherwise.\", \"type\": \"boolean\"}, \"rearLeftTirePressure\": {\"description\": \"The pressure of the rear left tire in psi.\", \"type\": \"float\"}, \"rearRightTirePressure\": {\"description\": \"The pressure of the rear right tire in psi.\", \"type\": \"float\"}}, \"type\": \"dict\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "tirePressure": {
+          "type": "dict",
+          "description": "The tire pressure of the vehicle.",
+          "properties": {
+            "frontLeftTirePressure": {
+              "type": "float",
+              "description": "The pressure of the front left tire in psi."
+            },
+            "frontRightTirePressure": {
+              "type": "float",
+              "description": "The pressure of the front right tire in psi."
+            },
+            "rearLeftTirePressure": {
+              "type": "float",
+              "description": "The pressure of the rear left tire in psi."
+            },
+            "rearRightTirePressure": {
+              "type": "float",
+              "description": "The pressure of the rear right tire in psi."
+            },
+            "healthy_tire_pressure": {
+              "type": "boolean",
+              "description": "True if the tire pressure is healthy, False otherwise."
+            },
+            "car_info": {
+              "type": "dict",
+              "description": "The metadata of the car."
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.displayCarStatus",
+    "category": "VehicleControlAPI",
+    "function": "displayCarStatus",
+    "signature": "(option: str)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Displays the status of the vehicle based on the provided display option.\nParameter descriptions: {\"option\": \"The option to display. [Enum]: [\\\"fuel\\\", \\\"battery\\\", \\\"doors\\\", \\\"climate\\\", \\\"headlights\\\", \\\"parkingBrake\\\", \\\"brakePedal\\\", \\\"engine\\\"]\"}\nResponse schema: {\"properties\": {\"status\": {\"description\": \"The status of the vehicle based on the option.\", \"properties\": {\"batteryVoltage\": {\"description\": \"[Optional] The battery voltage of the vehicle in volts.\", \"type\": \"float\"}, \"brakePedalForce\": {\"description\": \"[Optional] The force applied to the brake pedal in Newtons.\", \"type\": \"float\"}, \"brakePedalStatus\": {\"description\": \"[Optional] The status of the brake pedal. [Enum]: [\\\"pressed\\\", \\\"released\\\"]\", \"type\": \"string\"}, \"climateMode\": {\"description\": \"[Optional] The climate mode set. [Enum]: [\\\"auto\\\", \\\"cool\\\", \\\"heat\\\", \\\"defrost\\\"]\", \"type\": \"string\"}, \"currentACTemperature\": {\"description\": \"[Optional] The current temperature set in degree Celsius.\", \"type\": \"float\"}, \"doorStatus\": {\"description\": \"[Optional] The status of the doors.\", \"properties\": {\"driver\": {\"description\": \"The status of the driver door. [Enum]: [\\\"locked\\\", \\\"unlocked\\\"]\", \"type\": \"string\"}, \"passenger\": {\"description\": \"The status of the passenger door. [Enum]: [\\\"locked\\\", \\\"unlocked\\\"]\", \"type\": \"string\"}, \"rear_left\": {\"description\": \"The status of the rear left door. [Enum]: [\\\"locked\\\", \\\"unlocked\\\"]\", \"type\": \"string\"}, \"rear_right\": {\"description\": \"The status of the rear right door. [Enum]: [\\\"locked\\\", \\\"unlocked\\\"]\", \"type\": \"string\"}}, \"type\": \"dict\"}, \"engineState\": {\"description\": \"[Optional] The state of the engine. [Enum]: [\\\"running\\\", \\\"stopped\\\"]\", \"type\": \"string\"}, \"fanSpeed\": {\"description\": \"[Optional] The fan speed set from 0 to 100.\", \"type\": \"integer\"}, \"fuelLevel\": {\"description\": \"[Optional] The fuel level of the vehicle in gallons.\", \"type\": \"float\"}, \"headlightStatus\": {\"description\": \"[Optional] The status of the headlights. [Enum]: [\\\"on\\\", \\\"off\\\"]\", \"type\": \"string\"}, \"humidityLevel\": {\"description\": \"[Optional] The humidity level in percentage.\", \"type\": \"float\"}, \"metadata\": {\"description\": \"[Optional] The metadata of the car.\", \"type\": \"string\"}, \"parkingBrakeForce\": {\"description\": \"[Optional] The force applied to the brake in Newtons.\", \"type\": \"float\"}, \"parkingBrakeStatus\": {\"description\": \"[Optional] The status of the brake. [Enum]: [\\\"engaged\\\", \\\"released\\\"]\", \"type\": \"string\"}, \"slopeAngle\": {\"description\": \"[Optional] The slope angle in degrees.\", \"type\": \"float\"}}, \"type\": \"dict\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "option": {
+          "type": "string",
+          "description": "The option to display. [Enum]: [\"fuel\", \"battery\", \"doors\", \"climate\", \"headlights\", \"parkingBrake\", \"brakePedal\", \"engine\"]"
+        }
+      },
+      "required": [
+        "option"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "dict",
+          "description": "The status of the vehicle based on the option.",
+          "properties": {
+            "fuelLevel": {
+              "type": "float",
+              "description": "[Optional] The fuel level of the vehicle in gallons."
+            },
+            "batteryVoltage": {
+              "type": "float",
+              "description": "[Optional] The battery voltage of the vehicle in volts."
+            },
+            "doorStatus": {
+              "type": "dict",
+              "description": "[Optional] The status of the doors.",
+              "properties": {
+                "driver": {
+                  "type": "string",
+                  "description": "The status of the driver door. [Enum]: [\"locked\", \"unlocked\"]"
+                },
+                "passenger": {
+                  "type": "string",
+                  "description": "The status of the passenger door. [Enum]: [\"locked\", \"unlocked\"]"
+                },
+                "rear_left": {
+                  "type": "string",
+                  "description": "The status of the rear left door. [Enum]: [\"locked\", \"unlocked\"]"
+                },
+                "rear_right": {
+                  "type": "string",
+                  "description": "The status of the rear right door. [Enum]: [\"locked\", \"unlocked\"]"
+                }
+              }
+            },
+            "currentACTemperature": {
+              "type": "float",
+              "description": "[Optional] The current temperature set in degree Celsius."
+            },
+            "fanSpeed": {
+              "type": "integer",
+              "description": "[Optional] The fan speed set from 0 to 100."
+            },
+            "climateMode": {
+              "type": "string",
+              "description": "[Optional] The climate mode set. [Enum]: [\"auto\", \"cool\", \"heat\", \"defrost\"]"
+            },
+            "humidityLevel": {
+              "type": "float",
+              "description": "[Optional] The humidity level in percentage."
+            },
+            "headlightStatus": {
+              "type": "string",
+              "description": "[Optional] The status of the headlights. [Enum]: [\"on\", \"off\"]"
+            },
+            "parkingBrakeStatus": {
+              "type": "string",
+              "description": "[Optional] The status of the brake. [Enum]: [\"engaged\", \"released\"]"
+            },
+            "parkingBrakeForce": {
+              "type": "float",
+              "description": "[Optional] The force applied to the brake in Newtons."
+            },
+            "slopeAngle": {
+              "type": "float",
+              "description": "[Optional] The slope angle in degrees."
+            },
+            "brakePedalStatus": {
+              "type": "string",
+              "description": "[Optional] The status of the brake pedal. [Enum]: [\"pressed\", \"released\"]"
+            },
+            "brakePedalForce": {
+              "type": "float",
+              "description": "[Optional] The force applied to the brake pedal in Newtons."
+            },
+            "engineState": {
+              "type": "string",
+              "description": "[Optional] The state of the engine. [Enum]: [\"running\", \"stopped\"]"
+            },
+            "metadata": {
+              "type": "string",
+              "description": "[Optional] The metadata of the car."
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.display_log",
+    "category": "VehicleControlAPI",
+    "function": "display_log",
+    "signature": "(messages: list[str])",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Displays the log messages.\nParameter descriptions: {\"messages\": \"The list of messages to display.\"}\nResponse schema: {\"properties\": {\"log\": {\"description\": \"The list of messages displayed.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "messages": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The list of messages to display."
+        }
+      },
+      "required": [
+        "messages"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "log": {
+          "type": "array",
+          "description": "The list of messages displayed.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.estimate_distance",
+    "category": "VehicleControlAPI",
+    "function": "estimate_distance",
+    "signature": "(cityA: str, cityB: str)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Estimates the distance between two cities.\nParameter descriptions: {\"cityA\": \"The zipcode of the first city.\", \"cityB\": \"The zipcode of the second city.\"}\nResponse schema: {\"properties\": {\"distance\": {\"description\": \"The distance between the two cities in km.\", \"type\": \"float\"}, \"intermediaryCities\": {\"description\": \"[Optional] The list of intermediary cities between the two cities.\", \"items\": {\"type\": \"string\"}, \"type\": \"array\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "cityA": {
+          "type": "string",
+          "description": "The zipcode of the first city."
+        },
+        "cityB": {
+          "type": "string",
+          "description": "The zipcode of the second city."
+        }
+      },
+      "required": [
+        "cityA",
+        "cityB"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "distance": {
+          "type": "float",
+          "description": "The distance between the two cities in km."
+        },
+        "intermediaryCities": {
+          "type": "array",
+          "description": "[Optional] The list of intermediary cities between the two cities.",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.estimate_drive_feasibility_by_mileage",
+    "category": "VehicleControlAPI",
+    "function": "estimate_drive_feasibility_by_mileage",
+    "signature": "(distance: float)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Estimates the milage of the vehicle given the distance needed to drive.\nParameter descriptions: {\"distance\": \"The distance to travel in miles.\"}\nResponse schema: {\"properties\": {\"canDrive\": {\"description\": \"True if the vehicle can drive the distance, False otherwise.\", \"type\": \"boolean\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "distance": {
+          "type": "float",
+          "description": "The distance to travel in miles."
+        }
+      },
+      "required": [
+        "distance"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "canDrive": {
+          "type": "boolean",
+          "description": "True if the vehicle can drive the distance, False otherwise."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.fillFuelTank",
+    "category": "VehicleControlAPI",
+    "function": "fillFuelTank",
+    "signature": "(fuelAmount: float)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Fills the fuel tank of the vehicle. The fuel tank can hold up to 50 gallons.\nParameter descriptions: {\"fuelAmount\": \"The amount of fuel to fill in gallons; this is the additional fuel to add to the tank.\"}\nResponse schema: {\"properties\": {\"fuelLevel\": {\"description\": \"The fuel level of the vehicle in gallons.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "fuelAmount": {
+          "type": "float",
+          "description": "The amount of fuel to fill in gallons; this is the additional fuel to add to the tank."
+        }
+      },
+      "required": [
+        "fuelAmount"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "fuelLevel": {
+          "type": "float",
+          "description": "The fuel level of the vehicle in gallons."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.find_nearest_tire_shop",
+    "category": "VehicleControlAPI",
+    "function": "find_nearest_tire_shop",
+    "signature": "()",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Finds the nearest tire shop.\nResponse schema: {\"properties\": {\"shopLocation\": {\"description\": \"The location of the nearest tire shop.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "shopLocation": {
+          "type": "string",
+          "description": "The location of the nearest tire shop."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.gallon_to_liter",
+    "category": "VehicleControlAPI",
+    "function": "gallon_to_liter",
+    "signature": "(gallon: float)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Converts the gallon to liter.\nParameter descriptions: {\"gallon\": \"The amount of gallon to convert.\"}\nResponse schema: {\"properties\": {\"liter\": {\"description\": \"The amount of liter converted.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "gallon": {
+          "type": "float",
+          "description": "The amount of gallon to convert."
+        }
+      },
+      "required": [
+        "gallon"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "liter": {
+          "type": "float",
+          "description": "The amount of liter converted."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.get_current_speed",
+    "category": "VehicleControlAPI",
+    "function": "get_current_speed",
+    "signature": "()",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Gets the current speed of the vehicle.\nResponse schema: {\"properties\": {\"currentSpeed\": {\"description\": \"The current speed of the vehicle in km/h.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "currentSpeed": {
+          "type": "float",
+          "description": "The current speed of the vehicle in km/h."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.get_outside_temperature_from_google",
+    "category": "VehicleControlAPI",
+    "function": "get_outside_temperature_from_google",
+    "signature": "()",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Gets the outside temperature.\nResponse schema: {\"properties\": {\"outsideTemperature\": {\"description\": \"The outside temperature in degree Celsius.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "outsideTemperature": {
+          "type": "float",
+          "description": "The outside temperature in degree Celsius."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.get_outside_temperature_from_weather_com",
+    "category": "VehicleControlAPI",
+    "function": "get_outside_temperature_from_weather_com",
+    "signature": "()",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Gets the outside temperature.\nResponse schema: {\"properties\": {\"outsideTemperature\": {\"description\": \"The outside temperature in degree Celsius.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "outsideTemperature": {
+          "type": "float",
+          "description": "The outside temperature in degree Celsius."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.get_zipcode_based_on_city",
+    "category": "VehicleControlAPI",
+    "function": "get_zipcode_based_on_city",
+    "signature": "(city: str)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Gets the zipcode based on the city.\nParameter descriptions: {\"city\": \"The name of the city.\"}\nResponse schema: {\"properties\": {\"zipcode\": {\"description\": \"The zipcode of the city.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "city": {
+          "type": "string",
+          "description": "The name of the city."
+        }
+      },
+      "required": [
+        "city"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "zipcode": {
+          "type": "string",
+          "description": "The zipcode of the city."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.liter_to_gallon",
+    "category": "VehicleControlAPI",
+    "function": "liter_to_gallon",
+    "signature": "(liter: float)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Converts the liter to gallon.\nParameter descriptions: {\"liter\": \"The amount of liter to convert.\"}\nResponse schema: {\"properties\": {\"gallon\": {\"description\": \"The amount of gallon converted.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "liter": {
+          "type": "float",
+          "description": "The amount of liter to convert."
+        }
+      },
+      "required": [
+        "liter"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "gallon": {
+          "type": "float",
+          "description": "The amount of gallon converted."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.lockDoors",
+    "category": "VehicleControlAPI",
+    "function": "lockDoors",
+    "signature": "(unlock: bool, door: list[str])",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Locks the doors of the vehicle.\nParameter descriptions: {\"door\": \"The list of doors to lock or unlock. [Enum]: [\\\"driver\\\", \\\"passenger\\\", \\\"rear_left\\\", \\\"rear_right\\\"]\", \"unlock\": \"True if the doors are to be unlocked, False otherwise.\"}\nResponse schema: {\"properties\": {\"lockStatus\": {\"description\": \"The status of the lock. [Enum]: [\\\"locked\\\", \\\"unlocked\\\"]\", \"type\": \"string\"}, \"remainingUnlockedDoors\": {\"description\": \"The number of remaining unlocked doors.\", \"type\": \"integer\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "unlock": {
+          "type": "boolean",
+          "description": "True if the doors are to be unlocked, False otherwise."
+        },
+        "door": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "The list of doors to lock or unlock. [Enum]: [\"driver\", \"passenger\", \"rear_left\", \"rear_right\"]"
+        }
+      },
+      "required": [
+        "unlock",
+        "door"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "lockStatus": {
+          "type": "string",
+          "description": "The status of the lock. [Enum]: [\"locked\", \"unlocked\"]"
+        },
+        "remainingUnlockedDoors": {
+          "type": "integer",
+          "description": "The number of remaining unlocked doors."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.pressBrakePedal",
+    "category": "VehicleControlAPI",
+    "function": "pressBrakePedal",
+    "signature": "(pedalPosition: float)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Presses the brake pedal based on pedal position. The brake pedal will be kept pressed until released.\nParameter descriptions: {\"pedalPosition\": \"Position of the brake pedal, between 0 (not pressed) and 1 (fully pressed).\"}\nResponse schema: {\"properties\": {\"brakePedalForce\": {\"description\": \"The force applied to the brake pedal in Newtons.\", \"type\": \"float\"}, \"brakePedalStatus\": {\"description\": \"The status of the brake pedal. [Enum]: [\\\"pressed\\\", \\\"released\\\"]\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "pedalPosition": {
+          "type": "float",
+          "description": "Position of the brake pedal, between 0 (not pressed) and 1 (fully pressed)."
+        }
+      },
+      "required": [
+        "pedalPosition"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "brakePedalStatus": {
+          "type": "string",
+          "description": "The status of the brake pedal. [Enum]: [\"pressed\", \"released\"]"
+        },
+        "brakePedalForce": {
+          "type": "float",
+          "description": "The force applied to the brake pedal in Newtons."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.releaseBrakePedal",
+    "category": "VehicleControlAPI",
+    "function": "releaseBrakePedal",
+    "signature": "()",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Releases the brake pedal of the vehicle.\nResponse schema: {\"properties\": {\"brakePedalForce\": {\"description\": \"The force applied to the brake pedal in Newtons.\", \"type\": \"float\"}, \"brakePedalStatus\": {\"description\": \"The status of the brake pedal. [Enum]: [\\\"pressed\\\", \\\"released\\\"]\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {},
+      "required": []
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "brakePedalStatus": {
+          "type": "string",
+          "description": "The status of the brake pedal. [Enum]: [\"pressed\", \"released\"]"
+        },
+        "brakePedalForce": {
+          "type": "float",
+          "description": "The force applied to the brake pedal in Newtons."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.setCruiseControl",
+    "category": "VehicleControlAPI",
+    "function": "setCruiseControl",
+    "signature": "(speed: float, activate: bool, distanceToNextVehicle: float)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Sets the cruise control of the vehicle.\nParameter descriptions: {\"activate\": \"True to activate the cruise control, False to deactivate.\", \"distanceToNextVehicle\": \"The distance to the next vehicle in meters.\", \"speed\": \"The speed to set in m/h. The speed should be between 0 and 120 and a multiple of 5.\"}\nResponse schema: {\"properties\": {\"cruiseStatus\": {\"description\": \"The status of the cruise control. [Enum]: [\\\"active\\\", \\\"inactive\\\"]\", \"type\": \"string\"}, \"currentSpeed\": {\"description\": \"The current speed of the vehicle in km/h.\", \"type\": \"float\"}, \"distanceToNextVehicle\": {\"description\": \"The distance to the next vehicle in meters.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "speed": {
+          "type": "float",
+          "description": "The speed to set in m/h. The speed should be between 0 and 120 and a multiple of 5."
+        },
+        "activate": {
+          "type": "boolean",
+          "description": "True to activate the cruise control, False to deactivate."
+        },
+        "distanceToNextVehicle": {
+          "type": "float",
+          "description": "The distance to the next vehicle in meters."
+        }
+      },
+      "required": [
+        "speed",
+        "activate",
+        "distanceToNextVehicle"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "cruiseStatus": {
+          "type": "string",
+          "description": "The status of the cruise control. [Enum]: [\"active\", \"inactive\"]"
+        },
+        "currentSpeed": {
+          "type": "float",
+          "description": "The current speed of the vehicle in km/h."
+        },
+        "distanceToNextVehicle": {
+          "type": "float",
+          "description": "The distance to the next vehicle in meters."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.setHeadlights",
+    "category": "VehicleControlAPI",
+    "function": "setHeadlights",
+    "signature": "(mode: str)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Sets the headlights of the vehicle.\nParameter descriptions: {\"mode\": \"The mode of the headlights. [Enum]: [\\\"on\\\", \\\"off\\\", \\\"auto\\\"]\"}\nResponse schema: {\"properties\": {\"headlightStatus\": {\"description\": \"The status of the headlights. [Enum]: [\\\"on\\\", \\\"off\\\"]\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "mode": {
+          "type": "string",
+          "description": "The mode of the headlights. [Enum]: [\"on\", \"off\", \"auto\"]"
+        }
+      },
+      "required": [
+        "mode"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "headlightStatus": {
+          "type": "string",
+          "description": "The status of the headlights. [Enum]: [\"on\", \"off\"]"
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.set_navigation",
+    "category": "VehicleControlAPI",
+    "function": "set_navigation",
+    "signature": "(destination: str)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Navigates to the destination.\nParameter descriptions: {\"destination\": \"The destination to navigate in the format of street, city, state.\"}\nResponse schema: {\"properties\": {\"status\": {\"description\": \"The status of the navigation.\", \"type\": \"string\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "destination": {
+          "type": "string",
+          "description": "The destination to navigate in the format of street, city, state."
+        }
+      },
+      "required": [
+        "destination"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "status": {
+          "type": "string",
+          "description": "The status of the navigation."
+        }
+      }
+    }
+  },
+  {
+    "name": "VehicleControlAPI.startEngine",
+    "category": "VehicleControlAPI",
+    "function": "startEngine",
+    "signature": "(ignitionMode: str)",
+    "docstring": "This tool belongs to the vehicle control system, which allows users to control various aspects of the car such as engine, doors, climate control, lights, and more. Tool description: Starts the engine of the vehicle.\nParameter descriptions: {\"ignitionMode\": \"The ignition mode of the vehicle. [Enum]: [\\\"START\\\", \\\"STOP\\\"]\"}\nResponse schema: {\"properties\": {\"batteryVoltage\": {\"description\": \"The battery voltage of the vehicle in volts.\", \"type\": \"float\"}, \"engineState\": {\"description\": \"The state of the engine. [Enum]: [\\\"running\\\", \\\"stopped\\\"]\", \"type\": \"string\"}, \"fuelLevel\": {\"description\": \"The fuel level of the vehicle in gallons.\", \"type\": \"float\"}}, \"type\": \"dict\"}",
+    "parameters": {
+      "type": "dict",
+      "properties": {
+        "ignitionMode": {
+          "type": "string",
+          "description": "The ignition mode of the vehicle. [Enum]: [\"START\", \"STOP\"]"
+        }
+      },
+      "required": [
+        "ignitionMode"
+      ]
+    },
+    "response": {
+      "type": "dict",
+      "properties": {
+        "engineState": {
+          "type": "string",
+          "description": "The state of the engine. [Enum]: [\"running\", \"stopped\"]"
+        },
+        "fuelLevel": {
+          "type": "float",
+          "description": "The fuel level of the vehicle in gallons."
+        },
+        "batteryVoltage": {
+          "type": "float",
+          "description": "The battery voltage of the vehicle in volts."
+        }
+      }
+    }
+  }
+]

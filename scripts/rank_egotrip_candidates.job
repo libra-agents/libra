@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=rank-egotrip-candidates-job
+#SBATCH --nodes=1
+#SBATCH --cpus-per-task=4
+#SBATCH --mem=16G
+#SBATCH --time=00:30:00
+#SBATCH --output=slurm-%x-%j.out
+#SBATCH --error=slurm-%x-%j.err
+
+set -euo pipefail
+
+REPO_ROOT="${REPO_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
+REPO_ROOT="$(cd "$REPO_ROOT" && pwd)"
+if [[ -z "${SCRATCH_ROOT:-}" && -n "${SKILL_MINING_ROOT:-}" ]]; then
+  SCRATCH_ROOT="$SKILL_MINING_ROOT"
+elif [[ -z "${SCRATCH_ROOT:-}" && -n "${SCRATCH:-}" ]]; then
+  SCRATCH_ROOT="${SCRATCH%/}/skill-mining"
+elif [[ -z "${SCRATCH_ROOT:-}" && "$(basename "$REPO_ROOT")" == src ]]; then
+  SCRATCH_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
+elif [[ -z "${SCRATCH_ROOT:-}" ]]; then
+  SCRATCH_ROOT="$REPO_ROOT"
+fi
+readonly REPO_ROOT SCRATCH_ROOT
+readonly VENV_PYTHON="${SCRATCH_ROOT}/.venv/bin/python"
+readonly EMBEDDING_ROOT="${SCRATCH_ROOT}/embeddings/qwen3_embedding_0.6b_v1"
+readonly OUTPUT_ROOT="${SCRATCH_ROOT}/outputs/retrieval/egotrip"
+
+module load python/3.11.11-5e66
+export PYTHONPATH="${REPO_ROOT}"
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 NUMEXPR_NUM_THREADS=1
+mkdir -p "${SCRATCH_ROOT}/logs" "${OUTPUT_ROOT}"
+cd "${REPO_ROOT}"
+for dataset in appworld scitool bfcl; do
+  embedding_dataset="${dataset}"
+  if [[ "${dataset}" == scitool ]]; then
+    embedding_dataset=scitool_clean
+  fi
+  "${VENV_PYTHON}" -m scripts.rank_egotrip_candidates \
+    --candidates "${OUTPUT_ROOT}/${dataset}_candidates.jsonl" \
+    --tool-embeddings "${EMBEDDING_ROOT}/${embedding_dataset}/tool_embeddings.npz" \
+    --query-embeddings "${EMBEDDING_ROOT}/${embedding_dataset}/query_embeddings.npz" \
+    --output "${OUTPUT_ROOT}/${dataset}_budget_top20.jsonl" \
+    --metrics-output "${OUTPUT_ROOT}/${dataset}_budget_no_rerank_metrics.json" \
+    --candidate-depth 20
+done

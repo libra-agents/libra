@@ -1,0 +1,293 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=run-toolreagt-job
+#SBATCH --nodes=1
+#SBATCH --gres=gpu:1
+#SBATCH --cpus-per-task=8
+#SBATCH --mem=96G
+#SBATCH --time=24:00:00
+#SBATCH --output=slurm-%x-%j.out
+#SBATCH --error=slurm-%x-%j.err
+
+set -euo pipefail
+
+if [[ $# -ne 5 && $# -ne 6 ]]; then
+  echo "Usage: sbatch $0 DATASET REPRESENTATION MODEL SEED RETRIEVAL_MODE [LIMIT]" >&2
+  exit 2
+fi
+
+readonly DATASET_SPEC=$1
+readonly REPRESENTATION_SPEC=$2
+readonly MODEL=$3
+readonly SEED=$4
+readonly RETRIEVAL_MODE=$5
+readonly LIMIT=${6:-}
+if [[ "${RETRIEVAL_MODE}" != no_rerank && "${RETRIEVAL_MODE}" != rerank ]]; then
+  echo "RETRIEVAL_MODE must be no_rerank or rerank." >&2
+  exit 2
+fi
+readonly TASK_CONCURRENCY=${TASK_CONCURRENCY:-16}
+REPO_ROOT="${REPO_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
+REPO_ROOT="$(cd "$REPO_ROOT" && pwd)"
+if [[ -z "${SCRATCH_ROOT:-}" && -n "${SKILL_MINING_ROOT:-}" ]]; then
+  SCRATCH_ROOT="$SKILL_MINING_ROOT"
+elif [[ -z "${SCRATCH_ROOT:-}" && -n "${SCRATCH:-}" ]]; then
+  SCRATCH_ROOT="${SCRATCH%/}/skill-mining"
+elif [[ -z "${SCRATCH_ROOT:-}" && "$(basename "$REPO_ROOT")" == src ]]; then
+  SCRATCH_ROOT="$(cd "$REPO_ROOT/.." && pwd)"
+elif [[ -z "${SCRATCH_ROOT:-}" ]]; then
+  SCRATCH_ROOT="$REPO_ROOT"
+fi
+readonly REPO_ROOT SCRATCH_ROOT
+readonly RESULT_ROOT=${AGENTIC_RESULT_ROOT:-"${SCRATCH_ROOT}/outputs/toolreagt"}
+readonly IMAGE_PATH=${VLLM_IMAGE_PATH:-"${SCRATCH_ROOT}/containers/vllm-openai-v0.26.0-cu129.sif"}
+readonly VENV_PYTHON="${SCRATCH_ROOT}/.venv/bin/python"
+readonly HF_TOKEN_FILE="${SCRATCH_ROOT}/secrets/hf_token"
+readonly RUN_NAME="ToolReAGt-${RETRIEVAL_MODE}-$(basename "${MODEL}")-seed${SEED}-${DATASET_SPEC//,/_}-${REPRESENTATION_SPEC//,/_}"
+readonly RERANK_TEMPLATE="${REPO_ROOT}/agentic_retrieval/qwen3_reranker.jinja"
+readonly JOB_CACHE_ROOT="${SCRATCH_ROOT}/job-cache/${SLURM_JOB_ID}"
+readonly PORT_SLOT=$(((SLURM_JOB_ID + UID * 997) % 15000))
+readonly CHAT_PORT=${PORT_BASE:-$((10000 + PORT_SLOT * 3))}
+readonly EMBEDDING_PORT=$((CHAT_PORT + 1))
+readonly RERANKER_PORT=$((CHAT_PORT + 2))
+
+module load python/3.11.11-5e66
+export PYTHONPATH="${REPO_ROOT}"
+export HF_HOME="${SCRATCH_ROOT}/huggingface"
+export HUGGINGFACE_HUB_CACHE="${HF_HOME}/hub"
+export VLLM_CACHE_ROOT="${JOB_CACHE_ROOT}/vllm"
+export XDG_CACHE_HOME="${JOB_CACHE_ROOT}/xdg-cache"
+export XDG_CONFIG_HOME="${SCRATCH_ROOT}/config"
+export APPTAINER_CACHEDIR="${SCRATCH_ROOT}/containers/cache"
+export TMPDIR="${JOB_CACHE_ROOT}/tmp"
+export FLASHINFER_WORKSPACE_BASE="${JOB_CACHE_ROOT}/flashinfer"
+export TORCHINDUCTOR_CACHE_DIR="${JOB_CACHE_ROOT}/torchinductor"
+export TRITON_CACHE_DIR="${JOB_CACHE_ROOT}/triton"
+export CUDA_CACHE_PATH="${JOB_CACHE_ROOT}/cuda"
+export TOKENIZERS_PARALLELISM=false
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export PYTHONNOUSERSITE=1
+export APPTAINERENV_PYTHONNOUSERSITE=1
+export APPTAINERENV_HF_HOME="${HF_HOME}"
+export APPTAINERENV_HUGGINGFACE_HUB_CACHE="${HUGGINGFACE_HUB_CACHE}"
+export APPTAINERENV_VLLM_CACHE_ROOT="${VLLM_CACHE_ROOT}"
+export APPTAINERENV_XDG_CACHE_HOME="${XDG_CACHE_HOME}"
+export APPTAINERENV_XDG_CONFIG_HOME="${XDG_CONFIG_HOME}"
+export APPTAINERENV_TMPDIR="${TMPDIR}"
+export APPTAINERENV_FLASHINFER_WORKSPACE_BASE="${FLASHINFER_WORKSPACE_BASE}"
+export APPTAINERENV_TORCHINDUCTOR_CACHE_DIR="${TORCHINDUCTOR_CACHE_DIR}"
+export APPTAINERENV_TRITON_CACHE_DIR="${TRITON_CACHE_DIR}"
+export APPTAINERENV_CUDA_CACHE_PATH="${CUDA_CACHE_PATH}"
+
+mkdir -p \
+  "${HF_HOME}" \
+  "${HUGGINGFACE_HUB_CACHE}" \
+  "${VLLM_CACHE_ROOT}" \
+  "${XDG_CACHE_HOME}" \
+  "${XDG_CONFIG_HOME}" \
+  "${TMPDIR}" \
+  "${VLLM_CACHE_ROOT}" \
+  "${FLASHINFER_WORKSPACE_BASE}" \
+  "${TORCHINDUCTOR_CACHE_DIR}" \
+  "${TRITON_CACHE_DIR}" \
+  "${CUDA_CACHE_PATH}" \
+  "${SCRATCH_ROOT}/logs" \
+  "${RESULT_ROOT}"
+
+if [[ ! -f "${IMAGE_PATH}" ]]; then
+  echo "Missing ${IMAGE_PATH}; submit scripts/setup_baselines.job first." >&2
+  exit 1
+fi
+if [[ ! -x "${VENV_PYTHON}" ]]; then
+  echo "Missing ${VENV_PYTHON}; submit scripts/setup_baselines.job first." >&2
+  exit 1
+fi
+if [[ -z "${HF_TOKEN:-}" && -f "${HF_TOKEN_FILE}" && "$(stat -c '%a' "${HF_TOKEN_FILE}")" == 600 ]]; then
+  HF_TOKEN=$(<"${HF_TOKEN_FILE}")
+  export HF_TOKEN
+fi
+if [[ "${MODEL}" == meta-llama/* && -z "${HF_TOKEN:-}" ]]; then
+  echo "Gated Llama requires HF_TOKEN or a mode-600 ${HF_TOKEN_FILE}." >&2
+  exit 1
+fi
+if [[ -n "${HF_TOKEN:-}" ]]; then
+  export APPTAINERENV_HF_TOKEN="${HF_TOKEN}"
+fi
+
+container_exec=(
+  apptainer exec
+  --nv
+  --no-home
+  --bind "${REPO_ROOT}:${REPO_ROOT}"
+  --bind "${SCRATCH_ROOT}:${SCRATCH_ROOT}"
+  "${IMAGE_PATH}"
+)
+
+chat_pid=
+embedding_pid=
+reranker_pid=
+cleanup() {
+  for process_id in "${chat_pid}" "${embedding_pid}" "${reranker_pid}"; do
+    if [[ -n "${process_id}" ]]; then
+      kill "${process_id}" 2>/dev/null || true
+    fi
+  done
+  for _ in $(seq 1 15); do
+    local running=false
+    for process_id in "${chat_pid}" "${embedding_pid}" "${reranker_pid}"; do
+      if [[ -n "${process_id}" ]] && kill -0 "${process_id}" 2>/dev/null; then
+        running=true
+      fi
+    done
+    if [[ "${running}" == false ]]; then
+      break
+    fi
+    sleep 1
+  done
+  for process_id in "${chat_pid}" "${embedding_pid}" "${reranker_pid}"; do
+    if [[ -n "${process_id}" ]] && kill -0 "${process_id}" 2>/dev/null; then
+      kill -KILL "${process_id}" 2>/dev/null || true
+    fi
+  done
+  wait 2>/dev/null || true
+  rm -rf -- "${JOB_CACHE_ROOT}"
+}
+trap cleanup EXIT INT TERM
+
+chat_context_args=()
+CHAT_MAX_MODEL_LEN=65536
+if [[ "${MODEL}" == Qwen/Qwen3.5-* ]]; then
+  chat_context_args+=(--language-model-only)
+elif [[ "${MODEL}" == google/gemma-4-* ]]; then
+  chat_context_args+=(--language-model-only)
+elif [[ "${MODEL}" == mistralai/Ministral-3-*-Instruct-*-BF16 ]]; then
+  chat_context_args+=(--language-model-only)
+elif [[ "${MODEL}" == Qwen/Qwen3-* ]]; then
+  chat_context_args+=(
+    --hf-overrides
+    '{"max_position_embeddings":65536,"rope_scaling":{"rope_type":"yarn","factor":2.0,"original_max_position_embeddings":32768}}'
+  )
+elif [[ "${MODEL}" == microsoft/phi-4 ]]; then
+  CHAT_MAX_MODEL_LEN=16384
+elif [[ "${MODEL}" == moonshotai/Moonlight-16B-A3B-Instruct ]]; then
+  CHAT_MAX_MODEL_LEN=8192
+  chat_context_args+=(--trust-remote-code)
+elif [[ "${MODEL}" == microsoft/Phi-4-mini-instruct ]]; then
+  chat_context_args+=(--trust-remote-code)
+elif [[ "${MODEL}" == nvidia/NVIDIA-Nemotron-Nano-9B-v2 ]]; then
+  chat_context_args+=(
+    --trust-remote-code
+    --mamba_ssm_cache_dtype float32
+  )
+fi
+readonly CHAT_MAX_MODEL_LEN
+
+"${container_exec[@]}" vllm serve "${MODEL}" \
+  --host 127.0.0.1 \
+  --port "${CHAT_PORT}" \
+  --dtype auto \
+  --max-model-len "${CHAT_MAX_MODEL_LEN}" \
+  --gpu-memory-utilization 0.65 \
+  --kv-cache-memory-bytes 25769803776 \
+  --max-num-seqs 64 \
+  --enable-prefix-caching \
+  --generation-config vllm \
+  "${chat_context_args[@]}" \
+  >"${RESULT_ROOT}/${RUN_NAME}-chat.log" 2>&1 &
+chat_pid=$!
+
+"${container_exec[@]}" vllm serve Qwen/Qwen3-Embedding-0.6B \
+  --runner pooling \
+  --host 127.0.0.1 \
+  --port "${EMBEDDING_PORT}" \
+  --dtype auto \
+  --max-model-len 8192 \
+  --gpu-memory-utilization 0.12 \
+  --kv-cache-memory-bytes 2147483648 \
+  --max-num-seqs 64 \
+  >"${RESULT_ROOT}/${RUN_NAME}-embedding.log" 2>&1 &
+embedding_pid=$!
+
+if [[ "${RETRIEVAL_MODE}" == rerank ]]; then
+  "${container_exec[@]}" vllm serve Qwen/Qwen3-Reranker-0.6B \
+    --runner pooling \
+    --host 127.0.0.1 \
+    --port "${RERANKER_PORT}" \
+    --dtype auto \
+    --max-model-len 8192 \
+    --gpu-memory-utilization 0.12 \
+    --kv-cache-memory-bytes 2147483648 \
+    --max-num-seqs 64 \
+    --hf-overrides \
+    '{"architectures":["Qwen3ForSequenceClassification"],"classifier_from_token":["no","yes"],"is_original_qwen3_reranker":true}' \
+    --chat-template "${RERANK_TEMPLATE}" \
+    >"${RESULT_ROOT}/${RUN_NAME}-reranker.log" 2>&1 &
+  reranker_pid=$!
+fi
+
+wait_for_server() {
+  local url=$1
+  local process_id=$2
+  local label=$3
+  local attempt
+  for attempt in $(seq 1 240); do
+    if ! kill -0 "${process_id}" 2>/dev/null; then
+      echo "${label} server exited during startup." >&2
+      return 1
+    fi
+    if curl --silent --fail "${url}/health" >/dev/null; then
+      return 0
+    fi
+    sleep 5
+  done
+  echo "Timed out waiting for ${label} server." >&2
+  return 1
+}
+
+wait_for_server "http://127.0.0.1:${CHAT_PORT}" "${chat_pid}" chat
+wait_for_server "http://127.0.0.1:${EMBEDDING_PORT}" "${embedding_pid}" embedding
+if [[ "${RETRIEVAL_MODE}" == rerank ]]; then
+  wait_for_server "http://127.0.0.1:${RERANKER_PORT}" "${reranker_pid}" reranker
+fi
+
+cd "${REPO_ROOT}"
+
+IFS=',' read -r -a DATASETS <<< "${DATASET_SPEC}"
+IFS=',' read -r -a REPRESENTATIONS <<< "${REPRESENTATION_SPEC}"
+
+for dataset in "${DATASETS[@]}"; do
+  for representation in "${REPRESENTATIONS[@]}"; do
+    if [[ "${representation}" == scitoolkg && "${dataset}" != scitool ]]; then
+      continue
+    fi
+    output_path="${RESULT_ROOT}/${dataset}-${representation}-ToolReAGt-${RETRIEVAL_MODE}-$(basename "${MODEL}")-seed${SEED}-curve.jsonl"
+    run_args=(
+      -m agentic_retrieval.cli
+      --dataset "${dataset}"
+      --representation "${representation}"
+      --model "${MODEL}"
+      --seed "${SEED}"
+      --retrieval-mode "${RETRIEVAL_MODE}"
+      --task-concurrency "${TASK_CONCURRENCY}"
+      --repo-root "${REPO_ROOT}"
+      --data-root "${SCRATCH_ROOT}/data"
+      --embedding-root "${SCRATCH_ROOT}/embeddings/qwen3_embedding_0.6b_v1"
+      --toolde-embedding-root "${SCRATCH_ROOT}/embeddings/qwen3_embedding_0.6b_v1"
+      --egotrip-root "${SCRATCH_ROOT}/egotrip"
+      --scikg-root "${SCRATCH_ROOT}/scikg/qwen3_embedding_0.6b_catalog477"
+      --retrieval-k 20
+      --metric-k 15
+      --output "${output_path}"
+      --chat-url "http://127.0.0.1:${CHAT_PORT}"
+      --embedding-url "http://127.0.0.1:${EMBEDDING_PORT}"
+    )
+    if [[ "${RETRIEVAL_MODE}" == rerank ]]; then
+      run_args+=(--reranker-url "http://127.0.0.1:${RERANKER_PORT}")
+    fi
+    if [[ -n "${LIMIT}" ]]; then
+      run_args+=(--limit "${LIMIT}")
+    fi
+    "${VENV_PYTHON}" "${run_args[@]}"
+  done
+done

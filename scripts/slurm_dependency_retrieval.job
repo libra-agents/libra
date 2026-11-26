@@ -1,0 +1,68 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=dependency-retrieval-job
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mem=32G
+#SBATCH --time=00:20:00
+#SBATCH --output=slurm-%x-%j.out
+#SBATCH --error=slurm-%x-%j.err
+
+set -euo pipefail
+set +x
+unset DEEPSEEK_API_KEY DASHSCOPE_API_KEY OPENROUTER_API_KEY EMBEDDING_API_KEY
+
+SRC="${REPO_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
+SRC="$(cd "$SRC" && pwd)"
+ROOT="${SKILL_MINING_ROOT:-${SCRATCH_ROOT:-}}"
+if [[ -z "$ROOT" && -n "${SCRATCH:-}" ]]; then
+  ROOT="${SCRATCH%/}/skill-mining"
+elif [[ -z "$ROOT" && "$(basename "$SRC")" == src ]]; then
+  ROOT="$(cd "$SRC/.." && pwd)"
+elif [[ -z "$ROOT" ]]; then
+  ROOT="$SRC"
+fi
+VENV="$ROOT/.venv"
+EMBEDDINGS="$ROOT/embeddings/qwen3_embedding_0.6b_v1"
+RUN="$ROOT/runs/dependency-retrieval-$SLURM_JOB_ID"
+
+module load python/3.11.11-5e66
+export PYTHONPATH="$SRC"
+export PYTHONDONTWRITEBYTECODE=1
+export OMP_NUM_THREADS=1
+export MKL_NUM_THREADS=1
+export OPENBLAS_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+
+test ! -e "$RUN"
+test -e "$EMBEDDINGS/COMPLETE"
+for benchmark in appworld scitool_clean bfcl; do
+  test -s "$EMBEDDINGS/$benchmark/tool_embeddings.npz"
+  test -s "$EMBEDDINGS/$benchmark/query_embeddings.npz"
+done
+mkdir -p "$RUN"
+cd "$SRC"
+
+printf 'CONFIG job=%s cpus=%s embeddings=%s graphs=committed model_calls=0 tool_calls=0\n' \
+  "$SLURM_JOB_ID" "$SLURM_CPUS_PER_TASK" "$EMBEDDINGS"
+df -h "$ROOT"
+df -i "$ROOT"
+
+for module in \
+  retrieval.build_contracts \
+  retrieval.build_field_embeddings \
+  retrieval.publish_graph \
+  retrieval.adapters.appworld \
+  retrieval.adapters.bfcl \
+  retrieval.adapters.scitool; do
+  "$VENV/bin/python" -m "$module" --help >/dev/null
+done
+
+for benchmark in appworld scitool bfcl; do
+  "$VENV/bin/python" -m retrieval.retrieve "$benchmark" \
+    --embedding-root "$EMBEDDINGS" \
+    --output-dir "$RUN/$benchmark"
+done
+
+touch "$RUN/COMPLETE"
+du -sh "$RUN"

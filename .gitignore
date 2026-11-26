@@ -1,0 +1,24 @@
+__pycache__/
+*.py[cod]
+.venv/
+.env
+.env.*
+.DS_Store
+
+# Benchmark sources, acquired locally
+/benchmark_code/
+/SciToolAgent-main/
+/data/appworld/
+/dataset and embedding/appworld/
+
+# Runtime outputs
+/embeddings/
+/outputs/
+/runs/
+/logs/
+slurm-*.out
+slurm-*.err
+*.npz
+*.sqlite
+*.sqlite-shm
+*.sqlite-wal

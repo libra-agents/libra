@@ -1,0 +1,137 @@
+#!/usr/bin/env bash
+#SBATCH --job-name=bfcl-dependency-graph-job
+#SBATCH --nodes=1
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=96
+#SBATCH --mem=128G
+#SBATCH --gres=gpu:1
+#SBATCH --time=24:00:00
+#SBATCH --output=slurm-%x-%j.out
+#SBATCH --error=slurm-%x-%j.err
+
+set -euo pipefail
+set +x
+unset DASHSCOPE_API_KEY OPENROUTER_API_KEY EMBEDDING_API_KEY
+
+SRC="${REPO_ROOT:-${SLURM_SUBMIT_DIR:-$PWD}}"
+SRC="$(cd "$SRC" && pwd)"
+ROOT="${SKILL_MINING_ROOT:-${SCRATCH_ROOT:-}}"
+if [[ -z "$ROOT" && -n "${SCRATCH:-}" ]]; then
+  ROOT="${SCRATCH%/}/skill-mining"
+elif [[ -z "$ROOT" && "$(basename "$SRC")" == src ]]; then
+  ROOT="$(cd "$SRC/.." && pwd)"
+elif [[ -z "$ROOT" ]]; then
+  ROOT="$SRC"
+fi
+VENV="$ROOT/.venv"
+DATA="$SRC/dataset and embedding/bfcl"
+BFCL="$ROOT/runtime/gorilla/berkeley-function-call-leaderboard"
+IMAGE="$ROOT/containers/vllm-openai-v0.26.0-cu129.sif"
+MODEL=Qwen/Qwen3-Embedding-0.6B
+EMBEDDINGS="$ROOT/embeddings/qwen3_embedding_0.6b_v1"
+MODE="${MODE:-fresh}"
+WARM_CONTRACTS="${WARM_CONTRACTS:-$DATA/contracts.json}"
+MAX_CALLS=100000
+RUN="$ROOT/runs/bfcl-${MODE}-${SLURM_JOB_ID}"
+JOBTMP="${SLURM_TMPDIR:-$ROOT/jobtmp}/skill-mining-$SLURM_JOB_ID"
+WORK="$JOBTMP/work"
+PORT=$((10000 + SLURM_JOB_ID % 40000))
+BASE_URL="http://127.0.0.1:$PORT/v1"
+SERVER_PID=
+
+module load python/3.11.11-5e66
+source "$VENV/bin/activate"
+export PYTHONPATH="$SRC:$BFCL"
+export PYTHONDONTWRITEBYTECODE=1
+export OMP_NUM_THREADS=1 MKL_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1
+export NUMEXPR_NUM_THREADS=1
+export NO_PROXY=127.0.0.1,localhost no_proxy=127.0.0.1,localhost
+export HF_HOME="$ROOT/huggingface"
+export HUGGINGFACE_HUB_CACHE="$HF_HOME/hub"
+export XDG_CACHE_HOME="$JOBTMP/cache" TMPDIR="$JOBTMP/tmp"
+export VLLM_CACHE_ROOT="$JOBTMP/vllm"
+export FLASHINFER_WORKSPACE_BASE="$JOBTMP/flashinfer"
+export TORCHINDUCTOR_CACHE_DIR="$JOBTMP/torchinductor"
+export TRITON_CACHE_DIR="$JOBTMP/triton" CUDA_CACHE_PATH="$JOBTMP/cuda"
+export VLLM_NO_USAGE_STATS=1
+export APPTAINERENV_HF_HOME="$HF_HOME"
+export APPTAINERENV_HUGGINGFACE_HUB_CACHE="$HUGGINGFACE_HUB_CACHE"
+export APPTAINERENV_XDG_CACHE_HOME="$XDG_CACHE_HOME"
+export APPTAINERENV_TMPDIR="$TMPDIR"
+export APPTAINERENV_VLLM_CACHE_ROOT="$VLLM_CACHE_ROOT"
+export APPTAINERENV_FLASHINFER_WORKSPACE_BASE="$FLASHINFER_WORKSPACE_BASE"
+export APPTAINERENV_TORCHINDUCTOR_CACHE_DIR="$TORCHINDUCTOR_CACHE_DIR"
+export APPTAINERENV_TRITON_CACHE_DIR="$TRITON_CACHE_DIR"
+export APPTAINERENV_CUDA_CACHE_PATH="$CUDA_CACHE_PATH"
+export APPTAINERENV_VLLM_NO_USAGE_STATS=1
+
+cleanup() {
+  if [[ -n "$SERVER_PID" ]]; then
+    kill -9 "$SERVER_PID" >/dev/null 2>&1 || true
+  fi
+  rm -rf "$JOBTMP"
+}
+trap cleanup EXIT
+
+[[ "$MODE" == fresh || "$MODE" == warm ]]
+[[ "$MODE" == warm ]] && test -s "$WARM_CONTRACTS"
+[[ "$MODE" == warm || -n "${DEEPSEEK_API_KEY:-}" ]]
+test -s "$IMAGE"
+test -f "$BFCL/bfcl_eval/constants/executable_backend_config.py"
+test -s "$DATA/tool_registry.json"
+test -s "$EMBEDDINGS/bfcl/tool_embeddings.npz"
+test -s "$EMBEDDINGS/bfcl/query_embeddings.npz"
+test ! -e "$RUN"
+mkdir -p "$RUN" "$WORK/discovery" "$XDG_CACHE_HOME" "$TMPDIR" \
+  "$VLLM_CACHE_ROOT" "$FLASHINFER_WORKSPACE_BASE" \
+  "$TORCHINDUCTOR_CACHE_DIR" "$TRITON_CACHE_DIR" "$CUDA_CACHE_PATH"
+
+printf 'CONFIG job=%s benchmark=bfcl mode=%s calls=%s workers=96 round=2880 ipc=30\n' \
+  "$SLURM_JOB_ID" "$MODE" "$MAX_CALLS"
+printf 'MODELS deepseek=https://api.deepseek.com model=deepseek-v4-flash qwen=%s\n' \
+  "$MODEL"
+df -h "$ROOT"
+df -i "$ROOT"
+
+apptainer exec --nv --no-home --bind "$ROOT:$ROOT" --bind "$JOBTMP:$JOBTMP" \
+  "$IMAGE" vllm serve "$MODEL" --runner pooling --host 127.0.0.1 \
+  --port "$PORT" --dtype auto --max-model-len 8192 \
+  > "$RUN/qwen-server.log" 2>&1 &
+SERVER_PID=$!
+for _ in $(seq 1 120); do
+  kill -0 "$SERVER_PID" 2>/dev/null || exit 1
+  curl --fail --silent "http://127.0.0.1:$PORT/health" >/dev/null && break
+  sleep 5
+done
+curl --fail --silent "http://127.0.0.1:$PORT/health" >/dev/null
+
+if [[ "$MODE" == fresh ]]; then
+  python -m retrieval.build_contracts bfcl --data-dir "$DATA" \
+    --output "$WORK/contracts.json" | tee "$RUN/contracts.log"
+else
+  cp "$WARM_CONTRACTS" "$WORK/contracts.json"
+fi
+for descriptor in field context; do
+  python -m retrieval.build_field_embeddings bfcl --data-dir "$DATA" \
+    --contracts "$WORK/contracts.json" --output "$WORK/$descriptor.sqlite" \
+    --descriptor "$descriptor" --embedding-base-url "$BASE_URL" \
+    > "$RUN/$descriptor-embeddings.json"
+done
+
+python -m retrieval.adapters.bfcl --mode "$MODE" \
+  --registry "$DATA/tool_registry.json" --bfcl-root "$BFCL" \
+  --contracts "$WORK/contracts.json" --field-embeddings "$WORK/field.sqlite" \
+  --scheduling-field-embeddings "$WORK/context.sqlite" \
+  --work-dir "$WORK/discovery" --output "$RUN/raw-graph.json" \
+  --telemetry-output "$RUN/telemetry.jsonl" --max-calls "$MAX_CALLS" \
+  --embedding-base-url "$BASE_URL" | tee "$RUN/build.log"
+
+python -m retrieval.publish_graph bfcl --data-dir "$DATA" \
+  --raw-graph "$RUN/raw-graph.json" --contracts "$WORK/contracts.json" \
+  --field-embeddings "$WORK/field.sqlite" \
+  --output "$RUN/dependency_graph.json" --contracts-output "$RUN/contracts.json"
+cp "$WORK/discovery/evidence.jsonl" "$RUN/evidence.jsonl"
+python -m retrieval.retrieve bfcl --embedding-root "$EMBEDDINGS" \
+  --output-dir "$RUN/retrieval"
+touch "$RUN/COMPLETE"
+du -sh "$RUN"
