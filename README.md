@@ -1,6 +1,9 @@
-# LIBRA: Programmatic Induction of Executable Tool Libraries
+# LIBRA: Programmatic Induction of Executable Tool Libraries (EACL '27)
 
 [![arXiv](https://img.shields.io/badge/arXiv-2611.05445-b31b1b.svg)](https://arxiv.org/abs/2611.05445)
+[![EACL 2027](https://img.shields.io/badge/EACL-2027%20Main-blue.svg)](https://arxiv.org/abs/2611.05445)
+
+Accepted to the EACL 2027 Main Conference (13.5% acceptance rate).
 
 LIBRA (Library Induction by Runtime Assembly) turns a flat tool catalog into an
 executable tool library. An LLM proposes a contract for each tool (candidate
